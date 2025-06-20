@@ -49,7 +49,7 @@ export const SignupForm = () => {
   return (
     <Card className='w-[36rem] max-h-screen'>
       <CardHeader className='flex justify-center'>
-        <h1 className='font-bold md:text-2xl'>Sign Up</h1>
+        <h1 className='font-bold text-2xl'>Sign Up</h1>
       </CardHeader>
       <CardContent>
         <Form {...form}>
