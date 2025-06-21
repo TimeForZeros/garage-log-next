@@ -1,10 +1,14 @@
 'use client';
 
+import { useState } from 'react';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardContent } from './ui/card';
+import { zxcvbn, zxcvbnOptions } from '@zxcvbn-ts/core';
+import * as zxcvbnCommonPackage from '@zxcvbn-ts/language-common';
+import * as zxcvbnEnPackage from '@zxcvbn-ts/language-en';
 import {
   Form,
   FormControl,
@@ -14,6 +18,17 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
+
+const options = {
+  translations: zxcvbnEnPackage.translations,
+  graphs: zxcvbnCommonPackage.adjacencyGraphs,
+  dictionary: {
+    ...zxcvbnCommonPackage.dictionary,
+    ...zxcvbnEnPackage.dictionary,
+  },
+};
+
+zxcvbnOptions.setOptions(options);
 
 const signupSchema = z
   .object({
@@ -46,6 +61,42 @@ export const SignupForm = () => {
     console.log(values);
   };
 
+  const PassIntegrityMsg = () => {
+    const { password } = form.getValues();
+    const result = zxcvbn(password);
+    let message = '';
+    let textColor = '';
+    switch (true) {
+      case result.score > 3:
+        message = 'Strong Password';
+        textColor = 'text-green-600';
+        break;
+      case result.score > 2:
+        message = 'Medium Password';
+        textColor = 'text-yellow-600';
+        break;
+      case result.score > 0:
+        message = 'Weak Password';
+        break;
+      default:
+    }
+
+    return <FormMessage className={textColor}>{message}</FormMessage>;
+  };
+
+  const ConfirmMessage = () => {
+    const { password, confirmPassword } = form.getValues();
+    let message = '';
+    if (confirmPassword.length > 1) {
+      message = password === confirmPassword ? 'Passwords Match' : 'Passwords Do Not Match';
+    }
+    return (
+      <FormMessage className={password === confirmPassword ? 'text-green-600' : ''}>
+        {message}
+      </FormMessage>
+    );
+  };
+
   return (
     <Card className='w-[36rem] max-h-screen'>
       <CardHeader className='flex justify-center'>
@@ -53,7 +104,7 @@ export const SignupForm = () => {
       </CardHeader>
       <CardContent>
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-8'>
+          <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-2'>
             <FormField
               control={form.control}
               name='username'
@@ -91,7 +142,7 @@ export const SignupForm = () => {
                   <FormControl>
                     <Input type='password' placeholder='Password' {...field} />
                   </FormControl>
-                  <FormMessage />
+                  <PassIntegrityMsg />
                 </FormItem>
               )}
             />
@@ -105,7 +156,7 @@ export const SignupForm = () => {
                   <FormControl>
                     <Input type='password' placeholder='Confirm Password' {...field} />
                   </FormControl>
-                  <FormMessage />
+                  <ConfirmMessage />
                 </FormItem>
               )}
             />
