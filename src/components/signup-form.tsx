@@ -1,7 +1,6 @@
 'use client';
 
-import { useState } from 'react';
-import { z } from 'zod';
+import { useActionState } from 'react'
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { Button } from '@/components/ui/button';
@@ -9,6 +8,7 @@ import { Card, CardHeader, CardContent } from './ui/card';
 import { zxcvbn, zxcvbnOptions } from '@zxcvbn-ts/core';
 import * as zxcvbnCommonPackage from '@zxcvbn-ts/language-common';
 import * as zxcvbnEnPackage from '@zxcvbn-ts/language-en';
+import { signupSchema, SignupSchema } from '@/lib/definitions';
 import {
   Form,
   FormControl,
@@ -18,6 +18,7 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
+import { signup } from '@/app/actions/auth';
 
 const options = {
   translations: zxcvbnEnPackage.translations,
@@ -30,24 +31,9 @@ const options = {
 
 zxcvbnOptions.setOptions(options);
 
-const signupSchema = z
-  .object({
-    username: z
-      .string()
-      .trim()
-      .min(2, { message: 'Name must be at least 2 characters long.' })
-      .max(64, { message: 'Name cannot exceed 50 characters.' }),
-    email: z.string().email().trim().toLowerCase(),
-    password: z.string().min(8, { message: 'Password must be at least 8 characters long.' }),
-    confirmPassword: z.string(),
-  })
-  .refine((data) => data.password === data.confirmPassword, {
-    message: 'Passwords do not match.',
-    path: ['confirmPassword'], // Apply the error to the confirmPassword field
-  });
-
 export const SignupForm = () => {
-  const form = useForm<z.infer<typeof signupSchema>>({
+  // const [state, action, pending] = useActionState(signup, undefined);
+  const form = useForm<SignupSchema>({
     resolver: zodResolver(signupSchema),
     defaultValues: {
       username: '',
@@ -57,10 +43,9 @@ export const SignupForm = () => {
     },
   });
 
-  const onSubmit = (values: z.infer<typeof signupSchema>) => {
-    // const res = signupSchema.parse(values);
-    // console.log(res);
-    console.log(values);
+  const onSubmit = async (values: SignupSchema) => {
+    const res = await signup(values);
+    console.log(res);
   };
 
   const IntegrityMessage = () => {
