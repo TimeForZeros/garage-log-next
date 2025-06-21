@@ -58,10 +58,12 @@ export const SignupForm = () => {
   });
 
   const onSubmit = (values: z.infer<typeof signupSchema>) => {
+    // const res = signupSchema.parse(values);
+    // console.log(res);
     console.log(values);
   };
 
-  const PassIntegrityMsg = () => {
+  const IntegrityMessage = () => {
     const { password } = form.getValues();
     const result = zxcvbn(password);
     let message = '';
@@ -142,7 +144,7 @@ export const SignupForm = () => {
                   <FormControl>
                     <Input type='password' placeholder='Password' {...field} />
                   </FormControl>
-                  <PassIntegrityMsg />
+                  <IntegrityMessage />
                 </FormItem>
               )}
             />
