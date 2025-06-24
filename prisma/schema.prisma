@@ -1,0 +1,59 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "./prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       Int       @id @default(autoincrement())
+  name     String?
+  email    String    @unique
+  password String
+  Vehicle  Vehicle[]
+}
+
+model Vehicle {
+  id                Int                 @id @default(autoincrement())
+  name              String
+  model             String?
+  make              String?
+  year              Int?
+  odometer_miles    Int
+  owner             User                @relation(fields: [userId], references: [id])
+  userId            Int
+  Maintenance_Item  Maintenance_Item[]
+  Maintenance_Entry Maintenance_Entry[]
+}
+
+model Maintenance_Item {
+  id                   Int                 @id @default(autoincrement())
+  name                 String
+  comments             String?
+  vehicle              Vehicle             @relation(fields: [vehicleId], references: [id])
+  time_interval_days   Int?
+  usage_interval_miles Float? // float so if there's probably a conversion from Km
+  recurring            Boolean
+  vehicleId            Int
+  Maintenance_Entry    Maintenance_Entry[]
+}
+
+model Maintenance_Entry {
+  id                 Int               @id @default(autoincrement())
+  title              String
+  details            String
+  vehicle            Vehicle           @relation(fields: [vehicleId], references: [id])
+  date               DateTime
+  maintenance_item   Maintenance_Item? @relation(fields: [maintenance_ItemId], references: [id])
+  vehicleId          Int
+  maintenance_ItemId Int?
+}

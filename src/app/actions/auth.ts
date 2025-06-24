@@ -1,7 +1,7 @@
 import { argon2id, argon2Verify } from 'hash-wasm';
 import { randomBytes } from 'crypto';
 import { signupSchema, SignupSchema } from '@/lib/definitions';
-import config from '@/config/index'
+import config from '@/config/index';
 
 const ARGON2ID_CONFIG = {
   // OWASP recommended config
@@ -20,7 +20,7 @@ const hashPassword = (password: string): Promise<string> =>
     salt: randomBytes(16),
   });
 
-export const authenticate = (password: string, hash: string) =>
+export const authenticate = async (password: string, hash: string) =>
   argon2Verify({ password, hash, secret: config.db.pepper });
 
 export async function signup(formData: SignupSchema) {
@@ -30,4 +30,10 @@ export async function signup(formData: SignupSchema) {
       errors: validatedFields.error.flatten().fieldErrors,
     };
   }
+  const passwordHash = await hashPassword(validatedFields.data.password);
+  const signupData = {
+    username: validatedFields.data.username,
+    email: validatedFields.data.email,
+    password: passwordHash,
+  };
 }
