@@ -1,7 +1,10 @@
+"use server"
+
 import { argon2id, argon2Verify } from 'hash-wasm';
 import { randomBytes } from 'crypto';
 import { signupSchema, SignupSchema } from '@/lib/definitions';
 import config from '@/config/index';
+import prisma from '@/lib/prisma';
 
 const ARGON2ID_CONFIG = {
   // OWASP recommended config
@@ -32,8 +35,10 @@ export async function signup(formData: SignupSchema) {
   }
   const passwordHash = await hashPassword(validatedFields.data.password);
   const signupData = {
-    username: validatedFields.data.username,
+    name: validatedFields.data.username,
     email: validatedFields.data.email,
     password: passwordHash,
   };
+  await prisma.user.create({ data: signupData });
+  return 'ok'
 }
