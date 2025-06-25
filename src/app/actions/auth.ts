@@ -1,8 +1,8 @@
-"use server"
+'use server';
 
 import { argon2id, argon2Verify } from 'hash-wasm';
 import { randomBytes } from 'crypto';
-import { signupSchema, SignupSchema } from '@/lib/definitions';
+import { signupSchema, SignupSchema, loginSchema, LoginSchema } from '@/lib/definitions';
 import config from '@/config/index';
 import prisma from '@/lib/prisma';
 
@@ -40,5 +40,29 @@ export async function signup(formData: SignupSchema) {
     password: passwordHash,
   };
   await prisma.user.create({ data: signupData });
-  return 'ok'
+  return 'ok';
 }
+
+export const login = async (loginData: LoginSchema) => {
+  const InvalidLoginError = new Error('Invalid Login Information');
+  try {
+    const { data, success } = loginSchema.safeParse(loginData);
+    if (!success) throw InvalidLoginError;
+    const res = await prisma.user.findUnique({
+      where: { email: data.email },
+    });
+    if (!res) throw InvalidLoginError;
+    const isValid = await authenticate(data.password, res?.password);
+    if (!isValid) throw InvalidLoginError;
+    // set session
+    return 'ok';
+  } catch (err) {
+    if (err instanceof Error) {
+      if (err.message !== InvalidLoginError.message) {
+        console.error(err);
+      }
+      return err.message;
+    }
+    return 'Unknown error';
+  }
+};
