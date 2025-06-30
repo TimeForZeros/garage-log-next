@@ -1,10 +1,13 @@
 'use client';
 
+import { useState } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardContent } from './ui/card';
 import { loginSchema, LoginSchema } from '@/lib/definitions';
+import { redirect } from 'next/navigation';
+
 import {
   Form,
   FormControl,
@@ -17,6 +20,8 @@ import { Input } from '@/components/ui/input';
 import { login } from '@/app/actions/auth';
 
 export const LoginForm = () => {
+  const [errorMessage, setErrorMessage] = useState('');
+  const ErrorMessage = () => <span className='text-destructive text-sm flex justify-around'>{errorMessage}</span>;
   const form = useForm<LoginSchema>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
@@ -26,8 +31,12 @@ export const LoginForm = () => {
   });
 
   const onSubmit = async (values: LoginSchema) => {
-    const res = await login(values);
-    console.log(res);
+    const message = await login(values);
+    if (message === 'ok') {
+      redirect('/dashboard');
+    } else {
+      setErrorMessage(message);
+    }
   };
 
   return (
@@ -36,6 +45,7 @@ export const LoginForm = () => {
         <h1 className='font-bold text-2xl'>Log In</h1>
       </CardHeader>
       <CardContent>
+        <ErrorMessage />
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-2'>
             <FormField
