@@ -31,11 +31,16 @@ export function NavBar() {
         </NavigationMenuList>
       </NavigationMenu>
 
-      <NavigationMenu className='px-5'>
+      <NavigationMenu viewport={false} className='px-5'>
         <NavigationMenuList>
           <NavigationMenuItem>
             <NavigationMenuLink>
               <Link href='/signup'>Sign Up</Link>
+            </NavigationMenuLink>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <NavigationMenuLink>
+              <Link href='/login'>Log In</Link>
             </NavigationMenuLink>
           </NavigationMenuItem>
         </NavigationMenuList>
