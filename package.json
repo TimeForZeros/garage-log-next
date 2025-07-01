@@ -13,6 +13,7 @@
     "@prisma/client": "^6.10.1",
     "@prisma/extension-accelerate": "^2.0.1",
     "@radix-ui/react-label": "^2.1.7",
+    "@radix-ui/react-navigation-menu": "^1.2.13",
     "@radix-ui/react-slot": "^1.2.3",
     "@tanstack/react-query": "^5.80.10",
     "@zxcvbn-ts/core": "^3.0.4",
