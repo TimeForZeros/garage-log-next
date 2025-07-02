@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardContent } from './ui/card';
 import { loginSchema, LoginSchema } from '@/lib/definitions';
 import { redirect } from 'next/navigation';
+import { signIn } from 'next-auth/react';
 
 import {
   Form,
@@ -21,7 +22,9 @@ import { login } from '@/app/actions/auth';
 
 export const LoginForm = () => {
   const [errorMessage, setErrorMessage] = useState('');
-  const ErrorMessage = () => <span className='text-destructive text-sm flex justify-around'>{errorMessage}</span>;
+  const ErrorMessage = () => (
+    <span className='text-destructive text-sm flex justify-around'>{errorMessage}</span>
+  );
   const form = useForm<LoginSchema>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
@@ -31,6 +34,9 @@ export const LoginForm = () => {
   });
 
   const onSubmit = async (values: LoginSchema) => {
+    const res = await signIn('credentials', values);
+    console.log(res);
+    return;
     const message = await login(values);
     if (message === 'ok') {
       redirect('/dashboard');

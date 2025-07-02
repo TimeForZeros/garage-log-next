@@ -1,6 +1,7 @@
+export * from './next-auth';
 const config = {
   db: {
-    pepper: process.env.PEPPER,
+    pepper: process.env.PEPPER!,
   },
 };
 
