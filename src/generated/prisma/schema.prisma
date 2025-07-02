@@ -6,7 +6,7 @@
 
 generator client {
   provider = "prisma-client-js"
-  output   = "../src/app/generated/prisma"
+  output   = "../src/generated/prisma"
 }
 
 datasource db {
@@ -15,7 +15,7 @@ datasource db {
 }
 
 model User {
-  id       Int       @id @default(autoincrement())
+  id       String    @id @default(cuid(2))
   name     String?
   email    String    @unique
   password String
@@ -23,14 +23,14 @@ model User {
 }
 
 model Vehicle {
-  id                Int                 @id @default(autoincrement())
+  id                String              @id @default(cuid(2))
   name              String
   model             String?
   make              String?
   year              Int?
   odometer_miles    Int
   owner             User                @relation(fields: [userId], references: [id])
-  userId            Int
+  userId            String
   Maintenance_Item  Maintenance_Item[]
   Maintenance_Entry Maintenance_Entry[]
 }
@@ -43,7 +43,7 @@ model Maintenance_Item {
   time_interval_days   Int?
   usage_interval_miles Float? // float so if there's probably a conversion from Km
   recurring            Boolean
-  vehicleId            Int
+  vehicleId            String
   Maintenance_Entry    Maintenance_Entry[]
 }
 
@@ -54,6 +54,6 @@ model Maintenance_Entry {
   vehicle            Vehicle           @relation(fields: [vehicleId], references: [id])
   date               DateTime
   maintenance_item   Maintenance_Item? @relation(fields: [maintenance_ItemId], references: [id])
-  vehicleId          Int
+  vehicleId          String
   maintenance_ItemId Int?
 }

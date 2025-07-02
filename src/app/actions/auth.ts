@@ -48,14 +48,15 @@ export const login = async (loginData: LoginSchema) => {
   try {
     const { data, success } = loginSchema.safeParse(loginData);
     if (!success) throw InvalidLoginError;
-    const res = await prisma.user.findUnique({
+    const user = await prisma.user.findUnique({
       where: { email: data.email },
     });
-    if (!res) throw InvalidLoginError;
-    const isValid = await authenticate(data.password, res?.password);
+    if (!user) throw InvalidLoginError;
+    const isValid = await authenticate(data.password, user?.password);
     if (!isValid) throw InvalidLoginError;
     // set session
-    return 'ok';
+    console.log(user);
+    return user.id;
   } catch (err) {
     if (err instanceof Error) {
       if (err.message !== InvalidLoginError.message) {

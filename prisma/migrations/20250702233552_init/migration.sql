@@ -1,6 +1,6 @@
 -- CreateTable
 CREATE TABLE "User" (
-    "id" SERIAL NOT NULL,
+    "id" TEXT NOT NULL,
     "name" TEXT,
     "email" TEXT NOT NULL,
     "password" TEXT NOT NULL,
@@ -10,13 +10,13 @@ CREATE TABLE "User" (
 
 -- CreateTable
 CREATE TABLE "Vehicle" (
-    "id" SERIAL NOT NULL,
+    "id" TEXT NOT NULL,
     "name" TEXT NOT NULL,
     "model" TEXT,
     "make" TEXT,
     "year" INTEGER,
     "odometer_miles" INTEGER NOT NULL,
-    "userId" INTEGER NOT NULL,
+    "userId" TEXT NOT NULL,
 
     CONSTRAINT "Vehicle_pkey" PRIMARY KEY ("id")
 );
@@ -29,7 +29,7 @@ CREATE TABLE "Maintenance_Item" (
     "time_interval_days" INTEGER,
     "usage_interval_miles" DOUBLE PRECISION,
     "recurring" BOOLEAN NOT NULL,
-    "vehicleId" INTEGER NOT NULL,
+    "vehicleId" TEXT NOT NULL,
 
     CONSTRAINT "Maintenance_Item_pkey" PRIMARY KEY ("id")
 );
@@ -40,7 +40,7 @@ CREATE TABLE "Maintenance_Entry" (
     "title" TEXT NOT NULL,
     "details" TEXT NOT NULL,
     "date" TIMESTAMP(3) NOT NULL,
-    "vehicleId" INTEGER NOT NULL,
+    "vehicleId" TEXT NOT NULL,
     "maintenance_ItemId" INTEGER,
 
     CONSTRAINT "Maintenance_Entry_pkey" PRIMARY KEY ("id")

@@ -1,5 +1,6 @@
 import CredentialsProvider from 'next-auth/providers/credentials';
 import { NextAuthOptions } from 'next-auth';
+import { login } from '@/app/actions/auth';
 
 export const nextAuthOptions: NextAuthOptions = {
   providers: [
@@ -8,7 +9,12 @@ export const nextAuthOptions: NextAuthOptions = {
         email: { label: 'Email', type: 'email' },
         password: { label: 'Password', type: 'password' },
       },
-      authorize: (credentials, req) => {
+      authorize: async (credentials, req) => {
+        if (credentials) {
+          const userData = { email: credentials.email, password: credentials.password };
+          const data = await login(userData);
+          console.log(data);
+        }
         return null;
       },
     }),
@@ -19,13 +25,13 @@ export const nextAuthOptions: NextAuthOptions = {
   jwt: {
     maxAge: 60 * 60 * 24 * 30,
   },
-  // pages: {
-  //   signIn: '/signin',
-  //   signOut: '/signout',
-  //   // error: '/error', // Error code passed in query string as ?error=
-  //   // verifyRequest: '/verify-request', // (used for check email message)
-  //   newUser: '/new-user', // New users will be directed here on first sign in (leave the property out if not of interest)
-  // },
+  pages: {
+    signIn: '/login',
+    signOut: '/logout',
+    // error: '/error', // Error code passed in query string as ?error=
+    // verifyRequest: '/verify-request', // (used for check email message)
+    newUser: '/new-user', // New users will be directed here on first sign in (leave the property out if not of interest)
+  },
   callbacks: {
     async signIn({ user, account, profile, email, credentials }) {
       return true;

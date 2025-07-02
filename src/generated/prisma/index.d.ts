@@ -256,8 +256,8 @@ export namespace Prisma {
   export import Exact = $Public.Exact
 
   /**
-   * Prisma Client JS version: 6.10.1
-   * Query Engine version: 9b628578b3b7cae625e8c927178f15a170e74a9c
+   * Prisma Client JS version: 6.11.0
+   * Query Engine version: 9c30299f5a0ea26a96790e13f796dc6094db3173
    */
   export type PrismaVersion = {
     client: string
@@ -1249,29 +1249,19 @@ export namespace Prisma {
 
   export type AggregateUser = {
     _count: UserCountAggregateOutputType | null
-    _avg: UserAvgAggregateOutputType | null
-    _sum: UserSumAggregateOutputType | null
     _min: UserMinAggregateOutputType | null
     _max: UserMaxAggregateOutputType | null
   }
 
-  export type UserAvgAggregateOutputType = {
-    id: number | null
-  }
-
-  export type UserSumAggregateOutputType = {
-    id: number | null
-  }
-
   export type UserMinAggregateOutputType = {
-    id: number | null
+    id: string | null
     name: string | null
     email: string | null
     password: string | null
   }
 
   export type UserMaxAggregateOutputType = {
-    id: number | null
+    id: string | null
     name: string | null
     email: string | null
     password: string | null
@@ -1285,14 +1275,6 @@ export namespace Prisma {
     _all: number
   }
 
-
-  export type UserAvgAggregateInputType = {
-    id?: true
-  }
-
-  export type UserSumAggregateInputType = {
-    id?: true
-  }
 
   export type UserMinAggregateInputType = {
     id?: true
@@ -1354,18 +1336,6 @@ export namespace Prisma {
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Select which fields to average
-    **/
-    _avg?: UserAvgAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to sum
-    **/
-    _sum?: UserSumAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
      * Select which fields to find the minimum value
     **/
     _min?: UserMinAggregateInputType
@@ -1396,20 +1366,16 @@ export namespace Prisma {
     take?: number
     skip?: number
     _count?: UserCountAggregateInputType | true
-    _avg?: UserAvgAggregateInputType
-    _sum?: UserSumAggregateInputType
     _min?: UserMinAggregateInputType
     _max?: UserMaxAggregateInputType
   }
 
   export type UserGroupByOutputType = {
-    id: number
+    id: string
     name: string | null
     email: string
     password: string
     _count: UserCountAggregateOutputType | null
-    _avg: UserAvgAggregateOutputType | null
-    _sum: UserSumAggregateOutputType | null
     _min: UserMinAggregateOutputType | null
     _max: UserMaxAggregateOutputType | null
   }
@@ -1472,7 +1438,7 @@ export namespace Prisma {
       Vehicle: Prisma.$VehiclePayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
-      id: number
+      id: string
       name: string | null
       email: string
       password: string
@@ -1900,7 +1866,7 @@ export namespace Prisma {
    * Fields of the User model
    */
   interface UserFieldRefs {
-    readonly id: FieldRef<"User", 'Int'>
+    readonly id: FieldRef<"User", 'String'>
     readonly name: FieldRef<"User", 'String'>
     readonly email: FieldRef<"User", 'String'>
     readonly password: FieldRef<"User", 'String'>
@@ -2347,37 +2313,33 @@ export namespace Prisma {
   }
 
   export type VehicleAvgAggregateOutputType = {
-    id: number | null
     year: number | null
     odometer_miles: number | null
-    userId: number | null
   }
 
   export type VehicleSumAggregateOutputType = {
-    id: number | null
     year: number | null
     odometer_miles: number | null
-    userId: number | null
   }
 
   export type VehicleMinAggregateOutputType = {
-    id: number | null
+    id: string | null
     name: string | null
     model: string | null
     make: string | null
     year: number | null
     odometer_miles: number | null
-    userId: number | null
+    userId: string | null
   }
 
   export type VehicleMaxAggregateOutputType = {
-    id: number | null
+    id: string | null
     name: string | null
     model: string | null
     make: string | null
     year: number | null
     odometer_miles: number | null
-    userId: number | null
+    userId: string | null
   }
 
   export type VehicleCountAggregateOutputType = {
@@ -2393,17 +2355,13 @@ export namespace Prisma {
 
 
   export type VehicleAvgAggregateInputType = {
-    id?: true
     year?: true
     odometer_miles?: true
-    userId?: true
   }
 
   export type VehicleSumAggregateInputType = {
-    id?: true
     year?: true
     odometer_miles?: true
-    userId?: true
   }
 
   export type VehicleMinAggregateInputType = {
@@ -2524,13 +2482,13 @@ export namespace Prisma {
   }
 
   export type VehicleGroupByOutputType = {
-    id: number
+    id: string
     name: string
     model: string | null
     make: string | null
     year: number | null
     odometer_miles: number
-    userId: number
+    userId: string
     _count: VehicleCountAggregateOutputType | null
     _avg: VehicleAvgAggregateOutputType | null
     _sum: VehicleSumAggregateOutputType | null
@@ -2620,13 +2578,13 @@ export namespace Prisma {
       Maintenance_Entry: Prisma.$Maintenance_EntryPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
-      id: number
+      id: string
       name: string
       model: string | null
       make: string | null
       year: number | null
       odometer_miles: number
-      userId: number
+      userId: string
     }, ExtArgs["result"]["vehicle"]>
     composites: {}
   }
@@ -3053,13 +3011,13 @@ export namespace Prisma {
    * Fields of the Vehicle model
    */
   interface VehicleFieldRefs {
-    readonly id: FieldRef<"Vehicle", 'Int'>
+    readonly id: FieldRef<"Vehicle", 'String'>
     readonly name: FieldRef<"Vehicle", 'String'>
     readonly model: FieldRef<"Vehicle", 'String'>
     readonly make: FieldRef<"Vehicle", 'String'>
     readonly year: FieldRef<"Vehicle", 'Int'>
     readonly odometer_miles: FieldRef<"Vehicle", 'Int'>
-    readonly userId: FieldRef<"Vehicle", 'Int'>
+    readonly userId: FieldRef<"Vehicle", 'String'>
   }
     
 
@@ -3538,14 +3496,12 @@ export namespace Prisma {
     id: number | null
     time_interval_days: number | null
     usage_interval_miles: number | null
-    vehicleId: number | null
   }
 
   export type Maintenance_ItemSumAggregateOutputType = {
     id: number | null
     time_interval_days: number | null
     usage_interval_miles: number | null
-    vehicleId: number | null
   }
 
   export type Maintenance_ItemMinAggregateOutputType = {
@@ -3555,7 +3511,7 @@ export namespace Prisma {
     time_interval_days: number | null
     usage_interval_miles: number | null
     recurring: boolean | null
-    vehicleId: number | null
+    vehicleId: string | null
   }
 
   export type Maintenance_ItemMaxAggregateOutputType = {
@@ -3565,7 +3521,7 @@ export namespace Prisma {
     time_interval_days: number | null
     usage_interval_miles: number | null
     recurring: boolean | null
-    vehicleId: number | null
+    vehicleId: string | null
   }
 
   export type Maintenance_ItemCountAggregateOutputType = {
@@ -3584,14 +3540,12 @@ export namespace Prisma {
     id?: true
     time_interval_days?: true
     usage_interval_miles?: true
-    vehicleId?: true
   }
 
   export type Maintenance_ItemSumAggregateInputType = {
     id?: true
     time_interval_days?: true
     usage_interval_miles?: true
-    vehicleId?: true
   }
 
   export type Maintenance_ItemMinAggregateInputType = {
@@ -3718,7 +3672,7 @@ export namespace Prisma {
     time_interval_days: number | null
     usage_interval_miles: number | null
     recurring: boolean
-    vehicleId: number
+    vehicleId: string
     _count: Maintenance_ItemCountAggregateOutputType | null
     _avg: Maintenance_ItemAvgAggregateOutputType | null
     _sum: Maintenance_ItemSumAggregateOutputType | null
@@ -3811,7 +3765,7 @@ export namespace Prisma {
       time_interval_days: number | null
       usage_interval_miles: number | null
       recurring: boolean
-      vehicleId: number
+      vehicleId: string
     }, ExtArgs["result"]["maintenance_Item"]>
     composites: {}
   }
@@ -4243,7 +4197,7 @@ export namespace Prisma {
     readonly time_interval_days: FieldRef<"Maintenance_Item", 'Int'>
     readonly usage_interval_miles: FieldRef<"Maintenance_Item", 'Float'>
     readonly recurring: FieldRef<"Maintenance_Item", 'Boolean'>
-    readonly vehicleId: FieldRef<"Maintenance_Item", 'Int'>
+    readonly vehicleId: FieldRef<"Maintenance_Item", 'String'>
   }
     
 
@@ -4696,13 +4650,11 @@ export namespace Prisma {
 
   export type Maintenance_EntryAvgAggregateOutputType = {
     id: number | null
-    vehicleId: number | null
     maintenance_ItemId: number | null
   }
 
   export type Maintenance_EntrySumAggregateOutputType = {
     id: number | null
-    vehicleId: number | null
     maintenance_ItemId: number | null
   }
 
@@ -4711,7 +4663,7 @@ export namespace Prisma {
     title: string | null
     details: string | null
     date: Date | null
-    vehicleId: number | null
+    vehicleId: string | null
     maintenance_ItemId: number | null
   }
 
@@ -4720,7 +4672,7 @@ export namespace Prisma {
     title: string | null
     details: string | null
     date: Date | null
-    vehicleId: number | null
+    vehicleId: string | null
     maintenance_ItemId: number | null
   }
 
@@ -4737,13 +4689,11 @@ export namespace Prisma {
 
   export type Maintenance_EntryAvgAggregateInputType = {
     id?: true
-    vehicleId?: true
     maintenance_ItemId?: true
   }
 
   export type Maintenance_EntrySumAggregateInputType = {
     id?: true
-    vehicleId?: true
     maintenance_ItemId?: true
   }
 
@@ -4866,7 +4816,7 @@ export namespace Prisma {
     title: string
     details: string
     date: Date
-    vehicleId: number
+    vehicleId: string
     maintenance_ItemId: number | null
     _count: Maintenance_EntryCountAggregateOutputType | null
     _avg: Maintenance_EntryAvgAggregateOutputType | null
@@ -4956,7 +4906,7 @@ export namespace Prisma {
       title: string
       details: string
       date: Date
-      vehicleId: number
+      vehicleId: string
       maintenance_ItemId: number | null
     }, ExtArgs["result"]["maintenance_Entry"]>
     composites: {}
@@ -5387,7 +5337,7 @@ export namespace Prisma {
     readonly title: FieldRef<"Maintenance_Entry", 'String'>
     readonly details: FieldRef<"Maintenance_Entry", 'String'>
     readonly date: FieldRef<"Maintenance_Entry", 'DateTime'>
-    readonly vehicleId: FieldRef<"Maintenance_Entry", 'Int'>
+    readonly vehicleId: FieldRef<"Maintenance_Entry", 'String'>
     readonly maintenance_ItemId: FieldRef<"Maintenance_Entry", 'Int'>
   }
     
@@ -5914,20 +5864,6 @@ export namespace Prisma {
 
 
   /**
-   * Reference to a field of type 'Int'
-   */
-  export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>
-    
-
-
-  /**
-   * Reference to a field of type 'Int[]'
-   */
-  export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int[]'>
-    
-
-
-  /**
    * Reference to a field of type 'String'
    */
   export type StringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String'>
@@ -5938,6 +5874,20 @@ export namespace Prisma {
    * Reference to a field of type 'String[]'
    */
   export type ListStringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String[]'>
+    
+
+
+  /**
+   * Reference to a field of type 'Int'
+   */
+  export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>
+    
+
+
+  /**
+   * Reference to a field of type 'Int[]'
+   */
+  export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int[]'>
     
 
 
@@ -5983,7 +5933,7 @@ export namespace Prisma {
     AND?: UserWhereInput | UserWhereInput[]
     OR?: UserWhereInput[]
     NOT?: UserWhereInput | UserWhereInput[]
-    id?: IntFilter<"User"> | number
+    id?: StringFilter<"User"> | string
     name?: StringNullableFilter<"User"> | string | null
     email?: StringFilter<"User"> | string
     password?: StringFilter<"User"> | string
@@ -5999,7 +5949,7 @@ export namespace Prisma {
   }
 
   export type UserWhereUniqueInput = Prisma.AtLeast<{
-    id?: number
+    id?: string
     email?: string
     AND?: UserWhereInput | UserWhereInput[]
     OR?: UserWhereInput[]
@@ -6015,17 +5965,15 @@ export namespace Prisma {
     email?: SortOrder
     password?: SortOrder
     _count?: UserCountOrderByAggregateInput
-    _avg?: UserAvgOrderByAggregateInput
     _max?: UserMaxOrderByAggregateInput
     _min?: UserMinOrderByAggregateInput
-    _sum?: UserSumOrderByAggregateInput
   }
 
   export type UserScalarWhereWithAggregatesInput = {
     AND?: UserScalarWhereWithAggregatesInput | UserScalarWhereWithAggregatesInput[]
     OR?: UserScalarWhereWithAggregatesInput[]
     NOT?: UserScalarWhereWithAggregatesInput | UserScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"User"> | number
+    id?: StringWithAggregatesFilter<"User"> | string
     name?: StringNullableWithAggregatesFilter<"User"> | string | null
     email?: StringWithAggregatesFilter<"User"> | string
     password?: StringWithAggregatesFilter<"User"> | string
@@ -6035,13 +5983,13 @@ export namespace Prisma {
     AND?: VehicleWhereInput | VehicleWhereInput[]
     OR?: VehicleWhereInput[]
     NOT?: VehicleWhereInput | VehicleWhereInput[]
-    id?: IntFilter<"Vehicle"> | number
+    id?: StringFilter<"Vehicle"> | string
     name?: StringFilter<"Vehicle"> | string
     model?: StringNullableFilter<"Vehicle"> | string | null
     make?: StringNullableFilter<"Vehicle"> | string | null
     year?: IntNullableFilter<"Vehicle"> | number | null
     odometer_miles?: IntFilter<"Vehicle"> | number
-    userId?: IntFilter<"Vehicle"> | number
+    userId?: StringFilter<"Vehicle"> | string
     owner?: XOR<UserScalarRelationFilter, UserWhereInput>
     Maintenance_Item?: Maintenance_ItemListRelationFilter
     Maintenance_Entry?: Maintenance_EntryListRelationFilter
@@ -6061,7 +6009,7 @@ export namespace Prisma {
   }
 
   export type VehicleWhereUniqueInput = Prisma.AtLeast<{
-    id?: number
+    id?: string
     AND?: VehicleWhereInput | VehicleWhereInput[]
     OR?: VehicleWhereInput[]
     NOT?: VehicleWhereInput | VehicleWhereInput[]
@@ -6070,7 +6018,7 @@ export namespace Prisma {
     make?: StringNullableFilter<"Vehicle"> | string | null
     year?: IntNullableFilter<"Vehicle"> | number | null
     odometer_miles?: IntFilter<"Vehicle"> | number
-    userId?: IntFilter<"Vehicle"> | number
+    userId?: StringFilter<"Vehicle"> | string
     owner?: XOR<UserScalarRelationFilter, UserWhereInput>
     Maintenance_Item?: Maintenance_ItemListRelationFilter
     Maintenance_Entry?: Maintenance_EntryListRelationFilter
@@ -6095,13 +6043,13 @@ export namespace Prisma {
     AND?: VehicleScalarWhereWithAggregatesInput | VehicleScalarWhereWithAggregatesInput[]
     OR?: VehicleScalarWhereWithAggregatesInput[]
     NOT?: VehicleScalarWhereWithAggregatesInput | VehicleScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"Vehicle"> | number
+    id?: StringWithAggregatesFilter<"Vehicle"> | string
     name?: StringWithAggregatesFilter<"Vehicle"> | string
     model?: StringNullableWithAggregatesFilter<"Vehicle"> | string | null
     make?: StringNullableWithAggregatesFilter<"Vehicle"> | string | null
     year?: IntNullableWithAggregatesFilter<"Vehicle"> | number | null
     odometer_miles?: IntWithAggregatesFilter<"Vehicle"> | number
-    userId?: IntWithAggregatesFilter<"Vehicle"> | number
+    userId?: StringWithAggregatesFilter<"Vehicle"> | string
   }
 
   export type Maintenance_ItemWhereInput = {
@@ -6114,7 +6062,7 @@ export namespace Prisma {
     time_interval_days?: IntNullableFilter<"Maintenance_Item"> | number | null
     usage_interval_miles?: FloatNullableFilter<"Maintenance_Item"> | number | null
     recurring?: BoolFilter<"Maintenance_Item"> | boolean
-    vehicleId?: IntFilter<"Maintenance_Item"> | number
+    vehicleId?: StringFilter<"Maintenance_Item"> | string
     vehicle?: XOR<VehicleScalarRelationFilter, VehicleWhereInput>
     Maintenance_Entry?: Maintenance_EntryListRelationFilter
   }
@@ -6141,7 +6089,7 @@ export namespace Prisma {
     time_interval_days?: IntNullableFilter<"Maintenance_Item"> | number | null
     usage_interval_miles?: FloatNullableFilter<"Maintenance_Item"> | number | null
     recurring?: BoolFilter<"Maintenance_Item"> | boolean
-    vehicleId?: IntFilter<"Maintenance_Item"> | number
+    vehicleId?: StringFilter<"Maintenance_Item"> | string
     vehicle?: XOR<VehicleScalarRelationFilter, VehicleWhereInput>
     Maintenance_Entry?: Maintenance_EntryListRelationFilter
   }, "id">
@@ -6171,7 +6119,7 @@ export namespace Prisma {
     time_interval_days?: IntNullableWithAggregatesFilter<"Maintenance_Item"> | number | null
     usage_interval_miles?: FloatNullableWithAggregatesFilter<"Maintenance_Item"> | number | null
     recurring?: BoolWithAggregatesFilter<"Maintenance_Item"> | boolean
-    vehicleId?: IntWithAggregatesFilter<"Maintenance_Item"> | number
+    vehicleId?: StringWithAggregatesFilter<"Maintenance_Item"> | string
   }
 
   export type Maintenance_EntryWhereInput = {
@@ -6182,7 +6130,7 @@ export namespace Prisma {
     title?: StringFilter<"Maintenance_Entry"> | string
     details?: StringFilter<"Maintenance_Entry"> | string
     date?: DateTimeFilter<"Maintenance_Entry"> | Date | string
-    vehicleId?: IntFilter<"Maintenance_Entry"> | number
+    vehicleId?: StringFilter<"Maintenance_Entry"> | string
     maintenance_ItemId?: IntNullableFilter<"Maintenance_Entry"> | number | null
     vehicle?: XOR<VehicleScalarRelationFilter, VehicleWhereInput>
     maintenance_item?: XOR<Maintenance_ItemNullableScalarRelationFilter, Maintenance_ItemWhereInput> | null
@@ -6207,7 +6155,7 @@ export namespace Prisma {
     title?: StringFilter<"Maintenance_Entry"> | string
     details?: StringFilter<"Maintenance_Entry"> | string
     date?: DateTimeFilter<"Maintenance_Entry"> | Date | string
-    vehicleId?: IntFilter<"Maintenance_Entry"> | number
+    vehicleId?: StringFilter<"Maintenance_Entry"> | string
     maintenance_ItemId?: IntNullableFilter<"Maintenance_Entry"> | number | null
     vehicle?: XOR<VehicleScalarRelationFilter, VehicleWhereInput>
     maintenance_item?: XOR<Maintenance_ItemNullableScalarRelationFilter, Maintenance_ItemWhereInput> | null
@@ -6235,11 +6183,12 @@ export namespace Prisma {
     title?: StringWithAggregatesFilter<"Maintenance_Entry"> | string
     details?: StringWithAggregatesFilter<"Maintenance_Entry"> | string
     date?: DateTimeWithAggregatesFilter<"Maintenance_Entry"> | Date | string
-    vehicleId?: IntWithAggregatesFilter<"Maintenance_Entry"> | number
+    vehicleId?: StringWithAggregatesFilter<"Maintenance_Entry"> | string
     maintenance_ItemId?: IntNullableWithAggregatesFilter<"Maintenance_Entry"> | number | null
   }
 
   export type UserCreateInput = {
+    id?: string
     name?: string | null
     email: string
     password: string
@@ -6247,7 +6196,7 @@ export namespace Prisma {
   }
 
   export type UserUncheckedCreateInput = {
-    id?: number
+    id?: string
     name?: string | null
     email: string
     password: string
@@ -6255,6 +6204,7 @@ export namespace Prisma {
   }
 
   export type UserUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
     name?: NullableStringFieldUpdateOperationsInput | string | null
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
@@ -6262,7 +6212,7 @@ export namespace Prisma {
   }
 
   export type UserUncheckedUpdateInput = {
-    id?: IntFieldUpdateOperationsInput | number
+    id?: StringFieldUpdateOperationsInput | string
     name?: NullableStringFieldUpdateOperationsInput | string | null
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
@@ -6270,26 +6220,28 @@ export namespace Prisma {
   }
 
   export type UserCreateManyInput = {
-    id?: number
+    id?: string
     name?: string | null
     email: string
     password: string
   }
 
   export type UserUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
     name?: NullableStringFieldUpdateOperationsInput | string | null
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
   }
 
   export type UserUncheckedUpdateManyInput = {
-    id?: IntFieldUpdateOperationsInput | number
+    id?: StringFieldUpdateOperationsInput | string
     name?: NullableStringFieldUpdateOperationsInput | string | null
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
   }
 
   export type VehicleCreateInput = {
+    id?: string
     name: string
     model?: string | null
     make?: string | null
@@ -6301,18 +6253,19 @@ export namespace Prisma {
   }
 
   export type VehicleUncheckedCreateInput = {
-    id?: number
+    id?: string
     name: string
     model?: string | null
     make?: string | null
     year?: number | null
     odometer_miles: number
-    userId: number
+    userId: string
     Maintenance_Item?: Maintenance_ItemUncheckedCreateNestedManyWithoutVehicleInput
     Maintenance_Entry?: Maintenance_EntryUncheckedCreateNestedManyWithoutVehicleInput
   }
 
   export type VehicleUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     model?: NullableStringFieldUpdateOperationsInput | string | null
     make?: NullableStringFieldUpdateOperationsInput | string | null
@@ -6324,28 +6277,29 @@ export namespace Prisma {
   }
 
   export type VehicleUncheckedUpdateInput = {
-    id?: IntFieldUpdateOperationsInput | number
+    id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     model?: NullableStringFieldUpdateOperationsInput | string | null
     make?: NullableStringFieldUpdateOperationsInput | string | null
     year?: NullableIntFieldUpdateOperationsInput | number | null
     odometer_miles?: IntFieldUpdateOperationsInput | number
-    userId?: IntFieldUpdateOperationsInput | number
+    userId?: StringFieldUpdateOperationsInput | string
     Maintenance_Item?: Maintenance_ItemUncheckedUpdateManyWithoutVehicleNestedInput
     Maintenance_Entry?: Maintenance_EntryUncheckedUpdateManyWithoutVehicleNestedInput
   }
 
   export type VehicleCreateManyInput = {
-    id?: number
+    id?: string
     name: string
     model?: string | null
     make?: string | null
     year?: number | null
     odometer_miles: number
-    userId: number
+    userId: string
   }
 
   export type VehicleUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     model?: NullableStringFieldUpdateOperationsInput | string | null
     make?: NullableStringFieldUpdateOperationsInput | string | null
@@ -6354,13 +6308,13 @@ export namespace Prisma {
   }
 
   export type VehicleUncheckedUpdateManyInput = {
-    id?: IntFieldUpdateOperationsInput | number
+    id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     model?: NullableStringFieldUpdateOperationsInput | string | null
     make?: NullableStringFieldUpdateOperationsInput | string | null
     year?: NullableIntFieldUpdateOperationsInput | number | null
     odometer_miles?: IntFieldUpdateOperationsInput | number
-    userId?: IntFieldUpdateOperationsInput | number
+    userId?: StringFieldUpdateOperationsInput | string
   }
 
   export type Maintenance_ItemCreateInput = {
@@ -6380,7 +6334,7 @@ export namespace Prisma {
     time_interval_days?: number | null
     usage_interval_miles?: number | null
     recurring: boolean
-    vehicleId: number
+    vehicleId: string
     Maintenance_Entry?: Maintenance_EntryUncheckedCreateNestedManyWithoutMaintenance_itemInput
   }
 
@@ -6401,7 +6355,7 @@ export namespace Prisma {
     time_interval_days?: NullableIntFieldUpdateOperationsInput | number | null
     usage_interval_miles?: NullableFloatFieldUpdateOperationsInput | number | null
     recurring?: BoolFieldUpdateOperationsInput | boolean
-    vehicleId?: IntFieldUpdateOperationsInput | number
+    vehicleId?: StringFieldUpdateOperationsInput | string
     Maintenance_Entry?: Maintenance_EntryUncheckedUpdateManyWithoutMaintenance_itemNestedInput
   }
 
@@ -6412,7 +6366,7 @@ export namespace Prisma {
     time_interval_days?: number | null
     usage_interval_miles?: number | null
     recurring: boolean
-    vehicleId: number
+    vehicleId: string
   }
 
   export type Maintenance_ItemUpdateManyMutationInput = {
@@ -6430,7 +6384,7 @@ export namespace Prisma {
     time_interval_days?: NullableIntFieldUpdateOperationsInput | number | null
     usage_interval_miles?: NullableFloatFieldUpdateOperationsInput | number | null
     recurring?: BoolFieldUpdateOperationsInput | boolean
-    vehicleId?: IntFieldUpdateOperationsInput | number
+    vehicleId?: StringFieldUpdateOperationsInput | string
   }
 
   export type Maintenance_EntryCreateInput = {
@@ -6446,7 +6400,7 @@ export namespace Prisma {
     title: string
     details: string
     date: Date | string
-    vehicleId: number
+    vehicleId: string
     maintenance_ItemId?: number | null
   }
 
@@ -6463,7 +6417,7 @@ export namespace Prisma {
     title?: StringFieldUpdateOperationsInput | string
     details?: StringFieldUpdateOperationsInput | string
     date?: DateTimeFieldUpdateOperationsInput | Date | string
-    vehicleId?: IntFieldUpdateOperationsInput | number
+    vehicleId?: StringFieldUpdateOperationsInput | string
     maintenance_ItemId?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
@@ -6472,7 +6426,7 @@ export namespace Prisma {
     title: string
     details: string
     date: Date | string
-    vehicleId: number
+    vehicleId: string
     maintenance_ItemId?: number | null
   }
 
@@ -6487,34 +6441,8 @@ export namespace Prisma {
     title?: StringFieldUpdateOperationsInput | string
     details?: StringFieldUpdateOperationsInput | string
     date?: DateTimeFieldUpdateOperationsInput | Date | string
-    vehicleId?: IntFieldUpdateOperationsInput | number
+    vehicleId?: StringFieldUpdateOperationsInput | string
     maintenance_ItemId?: NullableIntFieldUpdateOperationsInput | number | null
-  }
-
-  export type IntFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[] | ListIntFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntFilter<$PrismaModel> | number
-  }
-
-  export type StringNullableFilter<$PrismaModel = never> = {
-    equals?: string | StringFieldRefInput<$PrismaModel> | null
-    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    lt?: string | StringFieldRefInput<$PrismaModel>
-    lte?: string | StringFieldRefInput<$PrismaModel>
-    gt?: string | StringFieldRefInput<$PrismaModel>
-    gte?: string | StringFieldRefInput<$PrismaModel>
-    contains?: string | StringFieldRefInput<$PrismaModel>
-    startsWith?: string | StringFieldRefInput<$PrismaModel>
-    endsWith?: string | StringFieldRefInput<$PrismaModel>
-    mode?: QueryMode
-    not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
 
   export type StringFilter<$PrismaModel = never> = {
@@ -6530,6 +6458,21 @@ export namespace Prisma {
     endsWith?: string | StringFieldRefInput<$PrismaModel>
     mode?: QueryMode
     not?: NestedStringFilter<$PrismaModel> | string
+  }
+
+  export type StringNullableFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    mode?: QueryMode
+    not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
 
   export type VehicleListRelationFilter = {
@@ -6554,10 +6497,6 @@ export namespace Prisma {
     password?: SortOrder
   }
 
-  export type UserAvgOrderByAggregateInput = {
-    id?: SortOrder
-  }
-
   export type UserMaxOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
@@ -6570,44 +6509,6 @@ export namespace Prisma {
     name?: SortOrder
     email?: SortOrder
     password?: SortOrder
-  }
-
-  export type UserSumOrderByAggregateInput = {
-    id?: SortOrder
-  }
-
-  export type IntWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[] | ListIntFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
-    _count?: NestedIntFilter<$PrismaModel>
-    _avg?: NestedFloatFilter<$PrismaModel>
-    _sum?: NestedIntFilter<$PrismaModel>
-    _min?: NestedIntFilter<$PrismaModel>
-    _max?: NestedIntFilter<$PrismaModel>
-  }
-
-  export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: string | StringFieldRefInput<$PrismaModel> | null
-    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    lt?: string | StringFieldRefInput<$PrismaModel>
-    lte?: string | StringFieldRefInput<$PrismaModel>
-    gt?: string | StringFieldRefInput<$PrismaModel>
-    gte?: string | StringFieldRefInput<$PrismaModel>
-    contains?: string | StringFieldRefInput<$PrismaModel>
-    startsWith?: string | StringFieldRefInput<$PrismaModel>
-    endsWith?: string | StringFieldRefInput<$PrismaModel>
-    mode?: QueryMode
-    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedStringNullableFilter<$PrismaModel>
-    _max?: NestedStringNullableFilter<$PrismaModel>
   }
 
   export type StringWithAggregatesFilter<$PrismaModel = never> = {
@@ -6628,6 +6529,24 @@ export namespace Prisma {
     _max?: NestedStringFilter<$PrismaModel>
   }
 
+  export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    mode?: QueryMode
+    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedStringNullableFilter<$PrismaModel>
+    _max?: NestedStringNullableFilter<$PrismaModel>
+  }
+
   export type IntNullableFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel> | null
     in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
@@ -6637,6 +6556,17 @@ export namespace Prisma {
     gt?: number | IntFieldRefInput<$PrismaModel>
     gte?: number | IntFieldRefInput<$PrismaModel>
     not?: NestedIntNullableFilter<$PrismaModel> | number | null
+  }
+
+  export type IntFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntFilter<$PrismaModel> | number
   }
 
   export type UserScalarRelationFilter = {
@@ -6675,10 +6605,8 @@ export namespace Prisma {
   }
 
   export type VehicleAvgOrderByAggregateInput = {
-    id?: SortOrder
     year?: SortOrder
     odometer_miles?: SortOrder
-    userId?: SortOrder
   }
 
   export type VehicleMaxOrderByAggregateInput = {
@@ -6702,10 +6630,8 @@ export namespace Prisma {
   }
 
   export type VehicleSumOrderByAggregateInput = {
-    id?: SortOrder
     year?: SortOrder
     odometer_miles?: SortOrder
-    userId?: SortOrder
   }
 
   export type IntNullableWithAggregatesFilter<$PrismaModel = never> = {
@@ -6722,6 +6648,22 @@ export namespace Prisma {
     _sum?: NestedIntNullableFilter<$PrismaModel>
     _min?: NestedIntNullableFilter<$PrismaModel>
     _max?: NestedIntNullableFilter<$PrismaModel>
+  }
+
+  export type IntWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedIntFilter<$PrismaModel>
+    _min?: NestedIntFilter<$PrismaModel>
+    _max?: NestedIntFilter<$PrismaModel>
   }
 
   export type FloatNullableFilter<$PrismaModel = never> = {
@@ -6759,7 +6701,6 @@ export namespace Prisma {
     id?: SortOrder
     time_interval_days?: SortOrder
     usage_interval_miles?: SortOrder
-    vehicleId?: SortOrder
   }
 
   export type Maintenance_ItemMaxOrderByAggregateInput = {
@@ -6786,7 +6727,6 @@ export namespace Prisma {
     id?: SortOrder
     time_interval_days?: SortOrder
     usage_interval_miles?: SortOrder
-    vehicleId?: SortOrder
   }
 
   export type FloatNullableWithAggregatesFilter<$PrismaModel = never> = {
@@ -6840,7 +6780,6 @@ export namespace Prisma {
 
   export type Maintenance_EntryAvgOrderByAggregateInput = {
     id?: SortOrder
-    vehicleId?: SortOrder
     maintenance_ItemId?: SortOrder
   }
 
@@ -6864,7 +6803,6 @@ export namespace Prisma {
 
   export type Maintenance_EntrySumOrderByAggregateInput = {
     id?: SortOrder
-    vehicleId?: SortOrder
     maintenance_ItemId?: SortOrder
   }
 
@@ -6896,12 +6834,12 @@ export namespace Prisma {
     connect?: VehicleWhereUniqueInput | VehicleWhereUniqueInput[]
   }
 
-  export type NullableStringFieldUpdateOperationsInput = {
-    set?: string | null
-  }
-
   export type StringFieldUpdateOperationsInput = {
     set?: string
+  }
+
+  export type NullableStringFieldUpdateOperationsInput = {
+    set?: string | null
   }
 
   export type VehicleUpdateManyWithoutOwnerNestedInput = {
@@ -6916,14 +6854,6 @@ export namespace Prisma {
     update?: VehicleUpdateWithWhereUniqueWithoutOwnerInput | VehicleUpdateWithWhereUniqueWithoutOwnerInput[]
     updateMany?: VehicleUpdateManyWithWhereWithoutOwnerInput | VehicleUpdateManyWithWhereWithoutOwnerInput[]
     deleteMany?: VehicleScalarWhereInput | VehicleScalarWhereInput[]
-  }
-
-  export type IntFieldUpdateOperationsInput = {
-    set?: number
-    increment?: number
-    decrement?: number
-    multiply?: number
-    divide?: number
   }
 
   export type VehicleUncheckedUpdateManyWithoutOwnerNestedInput = {
@@ -6976,6 +6906,14 @@ export namespace Prisma {
 
   export type NullableIntFieldUpdateOperationsInput = {
     set?: number | null
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
+  }
+
+  export type IntFieldUpdateOperationsInput = {
+    set?: number
     increment?: number
     decrement?: number
     multiply?: number
@@ -7148,15 +7086,18 @@ export namespace Prisma {
     update?: XOR<XOR<Maintenance_ItemUpdateToOneWithWhereWithoutMaintenance_EntryInput, Maintenance_ItemUpdateWithoutMaintenance_EntryInput>, Maintenance_ItemUncheckedUpdateWithoutMaintenance_EntryInput>
   }
 
-  export type NestedIntFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[] | ListIntFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntFilter<$PrismaModel> | number
+  export type NestedStringFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel>
+    in?: string[] | ListStringFieldRefInput<$PrismaModel>
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel>
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringFilter<$PrismaModel> | string
   }
 
   export type NestedStringNullableFilter<$PrismaModel = never> = {
@@ -7173,7 +7114,7 @@ export namespace Prisma {
     not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
 
-  export type NestedStringFilter<$PrismaModel = never> = {
+  export type NestedStringWithAggregatesFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
     in?: string[] | ListStringFieldRefInput<$PrismaModel>
     notIn?: string[] | ListStringFieldRefInput<$PrismaModel>
@@ -7184,10 +7125,13 @@ export namespace Prisma {
     contains?: string | StringFieldRefInput<$PrismaModel>
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
-    not?: NestedStringFilter<$PrismaModel> | string
+    not?: NestedStringWithAggregatesFilter<$PrismaModel> | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedStringFilter<$PrismaModel>
+    _max?: NestedStringFilter<$PrismaModel>
   }
 
-  export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
+  export type NestedIntFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel>
     in?: number[] | ListIntFieldRefInput<$PrismaModel>
     notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
@@ -7195,23 +7139,7 @@ export namespace Prisma {
     lte?: number | IntFieldRefInput<$PrismaModel>
     gt?: number | IntFieldRefInput<$PrismaModel>
     gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
-    _count?: NestedIntFilter<$PrismaModel>
-    _avg?: NestedFloatFilter<$PrismaModel>
-    _sum?: NestedIntFilter<$PrismaModel>
-    _min?: NestedIntFilter<$PrismaModel>
-    _max?: NestedIntFilter<$PrismaModel>
-  }
-
-  export type NestedFloatFilter<$PrismaModel = never> = {
-    equals?: number | FloatFieldRefInput<$PrismaModel>
-    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
-    lt?: number | FloatFieldRefInput<$PrismaModel>
-    lte?: number | FloatFieldRefInput<$PrismaModel>
-    gt?: number | FloatFieldRefInput<$PrismaModel>
-    gte?: number | FloatFieldRefInput<$PrismaModel>
-    not?: NestedFloatFilter<$PrismaModel> | number
+    not?: NestedIntFilter<$PrismaModel> | number
   }
 
   export type NestedStringNullableWithAggregatesFilter<$PrismaModel = never> = {
@@ -7242,23 +7170,6 @@ export namespace Prisma {
     not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
-  export type NestedStringWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: string | StringFieldRefInput<$PrismaModel>
-    in?: string[] | ListStringFieldRefInput<$PrismaModel>
-    notIn?: string[] | ListStringFieldRefInput<$PrismaModel>
-    lt?: string | StringFieldRefInput<$PrismaModel>
-    lte?: string | StringFieldRefInput<$PrismaModel>
-    gt?: string | StringFieldRefInput<$PrismaModel>
-    gte?: string | StringFieldRefInput<$PrismaModel>
-    contains?: string | StringFieldRefInput<$PrismaModel>
-    startsWith?: string | StringFieldRefInput<$PrismaModel>
-    endsWith?: string | StringFieldRefInput<$PrismaModel>
-    not?: NestedStringWithAggregatesFilter<$PrismaModel> | string
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedStringFilter<$PrismaModel>
-    _max?: NestedStringFilter<$PrismaModel>
-  }
-
   export type NestedIntNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel> | null
     in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
@@ -7284,6 +7195,33 @@ export namespace Prisma {
     gt?: number | FloatFieldRefInput<$PrismaModel>
     gte?: number | FloatFieldRefInput<$PrismaModel>
     not?: NestedFloatNullableFilter<$PrismaModel> | number | null
+  }
+
+  export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedIntFilter<$PrismaModel>
+    _min?: NestedIntFilter<$PrismaModel>
+    _max?: NestedIntFilter<$PrismaModel>
+  }
+
+  export type NestedFloatFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel>
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatFilter<$PrismaModel> | number
   }
 
   export type NestedBoolFilter<$PrismaModel = never> = {
@@ -7341,6 +7279,7 @@ export namespace Prisma {
   }
 
   export type VehicleCreateWithoutOwnerInput = {
+    id?: string
     name: string
     model?: string | null
     make?: string | null
@@ -7351,7 +7290,7 @@ export namespace Prisma {
   }
 
   export type VehicleUncheckedCreateWithoutOwnerInput = {
-    id?: number
+    id?: string
     name: string
     model?: string | null
     make?: string | null
@@ -7391,23 +7330,24 @@ export namespace Prisma {
     AND?: VehicleScalarWhereInput | VehicleScalarWhereInput[]
     OR?: VehicleScalarWhereInput[]
     NOT?: VehicleScalarWhereInput | VehicleScalarWhereInput[]
-    id?: IntFilter<"Vehicle"> | number
+    id?: StringFilter<"Vehicle"> | string
     name?: StringFilter<"Vehicle"> | string
     model?: StringNullableFilter<"Vehicle"> | string | null
     make?: StringNullableFilter<"Vehicle"> | string | null
     year?: IntNullableFilter<"Vehicle"> | number | null
     odometer_miles?: IntFilter<"Vehicle"> | number
-    userId?: IntFilter<"Vehicle"> | number
+    userId?: StringFilter<"Vehicle"> | string
   }
 
   export type UserCreateWithoutVehicleInput = {
+    id?: string
     name?: string | null
     email: string
     password: string
   }
 
   export type UserUncheckedCreateWithoutVehicleInput = {
-    id?: number
+    id?: string
     name?: string | null
     email: string
     password: string
@@ -7484,13 +7424,14 @@ export namespace Prisma {
   }
 
   export type UserUpdateWithoutVehicleInput = {
+    id?: StringFieldUpdateOperationsInput | string
     name?: NullableStringFieldUpdateOperationsInput | string | null
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
   }
 
   export type UserUncheckedUpdateWithoutVehicleInput = {
-    id?: IntFieldUpdateOperationsInput | number
+    id?: StringFieldUpdateOperationsInput | string
     name?: NullableStringFieldUpdateOperationsInput | string | null
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
@@ -7522,7 +7463,7 @@ export namespace Prisma {
     time_interval_days?: IntNullableFilter<"Maintenance_Item"> | number | null
     usage_interval_miles?: FloatNullableFilter<"Maintenance_Item"> | number | null
     recurring?: BoolFilter<"Maintenance_Item"> | boolean
-    vehicleId?: IntFilter<"Maintenance_Item"> | number
+    vehicleId?: StringFilter<"Maintenance_Item"> | string
   }
 
   export type Maintenance_EntryUpsertWithWhereUniqueWithoutVehicleInput = {
@@ -7549,11 +7490,12 @@ export namespace Prisma {
     title?: StringFilter<"Maintenance_Entry"> | string
     details?: StringFilter<"Maintenance_Entry"> | string
     date?: DateTimeFilter<"Maintenance_Entry"> | Date | string
-    vehicleId?: IntFilter<"Maintenance_Entry"> | number
+    vehicleId?: StringFilter<"Maintenance_Entry"> | string
     maintenance_ItemId?: IntNullableFilter<"Maintenance_Entry"> | number | null
   }
 
   export type VehicleCreateWithoutMaintenance_ItemInput = {
+    id?: string
     name: string
     model?: string | null
     make?: string | null
@@ -7564,13 +7506,13 @@ export namespace Prisma {
   }
 
   export type VehicleUncheckedCreateWithoutMaintenance_ItemInput = {
-    id?: number
+    id?: string
     name: string
     model?: string | null
     make?: string | null
     year?: number | null
     odometer_miles: number
-    userId: number
+    userId: string
     Maintenance_Entry?: Maintenance_EntryUncheckedCreateNestedManyWithoutVehicleInput
   }
 
@@ -7591,7 +7533,7 @@ export namespace Prisma {
     title: string
     details: string
     date: Date | string
-    vehicleId: number
+    vehicleId: string
   }
 
   export type Maintenance_EntryCreateOrConnectWithoutMaintenance_itemInput = {
@@ -7616,6 +7558,7 @@ export namespace Prisma {
   }
 
   export type VehicleUpdateWithoutMaintenance_ItemInput = {
+    id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     model?: NullableStringFieldUpdateOperationsInput | string | null
     make?: NullableStringFieldUpdateOperationsInput | string | null
@@ -7626,13 +7569,13 @@ export namespace Prisma {
   }
 
   export type VehicleUncheckedUpdateWithoutMaintenance_ItemInput = {
-    id?: IntFieldUpdateOperationsInput | number
+    id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     model?: NullableStringFieldUpdateOperationsInput | string | null
     make?: NullableStringFieldUpdateOperationsInput | string | null
     year?: NullableIntFieldUpdateOperationsInput | number | null
     odometer_miles?: IntFieldUpdateOperationsInput | number
-    userId?: IntFieldUpdateOperationsInput | number
+    userId?: StringFieldUpdateOperationsInput | string
     Maintenance_Entry?: Maintenance_EntryUncheckedUpdateManyWithoutVehicleNestedInput
   }
 
@@ -7653,6 +7596,7 @@ export namespace Prisma {
   }
 
   export type VehicleCreateWithoutMaintenance_EntryInput = {
+    id?: string
     name: string
     model?: string | null
     make?: string | null
@@ -7663,13 +7607,13 @@ export namespace Prisma {
   }
 
   export type VehicleUncheckedCreateWithoutMaintenance_EntryInput = {
-    id?: number
+    id?: string
     name: string
     model?: string | null
     make?: string | null
     year?: number | null
     odometer_miles: number
-    userId: number
+    userId: string
     Maintenance_Item?: Maintenance_ItemUncheckedCreateNestedManyWithoutVehicleInput
   }
 
@@ -7694,7 +7638,7 @@ export namespace Prisma {
     time_interval_days?: number | null
     usage_interval_miles?: number | null
     recurring: boolean
-    vehicleId: number
+    vehicleId: string
   }
 
   export type Maintenance_ItemCreateOrConnectWithoutMaintenance_EntryInput = {
@@ -7714,6 +7658,7 @@ export namespace Prisma {
   }
 
   export type VehicleUpdateWithoutMaintenance_EntryInput = {
+    id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     model?: NullableStringFieldUpdateOperationsInput | string | null
     make?: NullableStringFieldUpdateOperationsInput | string | null
@@ -7724,13 +7669,13 @@ export namespace Prisma {
   }
 
   export type VehicleUncheckedUpdateWithoutMaintenance_EntryInput = {
-    id?: IntFieldUpdateOperationsInput | number
+    id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     model?: NullableStringFieldUpdateOperationsInput | string | null
     make?: NullableStringFieldUpdateOperationsInput | string | null
     year?: NullableIntFieldUpdateOperationsInput | number | null
     odometer_miles?: IntFieldUpdateOperationsInput | number
-    userId?: IntFieldUpdateOperationsInput | number
+    userId?: StringFieldUpdateOperationsInput | string
     Maintenance_Item?: Maintenance_ItemUncheckedUpdateManyWithoutVehicleNestedInput
   }
 
@@ -7761,11 +7706,11 @@ export namespace Prisma {
     time_interval_days?: NullableIntFieldUpdateOperationsInput | number | null
     usage_interval_miles?: NullableFloatFieldUpdateOperationsInput | number | null
     recurring?: BoolFieldUpdateOperationsInput | boolean
-    vehicleId?: IntFieldUpdateOperationsInput | number
+    vehicleId?: StringFieldUpdateOperationsInput | string
   }
 
   export type VehicleCreateManyOwnerInput = {
-    id?: number
+    id?: string
     name: string
     model?: string | null
     make?: string | null
@@ -7774,6 +7719,7 @@ export namespace Prisma {
   }
 
   export type VehicleUpdateWithoutOwnerInput = {
+    id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     model?: NullableStringFieldUpdateOperationsInput | string | null
     make?: NullableStringFieldUpdateOperationsInput | string | null
@@ -7784,7 +7730,7 @@ export namespace Prisma {
   }
 
   export type VehicleUncheckedUpdateWithoutOwnerInput = {
-    id?: IntFieldUpdateOperationsInput | number
+    id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     model?: NullableStringFieldUpdateOperationsInput | string | null
     make?: NullableStringFieldUpdateOperationsInput | string | null
@@ -7795,7 +7741,7 @@ export namespace Prisma {
   }
 
   export type VehicleUncheckedUpdateManyWithoutOwnerInput = {
-    id?: IntFieldUpdateOperationsInput | number
+    id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     model?: NullableStringFieldUpdateOperationsInput | string | null
     make?: NullableStringFieldUpdateOperationsInput | string | null
@@ -7876,7 +7822,7 @@ export namespace Prisma {
     title: string
     details: string
     date: Date | string
-    vehicleId: number
+    vehicleId: string
   }
 
   export type Maintenance_EntryUpdateWithoutMaintenance_itemInput = {
@@ -7891,7 +7837,7 @@ export namespace Prisma {
     title?: StringFieldUpdateOperationsInput | string
     details?: StringFieldUpdateOperationsInput | string
     date?: DateTimeFieldUpdateOperationsInput | Date | string
-    vehicleId?: IntFieldUpdateOperationsInput | number
+    vehicleId?: StringFieldUpdateOperationsInput | string
   }
 
   export type Maintenance_EntryUncheckedUpdateManyWithoutMaintenance_itemInput = {
@@ -7899,7 +7845,7 @@ export namespace Prisma {
     title?: StringFieldUpdateOperationsInput | string
     details?: StringFieldUpdateOperationsInput | string
     date?: DateTimeFieldUpdateOperationsInput | Date | string
-    vehicleId?: IntFieldUpdateOperationsInput | number
+    vehicleId?: StringFieldUpdateOperationsInput | string
   }
 
 
