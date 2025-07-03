@@ -2,9 +2,12 @@
 
 import { argon2id, argon2Verify } from 'hash-wasm';
 import { randomBytes } from 'crypto';
+import { NextResponse } from 'next/server';
 import { signupSchema, SignupSchema, loginSchema, LoginSchema } from '@/lib/definitions';
 import config from '@/config/index';
 import prisma from '@/lib/prisma';
+import { PrismaClientKnownRequestError } from '@/prisma/runtime/library';
+// import { PrismaClientKnownRequestError } from '@/prisma/runtime/library';
 
 const ARGON2ID_CONFIG = {
   // OWASP recommended config
@@ -39,8 +42,17 @@ export async function signup(formData: SignupSchema) {
     email: validatedFields.data.email,
     password: passwordHash,
   };
-  await prisma.user.create({ data: signupData });
-  return 'ok';
+  try {
+    await prisma.user.create({ data: signupData });
+    return {};
+  } catch (err) {
+    if (err instanceof PrismaClientKnownRequestError) {
+      if (err.code === 'P2002') {
+        return { error: 'Email already registered' };
+      }
+    }
+    return { error: 'Unknown error occurred' };
+  }
 }
 
 export const login = async (loginData: LoginSchema) => {
@@ -55,7 +67,6 @@ export const login = async (loginData: LoginSchema) => {
     const isValid = await authenticate(data.password, user?.password);
     if (!isValid) throw InvalidLoginError;
     // set session
-    console.log(user);
     return user.id;
   } catch (err) {
     if (err instanceof Error) {
