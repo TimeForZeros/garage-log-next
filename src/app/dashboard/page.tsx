@@ -20,13 +20,13 @@ export default async function Dashboard() {
   console.log(res);
   if (!res) redirect('/login');
   return (
-    <div>
+    <>
       <div>Hello World</div>
       <div>
         <Suspense fallback={<Loading />}>
           <Posts />
         </Suspense>
       </div>
-    </div>
+    </>
   );
 }

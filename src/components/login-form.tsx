@@ -34,15 +34,11 @@ export const LoginForm = () => {
   });
 
   const onSubmit = async (values: LoginSchema) => {
-    const res = await signIn('credentials', values);
-    console.log(res);
-    return;
-    const message = await login(values);
-    if (message === 'ok') {
+    const res = await signIn('credentials', { ...values, redirect: false });
+    if (res?.ok) {
       redirect('/dashboard');
-    } else {
-      setErrorMessage(message);
     }
+    setErrorMessage('Account not found or password incorrect');
   };
 
   return (

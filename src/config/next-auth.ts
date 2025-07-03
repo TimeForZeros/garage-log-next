@@ -3,20 +3,25 @@ import { NextAuthOptions } from 'next-auth';
 import { PrismaAdapter } from '@auth/prisma-adapter';
 import prisma from '@/lib/prisma';
 import { login } from '@/app/actions/auth';
+import { User } from '@/prisma';
+
+type LoginResponse = User | Error;
 
 export const nextAuthOptions: NextAuthOptions = {
   adapter: PrismaAdapter(prisma),
   providers: [
     CredentialsProvider({
       credentials: {
-        email: { label: 'Email', type: 'email' },
-        password: { label: 'Password', type: 'password' },
+        email: { type: 'email' },
+        password: { type: 'password' },
       },
       authorize: async (credentials, req) => {
         if (credentials) {
           const userData = { email: credentials.email, password: credentials.password };
-          const data = await login(userData);
-          console.log(data);
+          const data: LoginResponse = await login(userData);
+          if (!(data instanceof Error)) {
+            return data;
+          }
         }
         return null;
       },
@@ -24,6 +29,7 @@ export const nextAuthOptions: NextAuthOptions = {
   ],
   session: {
     strategy: 'jwt',
+    maxAge: 10
   },
   jwt: {
     maxAge: 60 * 60 * 24 * 30,
@@ -31,6 +37,7 @@ export const nextAuthOptions: NextAuthOptions = {
   pages: {
     signIn: '/login',
     signOut: '/logout',
+    error: '/login',
     // error: '/error', // Error code passed in query string as ?error=
     // verifyRequest: '/verify-request', // (used for check email message)
     newUser: '/new-user', // New users will be directed here on first sign in (leave the property out if not of interest)

@@ -8,6 +8,9 @@ import { zxcvbn, zxcvbnOptions } from '@zxcvbn-ts/core';
 import * as zxcvbnCommonPackage from '@zxcvbn-ts/language-common';
 import * as zxcvbnEnPackage from '@zxcvbn-ts/language-en';
 import { signupSchema, SignupSchema } from '@/lib/definitions';
+import { redirect } from 'next/navigation';
+import FormErrorMessage from './ui/form-error-message';
+import { useState } from 'react';
 import {
   Form,
   FormControl,
@@ -31,7 +34,7 @@ const options = {
 zxcvbnOptions.setOptions(options);
 
 export const SignupForm = () => {
-  // const [state, action, pending] = useActionState(signup, undefined);
+  const [errorMessage, setErrorMessage] = useState('');
   const form = useForm<SignupSchema>({
     resolver: zodResolver(signupSchema),
     defaultValues: {
@@ -44,7 +47,10 @@ export const SignupForm = () => {
 
   const onSubmit = async (values: SignupSchema) => {
     const res = await signup(values);
-    console.log(res);
+    if (!res) redirect('/login');
+    console.log('here');
+    console.log(res.error);
+    setErrorMessage(res.error);
   };
 
   const IntegrityMessage = () => {
@@ -89,6 +95,7 @@ export const SignupForm = () => {
         <h1 className='font-bold text-2xl'>Sign Up</h1>
       </CardHeader>
       <CardContent>
+        <FormErrorMessage errorMessage={errorMessage} />
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-2'>
             <FormField

@@ -19,14 +19,10 @@ export function NavBar() {
       <NavigationMenu viewport={false} className='mx-auto'>
         <NavigationMenuList>
           <NavigationMenuItem>
-            <NavigationMenuLink>
-              <Link href='/'>Home</Link>
-            </NavigationMenuLink>
+            <NavigationMenuLink href='/'>Home</NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <NavigationMenuLink>
-              <Link href='/dashboard'>Dashboard</Link>
-            </NavigationMenuLink>
+            <NavigationMenuLink href='/dashboard'>Dashboard</NavigationMenuLink>
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
@@ -34,14 +30,10 @@ export function NavBar() {
       <NavigationMenu viewport={false} className='px-5'>
         <NavigationMenuList>
           <NavigationMenuItem>
-            <NavigationMenuLink>
-              <Link href='/signup'>Sign Up</Link>
-            </NavigationMenuLink>
+            <NavigationMenuLink href='/signup'>Sign Up</NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <NavigationMenuLink>
-              <Link href='/login'>Log In</Link>
-            </NavigationMenuLink>
+            <NavigationMenuLink href='/login'>Log In</NavigationMenuLink>
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>

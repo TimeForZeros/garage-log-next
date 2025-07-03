@@ -2,7 +2,6 @@
 
 import { argon2id, argon2Verify } from 'hash-wasm';
 import { randomBytes } from 'crypto';
-import { NextResponse } from 'next/server';
 import { signupSchema, SignupSchema, loginSchema, LoginSchema } from '@/lib/definitions';
 import config from '@/config/index';
 import prisma from '@/lib/prisma';
@@ -44,7 +43,7 @@ export async function signup(formData: SignupSchema) {
   };
   try {
     await prisma.user.create({ data: signupData });
-    return {};
+    return null;
   } catch (err) {
     if (err instanceof PrismaClientKnownRequestError) {
       if (err.code === 'P2002') {
@@ -67,14 +66,11 @@ export const login = async (loginData: LoginSchema) => {
     const isValid = await authenticate(data.password, user?.password);
     if (!isValid) throw InvalidLoginError;
     // set session
-    return user.id;
+    return user;
   } catch (err) {
-    if (err instanceof Error) {
-      if (err.message !== InvalidLoginError.message) {
-        console.error(err);
-      }
-      return err.message;
+    if (err instanceof Error && err.message !== InvalidLoginError.message) {
+      console.error(err);
     }
-    return 'Unknown error';
+    return err as Error;
   }
 };
