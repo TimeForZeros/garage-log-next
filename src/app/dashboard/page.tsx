@@ -1,7 +1,4 @@
 import { Suspense } from 'react';
-import { getServerSession } from 'next-auth';
-import { redirect } from 'next/navigation';
-import { nextAuthOptions } from '@/config';
 import Loading from './loading';
 
 const Posts = async () => {
@@ -16,9 +13,6 @@ const Posts = async () => {
   );
 };
 export default async function Dashboard() {
-  const res = await getServerSession(nextAuthOptions);
-  console.log(res);
-  if (!res) redirect('/login');
   return (
     <>
       <div>Hello World</div>

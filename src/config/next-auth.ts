@@ -29,7 +29,7 @@ export const nextAuthOptions: NextAuthOptions = {
   ],
   session: {
     strategy: 'jwt',
-    maxAge: 10
+    maxAge: 60 * 60 * 24 * 30,
   },
   jwt: {
     maxAge: 60 * 60 * 24 * 30,
@@ -56,33 +56,33 @@ export const nextAuthOptions: NextAuthOptions = {
       return token;
     },
   },
-  events: {
-    async signIn(message) {
-      console.log(message);
-      /* on successful sign in */
-    },
-    async signOut(message) {
-      console.log(message);
-      /* on signout */
-    },
-    async createUser(message) {
-      console.log(message);
-      /* user created */
-    },
-    async updateUser(message) {
-      console.log(message);
+  // events: {
+  //   async signIn(message) {
+  //     console.log(message);
+  //     /* on successful sign in */
+  //   },
+  //   async signOut(message) {
+  //     console.log(message);
+  //     /* on signout */
+  //   },
+  //   async createUser(message) {
+  //     console.log(message);
+  //     /* user created */
+  //   },
+  //   async updateUser(message) {
+  //     console.log(message);
 
-      /* user updated - e.g. their email was verified */
-    },
-    async linkAccount(message) {
-      console.log(message);
+  //     /* user updated - e.g. their email was verified */
+  //   },
+  //   async linkAccount(message) {
+  //     console.log(message);
 
-      /* account (e.g. Twitter) linked to a user */
-    },
-    async session(message) {
-      console.log(message);
+  //     /* account (e.g. Twitter) linked to a user */
+  //   },
+  //   async session(message) {
+  //     console.log(message);
 
-      /* session is active */
-    },
-  },
+  //     /* session is active */
+  //   },
+  // },
 };
