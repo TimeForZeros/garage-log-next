@@ -3,13 +3,13 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { Button } from '@/components/ui/button';
-import { Card, CardHeader, CardContent } from './ui/card';
+import { Card, CardHeader, CardContent } from '../ui/card';
 import { zxcvbn, zxcvbnOptions } from '@zxcvbn-ts/core';
 import * as zxcvbnCommonPackage from '@zxcvbn-ts/language-common';
 import * as zxcvbnEnPackage from '@zxcvbn-ts/language-en';
 import { signupSchema, SignupSchema } from '@/lib/definitions';
 import { redirect } from 'next/navigation';
-import FormErrorMessage from './ui/form-error-message';
+import FormErrorMessage from '../ui/form-error-message';
 import { useState } from 'react';
 import {
   Form,

@@ -1,5 +1,6 @@
 import { Suspense } from 'react';
 import Loading from './loading';
+import AddVehicle from '@/components/modals/add-vehicle';
 
 const Posts = async () => {
   const res = await fetch('https://jsonplaceholder.typicode.com/posts');
@@ -12,10 +13,12 @@ const Posts = async () => {
     </ul>
   );
 };
+
 export default async function Dashboard() {
   return (
     <>
       <div>Hello World</div>
+      <AddVehicle />
       <div>
         <Suspense fallback={<Loading />}>
           <Posts />

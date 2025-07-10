@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { Button } from '@/components/ui/button';
-import { Card, CardHeader, CardContent } from './ui/card';
+import { Card, CardHeader, CardContent } from '../ui/card';
 import { loginSchema, LoginSchema } from '@/lib/definitions';
 import { redirect } from 'next/navigation';
 import { signIn } from 'next-auth/react';
@@ -18,7 +18,6 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
-import { login } from '@/app/actions/auth';
 
 export const LoginForm = () => {
   const [errorMessage, setErrorMessage] = useState('');
