@@ -16,6 +16,7 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 
+
 export const AddVehicleForm = () => {
   const addVehicleForm = useForm<VehicleSchema>({
     resolver: zodResolver(vehicleSchema),
@@ -23,15 +24,15 @@ export const AddVehicleForm = () => {
       name: '',
       make: '',
       model: '',
-      year: 0,
-      odometerMiles: 0,
+      year: '',
+      odometerMiles: '',
       useKm: false,
-
-    }
+    },
   });
-  const onSubmit = (evt) => {
-    console.log(evt);
-  };
+
+  const onSubmit = (formData: VehicleSchema) => {
+    console.log(formData);
+  }
 
   return (
     <Form {...addVehicleForm}>
@@ -83,7 +84,7 @@ export const AddVehicleForm = () => {
             <FormItem>
               <FormLabel>Year</FormLabel>
               <FormControl>
-                <Input type='number' {...field} />
+                <Input type='text' {...field} />
               </FormControl>
             </FormItem>
           )}
@@ -96,12 +97,12 @@ export const AddVehicleForm = () => {
             <FormItem>
               <FormLabel>Odometer</FormLabel>
               <FormControl>
-                <Input type='number' {...field} />
+                <Input type='text' {...field} />
               </FormControl>
             </FormItem>
           )}
         />
-        
+
         <FormField
           control={addVehicleForm.control}
           name='useKm'
@@ -124,4 +125,3 @@ export const AddVehicleForm = () => {
     </Form>
   );
 };
-

@@ -1,15 +1,30 @@
-import { z } from 'zod';
+import { coerce, string, z } from 'zod';
 
 export type LoginSchema = z.infer<typeof loginSchema>;
 export type SignupSchema = z.infer<typeof signupSchema>;
 export type VehicleSchema = z.infer<typeof vehicleSchema>;
 
+const parseIntFromInput = (text: string) => {
+  const num = Number(text);
+  return Number.isInteger(num) && num >= 0;
+};
+
 export const vehicleSchema = z.object({
-  name: z.string({ message: 'name is required' }).trim().min(1).max(128),
-  model: z.string().trim().min(1).max(128).optional(),
-  make: z.string().trim().min(1).max(128).optional(),
-  year: z.number().max(9999).optional(),
-  odometerMiles: z.number().positive().optional(),
+  name: z
+    .string()
+    .trim()
+    .min(1, { message: 'name must be at least one character in length' })
+    .max(128),
+  model: z
+    .string()
+    .trim()
+    .max(128),
+  make: z
+    .string()
+    .trim()
+    .max(128),
+  year: z.string().max(4).refine(parseIntFromInput),
+  odometerMiles: z.string().max(8).refine(parseIntFromInput),
   useKm: z.boolean(),
 });
 

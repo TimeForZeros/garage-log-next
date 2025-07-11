@@ -7,6 +7,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog';
+import { vehicleSchema, VehicleSchema } from '@/lib/definitions';
 import { AddVehicleForm } from '../forms/add-vehicle-form';
 
 const AddVehicle = () => {
@@ -18,7 +19,7 @@ const AddVehicle = () => {
           <DialogTitle>Create Vehicle</DialogTitle>
           {/* <DialogDescription> */}
           {/* </DialogDescription> */}
-            <AddVehicleForm />
+          <AddVehicleForm />
         </DialogHeader>
       </DialogContent>
     </Dialog>
