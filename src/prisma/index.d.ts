@@ -256,8 +256,8 @@ export namespace Prisma {
   export import Exact = $Public.Exact
 
   /**
-   * Prisma Client JS version: 6.11.0
-   * Query Engine version: 9c30299f5a0ea26a96790e13f796dc6094db3173
+   * Prisma Client JS version: 6.11.1
+   * Query Engine version: f40f79ec31188888a2e33acda0ecc8fd10a853a9
    */
   export type PrismaVersion = {
     client: string
@@ -2487,7 +2487,7 @@ export namespace Prisma {
     model: string | null
     make: string | null
     year: number | null
-    odometer_miles: number
+    odometer_miles: number | null
     userId: string
     _count: VehicleCountAggregateOutputType | null
     _avg: VehicleAvgAggregateOutputType | null
@@ -2583,7 +2583,7 @@ export namespace Prisma {
       model: string | null
       make: string | null
       year: number | null
-      odometer_miles: number
+      odometer_miles: number | null
       userId: string
     }, ExtArgs["result"]["vehicle"]>
     composites: {}
@@ -5988,7 +5988,7 @@ export namespace Prisma {
     model?: StringNullableFilter<"Vehicle"> | string | null
     make?: StringNullableFilter<"Vehicle"> | string | null
     year?: IntNullableFilter<"Vehicle"> | number | null
-    odometer_miles?: IntFilter<"Vehicle"> | number
+    odometer_miles?: IntNullableFilter<"Vehicle"> | number | null
     userId?: StringFilter<"Vehicle"> | string
     owner?: XOR<UserScalarRelationFilter, UserWhereInput>
     Maintenance_Item?: Maintenance_ItemListRelationFilter
@@ -6001,7 +6001,7 @@ export namespace Prisma {
     model?: SortOrderInput | SortOrder
     make?: SortOrderInput | SortOrder
     year?: SortOrderInput | SortOrder
-    odometer_miles?: SortOrder
+    odometer_miles?: SortOrderInput | SortOrder
     userId?: SortOrder
     owner?: UserOrderByWithRelationInput
     Maintenance_Item?: Maintenance_ItemOrderByRelationAggregateInput
@@ -6017,7 +6017,7 @@ export namespace Prisma {
     model?: StringNullableFilter<"Vehicle"> | string | null
     make?: StringNullableFilter<"Vehicle"> | string | null
     year?: IntNullableFilter<"Vehicle"> | number | null
-    odometer_miles?: IntFilter<"Vehicle"> | number
+    odometer_miles?: IntNullableFilter<"Vehicle"> | number | null
     userId?: StringFilter<"Vehicle"> | string
     owner?: XOR<UserScalarRelationFilter, UserWhereInput>
     Maintenance_Item?: Maintenance_ItemListRelationFilter
@@ -6030,7 +6030,7 @@ export namespace Prisma {
     model?: SortOrderInput | SortOrder
     make?: SortOrderInput | SortOrder
     year?: SortOrderInput | SortOrder
-    odometer_miles?: SortOrder
+    odometer_miles?: SortOrderInput | SortOrder
     userId?: SortOrder
     _count?: VehicleCountOrderByAggregateInput
     _avg?: VehicleAvgOrderByAggregateInput
@@ -6048,7 +6048,7 @@ export namespace Prisma {
     model?: StringNullableWithAggregatesFilter<"Vehicle"> | string | null
     make?: StringNullableWithAggregatesFilter<"Vehicle"> | string | null
     year?: IntNullableWithAggregatesFilter<"Vehicle"> | number | null
-    odometer_miles?: IntWithAggregatesFilter<"Vehicle"> | number
+    odometer_miles?: IntNullableWithAggregatesFilter<"Vehicle"> | number | null
     userId?: StringWithAggregatesFilter<"Vehicle"> | string
   }
 
@@ -6246,7 +6246,7 @@ export namespace Prisma {
     model?: string | null
     make?: string | null
     year?: number | null
-    odometer_miles: number
+    odometer_miles?: number | null
     owner: UserCreateNestedOneWithoutVehicleInput
     Maintenance_Item?: Maintenance_ItemCreateNestedManyWithoutVehicleInput
     Maintenance_Entry?: Maintenance_EntryCreateNestedManyWithoutVehicleInput
@@ -6258,7 +6258,7 @@ export namespace Prisma {
     model?: string | null
     make?: string | null
     year?: number | null
-    odometer_miles: number
+    odometer_miles?: number | null
     userId: string
     Maintenance_Item?: Maintenance_ItemUncheckedCreateNestedManyWithoutVehicleInput
     Maintenance_Entry?: Maintenance_EntryUncheckedCreateNestedManyWithoutVehicleInput
@@ -6270,7 +6270,7 @@ export namespace Prisma {
     model?: NullableStringFieldUpdateOperationsInput | string | null
     make?: NullableStringFieldUpdateOperationsInput | string | null
     year?: NullableIntFieldUpdateOperationsInput | number | null
-    odometer_miles?: IntFieldUpdateOperationsInput | number
+    odometer_miles?: NullableIntFieldUpdateOperationsInput | number | null
     owner?: UserUpdateOneRequiredWithoutVehicleNestedInput
     Maintenance_Item?: Maintenance_ItemUpdateManyWithoutVehicleNestedInput
     Maintenance_Entry?: Maintenance_EntryUpdateManyWithoutVehicleNestedInput
@@ -6282,7 +6282,7 @@ export namespace Prisma {
     model?: NullableStringFieldUpdateOperationsInput | string | null
     make?: NullableStringFieldUpdateOperationsInput | string | null
     year?: NullableIntFieldUpdateOperationsInput | number | null
-    odometer_miles?: IntFieldUpdateOperationsInput | number
+    odometer_miles?: NullableIntFieldUpdateOperationsInput | number | null
     userId?: StringFieldUpdateOperationsInput | string
     Maintenance_Item?: Maintenance_ItemUncheckedUpdateManyWithoutVehicleNestedInput
     Maintenance_Entry?: Maintenance_EntryUncheckedUpdateManyWithoutVehicleNestedInput
@@ -6294,7 +6294,7 @@ export namespace Prisma {
     model?: string | null
     make?: string | null
     year?: number | null
-    odometer_miles: number
+    odometer_miles?: number | null
     userId: string
   }
 
@@ -6304,7 +6304,7 @@ export namespace Prisma {
     model?: NullableStringFieldUpdateOperationsInput | string | null
     make?: NullableStringFieldUpdateOperationsInput | string | null
     year?: NullableIntFieldUpdateOperationsInput | number | null
-    odometer_miles?: IntFieldUpdateOperationsInput | number
+    odometer_miles?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
   export type VehicleUncheckedUpdateManyInput = {
@@ -6313,7 +6313,7 @@ export namespace Prisma {
     model?: NullableStringFieldUpdateOperationsInput | string | null
     make?: NullableStringFieldUpdateOperationsInput | string | null
     year?: NullableIntFieldUpdateOperationsInput | number | null
-    odometer_miles?: IntFieldUpdateOperationsInput | number
+    odometer_miles?: NullableIntFieldUpdateOperationsInput | number | null
     userId?: StringFieldUpdateOperationsInput | string
   }
 
@@ -6558,17 +6558,6 @@ export namespace Prisma {
     not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
-  export type IntFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[] | ListIntFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntFilter<$PrismaModel> | number
-  }
-
   export type UserScalarRelationFilter = {
     is?: UserWhereInput
     isNot?: UserWhereInput
@@ -6650,7 +6639,7 @@ export namespace Prisma {
     _max?: NestedIntNullableFilter<$PrismaModel>
   }
 
-  export type IntWithAggregatesFilter<$PrismaModel = never> = {
+  export type IntFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel>
     in?: number[] | ListIntFieldRefInput<$PrismaModel>
     notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
@@ -6658,12 +6647,7 @@ export namespace Prisma {
     lte?: number | IntFieldRefInput<$PrismaModel>
     gt?: number | IntFieldRefInput<$PrismaModel>
     gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
-    _count?: NestedIntFilter<$PrismaModel>
-    _avg?: NestedFloatFilter<$PrismaModel>
-    _sum?: NestedIntFilter<$PrismaModel>
-    _min?: NestedIntFilter<$PrismaModel>
-    _max?: NestedIntFilter<$PrismaModel>
+    not?: NestedIntFilter<$PrismaModel> | number
   }
 
   export type FloatNullableFilter<$PrismaModel = never> = {
@@ -6727,6 +6711,22 @@ export namespace Prisma {
     id?: SortOrder
     time_interval_days?: SortOrder
     usage_interval_miles?: SortOrder
+  }
+
+  export type IntWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedIntFilter<$PrismaModel>
+    _min?: NestedIntFilter<$PrismaModel>
+    _max?: NestedIntFilter<$PrismaModel>
   }
 
   export type FloatNullableWithAggregatesFilter<$PrismaModel = never> = {
@@ -6912,14 +6912,6 @@ export namespace Prisma {
     divide?: number
   }
 
-  export type IntFieldUpdateOperationsInput = {
-    set?: number
-    increment?: number
-    decrement?: number
-    multiply?: number
-    divide?: number
-  }
-
   export type UserUpdateOneRequiredWithoutVehicleNestedInput = {
     create?: XOR<UserCreateWithoutVehicleInput, UserUncheckedCreateWithoutVehicleInput>
     connectOrCreate?: UserCreateOrConnectWithoutVehicleInput
@@ -7036,6 +7028,14 @@ export namespace Prisma {
     update?: Maintenance_EntryUpdateWithWhereUniqueWithoutMaintenance_itemInput | Maintenance_EntryUpdateWithWhereUniqueWithoutMaintenance_itemInput[]
     updateMany?: Maintenance_EntryUpdateManyWithWhereWithoutMaintenance_itemInput | Maintenance_EntryUpdateManyWithWhereWithoutMaintenance_itemInput[]
     deleteMany?: Maintenance_EntryScalarWhereInput | Maintenance_EntryScalarWhereInput[]
+  }
+
+  export type IntFieldUpdateOperationsInput = {
+    set?: number
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
   }
 
   export type Maintenance_EntryUncheckedUpdateManyWithoutMaintenance_itemNestedInput = {
@@ -7197,6 +7197,11 @@ export namespace Prisma {
     not?: NestedFloatNullableFilter<$PrismaModel> | number | null
   }
 
+  export type NestedBoolFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolFilter<$PrismaModel> | boolean
+  }
+
   export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel>
     in?: number[] | ListIntFieldRefInput<$PrismaModel>
@@ -7222,11 +7227,6 @@ export namespace Prisma {
     gt?: number | FloatFieldRefInput<$PrismaModel>
     gte?: number | FloatFieldRefInput<$PrismaModel>
     not?: NestedFloatFilter<$PrismaModel> | number
-  }
-
-  export type NestedBoolFilter<$PrismaModel = never> = {
-    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
-    not?: NestedBoolFilter<$PrismaModel> | boolean
   }
 
   export type NestedFloatNullableWithAggregatesFilter<$PrismaModel = never> = {
@@ -7284,7 +7284,7 @@ export namespace Prisma {
     model?: string | null
     make?: string | null
     year?: number | null
-    odometer_miles: number
+    odometer_miles?: number | null
     Maintenance_Item?: Maintenance_ItemCreateNestedManyWithoutVehicleInput
     Maintenance_Entry?: Maintenance_EntryCreateNestedManyWithoutVehicleInput
   }
@@ -7295,7 +7295,7 @@ export namespace Prisma {
     model?: string | null
     make?: string | null
     year?: number | null
-    odometer_miles: number
+    odometer_miles?: number | null
     Maintenance_Item?: Maintenance_ItemUncheckedCreateNestedManyWithoutVehicleInput
     Maintenance_Entry?: Maintenance_EntryUncheckedCreateNestedManyWithoutVehicleInput
   }
@@ -7335,7 +7335,7 @@ export namespace Prisma {
     model?: StringNullableFilter<"Vehicle"> | string | null
     make?: StringNullableFilter<"Vehicle"> | string | null
     year?: IntNullableFilter<"Vehicle"> | number | null
-    odometer_miles?: IntFilter<"Vehicle"> | number
+    odometer_miles?: IntNullableFilter<"Vehicle"> | number | null
     userId?: StringFilter<"Vehicle"> | string
   }
 
@@ -7500,7 +7500,7 @@ export namespace Prisma {
     model?: string | null
     make?: string | null
     year?: number | null
-    odometer_miles: number
+    odometer_miles?: number | null
     owner: UserCreateNestedOneWithoutVehicleInput
     Maintenance_Entry?: Maintenance_EntryCreateNestedManyWithoutVehicleInput
   }
@@ -7511,7 +7511,7 @@ export namespace Prisma {
     model?: string | null
     make?: string | null
     year?: number | null
-    odometer_miles: number
+    odometer_miles?: number | null
     userId: string
     Maintenance_Entry?: Maintenance_EntryUncheckedCreateNestedManyWithoutVehicleInput
   }
@@ -7563,7 +7563,7 @@ export namespace Prisma {
     model?: NullableStringFieldUpdateOperationsInput | string | null
     make?: NullableStringFieldUpdateOperationsInput | string | null
     year?: NullableIntFieldUpdateOperationsInput | number | null
-    odometer_miles?: IntFieldUpdateOperationsInput | number
+    odometer_miles?: NullableIntFieldUpdateOperationsInput | number | null
     owner?: UserUpdateOneRequiredWithoutVehicleNestedInput
     Maintenance_Entry?: Maintenance_EntryUpdateManyWithoutVehicleNestedInput
   }
@@ -7574,7 +7574,7 @@ export namespace Prisma {
     model?: NullableStringFieldUpdateOperationsInput | string | null
     make?: NullableStringFieldUpdateOperationsInput | string | null
     year?: NullableIntFieldUpdateOperationsInput | number | null
-    odometer_miles?: IntFieldUpdateOperationsInput | number
+    odometer_miles?: NullableIntFieldUpdateOperationsInput | number | null
     userId?: StringFieldUpdateOperationsInput | string
     Maintenance_Entry?: Maintenance_EntryUncheckedUpdateManyWithoutVehicleNestedInput
   }
@@ -7601,7 +7601,7 @@ export namespace Prisma {
     model?: string | null
     make?: string | null
     year?: number | null
-    odometer_miles: number
+    odometer_miles?: number | null
     owner: UserCreateNestedOneWithoutVehicleInput
     Maintenance_Item?: Maintenance_ItemCreateNestedManyWithoutVehicleInput
   }
@@ -7612,7 +7612,7 @@ export namespace Prisma {
     model?: string | null
     make?: string | null
     year?: number | null
-    odometer_miles: number
+    odometer_miles?: number | null
     userId: string
     Maintenance_Item?: Maintenance_ItemUncheckedCreateNestedManyWithoutVehicleInput
   }
@@ -7663,7 +7663,7 @@ export namespace Prisma {
     model?: NullableStringFieldUpdateOperationsInput | string | null
     make?: NullableStringFieldUpdateOperationsInput | string | null
     year?: NullableIntFieldUpdateOperationsInput | number | null
-    odometer_miles?: IntFieldUpdateOperationsInput | number
+    odometer_miles?: NullableIntFieldUpdateOperationsInput | number | null
     owner?: UserUpdateOneRequiredWithoutVehicleNestedInput
     Maintenance_Item?: Maintenance_ItemUpdateManyWithoutVehicleNestedInput
   }
@@ -7674,7 +7674,7 @@ export namespace Prisma {
     model?: NullableStringFieldUpdateOperationsInput | string | null
     make?: NullableStringFieldUpdateOperationsInput | string | null
     year?: NullableIntFieldUpdateOperationsInput | number | null
-    odometer_miles?: IntFieldUpdateOperationsInput | number
+    odometer_miles?: NullableIntFieldUpdateOperationsInput | number | null
     userId?: StringFieldUpdateOperationsInput | string
     Maintenance_Item?: Maintenance_ItemUncheckedUpdateManyWithoutVehicleNestedInput
   }
@@ -7715,7 +7715,7 @@ export namespace Prisma {
     model?: string | null
     make?: string | null
     year?: number | null
-    odometer_miles: number
+    odometer_miles?: number | null
   }
 
   export type VehicleUpdateWithoutOwnerInput = {
@@ -7724,7 +7724,7 @@ export namespace Prisma {
     model?: NullableStringFieldUpdateOperationsInput | string | null
     make?: NullableStringFieldUpdateOperationsInput | string | null
     year?: NullableIntFieldUpdateOperationsInput | number | null
-    odometer_miles?: IntFieldUpdateOperationsInput | number
+    odometer_miles?: NullableIntFieldUpdateOperationsInput | number | null
     Maintenance_Item?: Maintenance_ItemUpdateManyWithoutVehicleNestedInput
     Maintenance_Entry?: Maintenance_EntryUpdateManyWithoutVehicleNestedInput
   }
@@ -7735,7 +7735,7 @@ export namespace Prisma {
     model?: NullableStringFieldUpdateOperationsInput | string | null
     make?: NullableStringFieldUpdateOperationsInput | string | null
     year?: NullableIntFieldUpdateOperationsInput | number | null
-    odometer_miles?: IntFieldUpdateOperationsInput | number
+    odometer_miles?: NullableIntFieldUpdateOperationsInput | number | null
     Maintenance_Item?: Maintenance_ItemUncheckedUpdateManyWithoutVehicleNestedInput
     Maintenance_Entry?: Maintenance_EntryUncheckedUpdateManyWithoutVehicleNestedInput
   }
@@ -7746,7 +7746,7 @@ export namespace Prisma {
     model?: NullableStringFieldUpdateOperationsInput | string | null
     make?: NullableStringFieldUpdateOperationsInput | string | null
     year?: NullableIntFieldUpdateOperationsInput | number | null
-    odometer_miles?: IntFieldUpdateOperationsInput | number
+    odometer_miles?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
   export type Maintenance_ItemCreateManyVehicleInput = {
