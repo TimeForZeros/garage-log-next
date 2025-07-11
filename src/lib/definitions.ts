@@ -9,24 +9,33 @@ const parseIntFromInput = (text: string) => {
   return Number.isInteger(num) && num >= 0;
 };
 
-export const vehicleSchema = z.object({
-  name: z
-    .string()
-    .trim()
-    .min(1, { message: 'name must be at least one character in length' })
-    .max(128),
-  model: z
-    .string()
-    .trim()
-    .max(128),
-  make: z
-    .string()
-    .trim()
-    .max(128),
-  year: z.string().max(4).refine(parseIntFromInput),
-  odometerMiles: z.string().max(8).refine(parseIntFromInput),
-  useKm: z.boolean(),
-});
+const KM_TO_MILES = 0.621371
+
+export const vehicleSchema = z
+  .object({
+    name: z
+      .string()
+      .trim()
+      .min(1, { message: 'name must be at least one character in length' })
+      .max(128),
+    model: z.string().trim().max(128),
+    make: z.string().trim().max(128),
+    year: z.string().max(4).refine(parseIntFromInput),
+    odometerMiles: z.string().max(8).refine(parseIntFromInput),
+    useKm: z.boolean(),
+  })
+  .transform((formData) => {
+    const vehicleData: any = {};
+    Object.entries(formData).forEach(([key, value]) => {
+      if (value === '' || key === 'useKm') return;
+      if (key === 'odometerMiles' && formData.useKm) {
+        vehicleData[key] = Number(value) * KM_TO_MILES;
+      } else {
+        vehicleData[key] = value;
+      }
+    });
+    return vehicleData;
+  });
 
 export const loginSchema = z.object({
   email: z.string().email().trim().toLowerCase(),
