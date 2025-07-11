@@ -24,15 +24,15 @@ export type User = $Result.DefaultSelection<Prisma.$UserPayload>
  */
 export type Vehicle = $Result.DefaultSelection<Prisma.$VehiclePayload>
 /**
- * Model Maintenance_Item
+ * Model MaintenanceItem
  * 
  */
-export type Maintenance_Item = $Result.DefaultSelection<Prisma.$Maintenance_ItemPayload>
+export type MaintenanceItem = $Result.DefaultSelection<Prisma.$MaintenanceItemPayload>
 /**
- * Model Maintenance_Entry
+ * Model MaintenanceEntry
  * 
  */
-export type Maintenance_Entry = $Result.DefaultSelection<Prisma.$Maintenance_EntryPayload>
+export type MaintenanceEntry = $Result.DefaultSelection<Prisma.$MaintenanceEntryPayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -180,24 +180,24 @@ export class PrismaClient<
   get vehicle(): Prisma.VehicleDelegate<ExtArgs, ClientOptions>;
 
   /**
-   * `prisma.maintenance_Item`: Exposes CRUD operations for the **Maintenance_Item** model.
+   * `prisma.maintenanceItem`: Exposes CRUD operations for the **MaintenanceItem** model.
     * Example usage:
     * ```ts
-    * // Fetch zero or more Maintenance_Items
-    * const maintenance_Items = await prisma.maintenance_Item.findMany()
+    * // Fetch zero or more MaintenanceItems
+    * const maintenanceItems = await prisma.maintenanceItem.findMany()
     * ```
     */
-  get maintenance_Item(): Prisma.Maintenance_ItemDelegate<ExtArgs, ClientOptions>;
+  get maintenanceItem(): Prisma.MaintenanceItemDelegate<ExtArgs, ClientOptions>;
 
   /**
-   * `prisma.maintenance_Entry`: Exposes CRUD operations for the **Maintenance_Entry** model.
+   * `prisma.maintenanceEntry`: Exposes CRUD operations for the **MaintenanceEntry** model.
     * Example usage:
     * ```ts
-    * // Fetch zero or more Maintenance_Entries
-    * const maintenance_Entries = await prisma.maintenance_Entry.findMany()
+    * // Fetch zero or more MaintenanceEntries
+    * const maintenanceEntries = await prisma.maintenanceEntry.findMany()
     * ```
     */
-  get maintenance_Entry(): Prisma.Maintenance_EntryDelegate<ExtArgs, ClientOptions>;
+  get maintenanceEntry(): Prisma.MaintenanceEntryDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -640,8 +640,8 @@ export namespace Prisma {
   export const ModelName: {
     User: 'User',
     Vehicle: 'Vehicle',
-    Maintenance_Item: 'Maintenance_Item',
-    Maintenance_Entry: 'Maintenance_Entry'
+    MaintenanceItem: 'MaintenanceItem',
+    MaintenanceEntry: 'MaintenanceEntry'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -660,7 +660,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "user" | "vehicle" | "maintenance_Item" | "maintenance_Entry"
+      modelProps: "user" | "vehicle" | "maintenanceItem" | "maintenanceEntry"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -812,151 +812,151 @@ export namespace Prisma {
           }
         }
       }
-      Maintenance_Item: {
-        payload: Prisma.$Maintenance_ItemPayload<ExtArgs>
-        fields: Prisma.Maintenance_ItemFieldRefs
+      MaintenanceItem: {
+        payload: Prisma.$MaintenanceItemPayload<ExtArgs>
+        fields: Prisma.MaintenanceItemFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.Maintenance_ItemFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$Maintenance_ItemPayload> | null
+            args: Prisma.MaintenanceItemFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MaintenanceItemPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.Maintenance_ItemFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$Maintenance_ItemPayload>
+            args: Prisma.MaintenanceItemFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MaintenanceItemPayload>
           }
           findFirst: {
-            args: Prisma.Maintenance_ItemFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$Maintenance_ItemPayload> | null
+            args: Prisma.MaintenanceItemFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MaintenanceItemPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.Maintenance_ItemFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$Maintenance_ItemPayload>
+            args: Prisma.MaintenanceItemFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MaintenanceItemPayload>
           }
           findMany: {
-            args: Prisma.Maintenance_ItemFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$Maintenance_ItemPayload>[]
+            args: Prisma.MaintenanceItemFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MaintenanceItemPayload>[]
           }
           create: {
-            args: Prisma.Maintenance_ItemCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$Maintenance_ItemPayload>
+            args: Prisma.MaintenanceItemCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MaintenanceItemPayload>
           }
           createMany: {
-            args: Prisma.Maintenance_ItemCreateManyArgs<ExtArgs>
+            args: Prisma.MaintenanceItemCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           createManyAndReturn: {
-            args: Prisma.Maintenance_ItemCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$Maintenance_ItemPayload>[]
+            args: Prisma.MaintenanceItemCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MaintenanceItemPayload>[]
           }
           delete: {
-            args: Prisma.Maintenance_ItemDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$Maintenance_ItemPayload>
+            args: Prisma.MaintenanceItemDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MaintenanceItemPayload>
           }
           update: {
-            args: Prisma.Maintenance_ItemUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$Maintenance_ItemPayload>
+            args: Prisma.MaintenanceItemUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MaintenanceItemPayload>
           }
           deleteMany: {
-            args: Prisma.Maintenance_ItemDeleteManyArgs<ExtArgs>
+            args: Prisma.MaintenanceItemDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.Maintenance_ItemUpdateManyArgs<ExtArgs>
+            args: Prisma.MaintenanceItemUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateManyAndReturn: {
-            args: Prisma.Maintenance_ItemUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$Maintenance_ItemPayload>[]
+            args: Prisma.MaintenanceItemUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MaintenanceItemPayload>[]
           }
           upsert: {
-            args: Prisma.Maintenance_ItemUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$Maintenance_ItemPayload>
+            args: Prisma.MaintenanceItemUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MaintenanceItemPayload>
           }
           aggregate: {
-            args: Prisma.Maintenance_ItemAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateMaintenance_Item>
+            args: Prisma.MaintenanceItemAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateMaintenanceItem>
           }
           groupBy: {
-            args: Prisma.Maintenance_ItemGroupByArgs<ExtArgs>
-            result: $Utils.Optional<Maintenance_ItemGroupByOutputType>[]
+            args: Prisma.MaintenanceItemGroupByArgs<ExtArgs>
+            result: $Utils.Optional<MaintenanceItemGroupByOutputType>[]
           }
           count: {
-            args: Prisma.Maintenance_ItemCountArgs<ExtArgs>
-            result: $Utils.Optional<Maintenance_ItemCountAggregateOutputType> | number
+            args: Prisma.MaintenanceItemCountArgs<ExtArgs>
+            result: $Utils.Optional<MaintenanceItemCountAggregateOutputType> | number
           }
         }
       }
-      Maintenance_Entry: {
-        payload: Prisma.$Maintenance_EntryPayload<ExtArgs>
-        fields: Prisma.Maintenance_EntryFieldRefs
+      MaintenanceEntry: {
+        payload: Prisma.$MaintenanceEntryPayload<ExtArgs>
+        fields: Prisma.MaintenanceEntryFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.Maintenance_EntryFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$Maintenance_EntryPayload> | null
+            args: Prisma.MaintenanceEntryFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MaintenanceEntryPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.Maintenance_EntryFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$Maintenance_EntryPayload>
+            args: Prisma.MaintenanceEntryFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MaintenanceEntryPayload>
           }
           findFirst: {
-            args: Prisma.Maintenance_EntryFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$Maintenance_EntryPayload> | null
+            args: Prisma.MaintenanceEntryFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MaintenanceEntryPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.Maintenance_EntryFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$Maintenance_EntryPayload>
+            args: Prisma.MaintenanceEntryFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MaintenanceEntryPayload>
           }
           findMany: {
-            args: Prisma.Maintenance_EntryFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$Maintenance_EntryPayload>[]
+            args: Prisma.MaintenanceEntryFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MaintenanceEntryPayload>[]
           }
           create: {
-            args: Prisma.Maintenance_EntryCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$Maintenance_EntryPayload>
+            args: Prisma.MaintenanceEntryCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MaintenanceEntryPayload>
           }
           createMany: {
-            args: Prisma.Maintenance_EntryCreateManyArgs<ExtArgs>
+            args: Prisma.MaintenanceEntryCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           createManyAndReturn: {
-            args: Prisma.Maintenance_EntryCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$Maintenance_EntryPayload>[]
+            args: Prisma.MaintenanceEntryCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MaintenanceEntryPayload>[]
           }
           delete: {
-            args: Prisma.Maintenance_EntryDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$Maintenance_EntryPayload>
+            args: Prisma.MaintenanceEntryDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MaintenanceEntryPayload>
           }
           update: {
-            args: Prisma.Maintenance_EntryUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$Maintenance_EntryPayload>
+            args: Prisma.MaintenanceEntryUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MaintenanceEntryPayload>
           }
           deleteMany: {
-            args: Prisma.Maintenance_EntryDeleteManyArgs<ExtArgs>
+            args: Prisma.MaintenanceEntryDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.Maintenance_EntryUpdateManyArgs<ExtArgs>
+            args: Prisma.MaintenanceEntryUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateManyAndReturn: {
-            args: Prisma.Maintenance_EntryUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$Maintenance_EntryPayload>[]
+            args: Prisma.MaintenanceEntryUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MaintenanceEntryPayload>[]
           }
           upsert: {
-            args: Prisma.Maintenance_EntryUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$Maintenance_EntryPayload>
+            args: Prisma.MaintenanceEntryUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MaintenanceEntryPayload>
           }
           aggregate: {
-            args: Prisma.Maintenance_EntryAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateMaintenance_Entry>
+            args: Prisma.MaintenanceEntryAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateMaintenanceEntry>
           }
           groupBy: {
-            args: Prisma.Maintenance_EntryGroupByArgs<ExtArgs>
-            result: $Utils.Optional<Maintenance_EntryGroupByOutputType>[]
+            args: Prisma.MaintenanceEntryGroupByArgs<ExtArgs>
+            result: $Utils.Optional<MaintenanceEntryGroupByOutputType>[]
           }
           count: {
-            args: Prisma.Maintenance_EntryCountArgs<ExtArgs>
-            result: $Utils.Optional<Maintenance_EntryCountAggregateOutputType> | number
+            args: Prisma.MaintenanceEntryCountArgs<ExtArgs>
+            result: $Utils.Optional<MaintenanceEntryCountAggregateOutputType> | number
           }
         }
       }
@@ -1046,8 +1046,8 @@ export namespace Prisma {
   export type GlobalOmitConfig = {
     user?: UserOmit
     vehicle?: VehicleOmit
-    maintenance_Item?: Maintenance_ItemOmit
-    maintenance_Entry?: Maintenance_EntryOmit
+    maintenanceItem?: MaintenanceItemOmit
+    maintenanceEntry?: MaintenanceEntryOmit
   }
 
   /* Types for Logging */
@@ -1173,13 +1173,13 @@ export namespace Prisma {
    */
 
   export type VehicleCountOutputType = {
-    Maintenance_Item: number
-    Maintenance_Entry: number
+    MaintenanceItem: number
+    MaintenanceEntry: number
   }
 
   export type VehicleCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    Maintenance_Item?: boolean | VehicleCountOutputTypeCountMaintenance_ItemArgs
-    Maintenance_Entry?: boolean | VehicleCountOutputTypeCountMaintenance_EntryArgs
+    MaintenanceItem?: boolean | VehicleCountOutputTypeCountMaintenanceItemArgs
+    MaintenanceEntry?: boolean | VehicleCountOutputTypeCountMaintenanceEntryArgs
   }
 
   // Custom InputTypes
@@ -1196,46 +1196,46 @@ export namespace Prisma {
   /**
    * VehicleCountOutputType without action
    */
-  export type VehicleCountOutputTypeCountMaintenance_ItemArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: Maintenance_ItemWhereInput
+  export type VehicleCountOutputTypeCountMaintenanceItemArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: MaintenanceItemWhereInput
   }
 
   /**
    * VehicleCountOutputType without action
    */
-  export type VehicleCountOutputTypeCountMaintenance_EntryArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: Maintenance_EntryWhereInput
+  export type VehicleCountOutputTypeCountMaintenanceEntryArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: MaintenanceEntryWhereInput
   }
 
 
   /**
-   * Count Type Maintenance_ItemCountOutputType
+   * Count Type MaintenanceItemCountOutputType
    */
 
-  export type Maintenance_ItemCountOutputType = {
-    Maintenance_Entry: number
+  export type MaintenanceItemCountOutputType = {
+    MaintenanceEntry: number
   }
 
-  export type Maintenance_ItemCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    Maintenance_Entry?: boolean | Maintenance_ItemCountOutputTypeCountMaintenance_EntryArgs
+  export type MaintenanceItemCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    MaintenanceEntry?: boolean | MaintenanceItemCountOutputTypeCountMaintenanceEntryArgs
   }
 
   // Custom InputTypes
   /**
-   * Maintenance_ItemCountOutputType without action
+   * MaintenanceItemCountOutputType without action
    */
-  export type Maintenance_ItemCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenanceItemCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Maintenance_ItemCountOutputType
+     * Select specific fields to fetch from the MaintenanceItemCountOutputType
      */
-    select?: Maintenance_ItemCountOutputTypeSelect<ExtArgs> | null
+    select?: MaintenanceItemCountOutputTypeSelect<ExtArgs> | null
   }
 
   /**
-   * Maintenance_ItemCountOutputType without action
+   * MaintenanceItemCountOutputType without action
    */
-  export type Maintenance_ItemCountOutputTypeCountMaintenance_EntryArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: Maintenance_EntryWhereInput
+  export type MaintenanceItemCountOutputTypeCountMaintenanceEntryArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: MaintenanceEntryWhereInput
   }
 
 
@@ -2314,12 +2314,12 @@ export namespace Prisma {
 
   export type VehicleAvgAggregateOutputType = {
     year: number | null
-    odometer_miles: number | null
+    odometer: number | null
   }
 
   export type VehicleSumAggregateOutputType = {
     year: number | null
-    odometer_miles: number | null
+    odometer: number | null
   }
 
   export type VehicleMinAggregateOutputType = {
@@ -2328,7 +2328,8 @@ export namespace Prisma {
     model: string | null
     make: string | null
     year: number | null
-    odometer_miles: number | null
+    odometer: number | null
+    useKm: boolean | null
     userId: string | null
   }
 
@@ -2338,7 +2339,8 @@ export namespace Prisma {
     model: string | null
     make: string | null
     year: number | null
-    odometer_miles: number | null
+    odometer: number | null
+    useKm: boolean | null
     userId: string | null
   }
 
@@ -2348,7 +2350,8 @@ export namespace Prisma {
     model: number
     make: number
     year: number
-    odometer_miles: number
+    odometer: number
+    useKm: number
     userId: number
     _all: number
   }
@@ -2356,12 +2359,12 @@ export namespace Prisma {
 
   export type VehicleAvgAggregateInputType = {
     year?: true
-    odometer_miles?: true
+    odometer?: true
   }
 
   export type VehicleSumAggregateInputType = {
     year?: true
-    odometer_miles?: true
+    odometer?: true
   }
 
   export type VehicleMinAggregateInputType = {
@@ -2370,7 +2373,8 @@ export namespace Prisma {
     model?: true
     make?: true
     year?: true
-    odometer_miles?: true
+    odometer?: true
+    useKm?: true
     userId?: true
   }
 
@@ -2380,7 +2384,8 @@ export namespace Prisma {
     model?: true
     make?: true
     year?: true
-    odometer_miles?: true
+    odometer?: true
+    useKm?: true
     userId?: true
   }
 
@@ -2390,7 +2395,8 @@ export namespace Prisma {
     model?: true
     make?: true
     year?: true
-    odometer_miles?: true
+    odometer?: true
+    useKm?: true
     userId?: true
     _all?: true
   }
@@ -2487,7 +2493,8 @@ export namespace Prisma {
     model: string | null
     make: string | null
     year: number | null
-    odometer_miles: number | null
+    odometer: number | null
+    useKm: boolean
     userId: string
     _count: VehicleCountAggregateOutputType | null
     _avg: VehicleAvgAggregateOutputType | null
@@ -2516,11 +2523,12 @@ export namespace Prisma {
     model?: boolean
     make?: boolean
     year?: boolean
-    odometer_miles?: boolean
+    odometer?: boolean
+    useKm?: boolean
     userId?: boolean
     owner?: boolean | UserDefaultArgs<ExtArgs>
-    Maintenance_Item?: boolean | Vehicle$Maintenance_ItemArgs<ExtArgs>
-    Maintenance_Entry?: boolean | Vehicle$Maintenance_EntryArgs<ExtArgs>
+    MaintenanceItem?: boolean | Vehicle$MaintenanceItemArgs<ExtArgs>
+    MaintenanceEntry?: boolean | Vehicle$MaintenanceEntryArgs<ExtArgs>
     _count?: boolean | VehicleCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["vehicle"]>
 
@@ -2530,7 +2538,8 @@ export namespace Prisma {
     model?: boolean
     make?: boolean
     year?: boolean
-    odometer_miles?: boolean
+    odometer?: boolean
+    useKm?: boolean
     userId?: boolean
     owner?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["vehicle"]>
@@ -2541,7 +2550,8 @@ export namespace Prisma {
     model?: boolean
     make?: boolean
     year?: boolean
-    odometer_miles?: boolean
+    odometer?: boolean
+    useKm?: boolean
     userId?: boolean
     owner?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["vehicle"]>
@@ -2552,15 +2562,16 @@ export namespace Prisma {
     model?: boolean
     make?: boolean
     year?: boolean
-    odometer_miles?: boolean
+    odometer?: boolean
+    useKm?: boolean
     userId?: boolean
   }
 
-  export type VehicleOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "model" | "make" | "year" | "odometer_miles" | "userId", ExtArgs["result"]["vehicle"]>
+  export type VehicleOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "model" | "make" | "year" | "odometer" | "useKm" | "userId", ExtArgs["result"]["vehicle"]>
   export type VehicleInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     owner?: boolean | UserDefaultArgs<ExtArgs>
-    Maintenance_Item?: boolean | Vehicle$Maintenance_ItemArgs<ExtArgs>
-    Maintenance_Entry?: boolean | Vehicle$Maintenance_EntryArgs<ExtArgs>
+    MaintenanceItem?: boolean | Vehicle$MaintenanceItemArgs<ExtArgs>
+    MaintenanceEntry?: boolean | Vehicle$MaintenanceEntryArgs<ExtArgs>
     _count?: boolean | VehicleCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type VehicleIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -2574,8 +2585,8 @@ export namespace Prisma {
     name: "Vehicle"
     objects: {
       owner: Prisma.$UserPayload<ExtArgs>
-      Maintenance_Item: Prisma.$Maintenance_ItemPayload<ExtArgs>[]
-      Maintenance_Entry: Prisma.$Maintenance_EntryPayload<ExtArgs>[]
+      MaintenanceItem: Prisma.$MaintenanceItemPayload<ExtArgs>[]
+      MaintenanceEntry: Prisma.$MaintenanceEntryPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
@@ -2583,7 +2594,8 @@ export namespace Prisma {
       model: string | null
       make: string | null
       year: number | null
-      odometer_miles: number | null
+      odometer: number | null
+      useKm: boolean
       userId: string
     }, ExtArgs["result"]["vehicle"]>
     composites: {}
@@ -2980,8 +2992,8 @@ export namespace Prisma {
   export interface Prisma__VehicleClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     owner<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-    Maintenance_Item<T extends Vehicle$Maintenance_ItemArgs<ExtArgs> = {}>(args?: Subset<T, Vehicle$Maintenance_ItemArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Maintenance_ItemPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    Maintenance_Entry<T extends Vehicle$Maintenance_EntryArgs<ExtArgs> = {}>(args?: Subset<T, Vehicle$Maintenance_EntryArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Maintenance_EntryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    MaintenanceItem<T extends Vehicle$MaintenanceItemArgs<ExtArgs> = {}>(args?: Subset<T, Vehicle$MaintenanceItemArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MaintenanceItemPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    MaintenanceEntry<T extends Vehicle$MaintenanceEntryArgs<ExtArgs> = {}>(args?: Subset<T, Vehicle$MaintenanceEntryArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MaintenanceEntryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -3016,7 +3028,8 @@ export namespace Prisma {
     readonly model: FieldRef<"Vehicle", 'String'>
     readonly make: FieldRef<"Vehicle", 'String'>
     readonly year: FieldRef<"Vehicle", 'Int'>
-    readonly odometer_miles: FieldRef<"Vehicle", 'Int'>
+    readonly odometer: FieldRef<"Vehicle", 'Int'>
+    readonly useKm: FieldRef<"Vehicle", 'Boolean'>
     readonly userId: FieldRef<"Vehicle", 'String'>
   }
     
@@ -3414,51 +3427,51 @@ export namespace Prisma {
   }
 
   /**
-   * Vehicle.Maintenance_Item
+   * Vehicle.MaintenanceItem
    */
-  export type Vehicle$Maintenance_ItemArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Vehicle$MaintenanceItemArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Maintenance_Item
+     * Select specific fields to fetch from the MaintenanceItem
      */
-    select?: Maintenance_ItemSelect<ExtArgs> | null
+    select?: MaintenanceItemSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Maintenance_Item
+     * Omit specific fields from the MaintenanceItem
      */
-    omit?: Maintenance_ItemOmit<ExtArgs> | null
+    omit?: MaintenanceItemOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Maintenance_ItemInclude<ExtArgs> | null
-    where?: Maintenance_ItemWhereInput
-    orderBy?: Maintenance_ItemOrderByWithRelationInput | Maintenance_ItemOrderByWithRelationInput[]
-    cursor?: Maintenance_ItemWhereUniqueInput
+    include?: MaintenanceItemInclude<ExtArgs> | null
+    where?: MaintenanceItemWhereInput
+    orderBy?: MaintenanceItemOrderByWithRelationInput | MaintenanceItemOrderByWithRelationInput[]
+    cursor?: MaintenanceItemWhereUniqueInput
     take?: number
     skip?: number
-    distinct?: Maintenance_ItemScalarFieldEnum | Maintenance_ItemScalarFieldEnum[]
+    distinct?: MaintenanceItemScalarFieldEnum | MaintenanceItemScalarFieldEnum[]
   }
 
   /**
-   * Vehicle.Maintenance_Entry
+   * Vehicle.MaintenanceEntry
    */
-  export type Vehicle$Maintenance_EntryArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Vehicle$MaintenanceEntryArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Maintenance_Entry
+     * Select specific fields to fetch from the MaintenanceEntry
      */
-    select?: Maintenance_EntrySelect<ExtArgs> | null
+    select?: MaintenanceEntrySelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Maintenance_Entry
+     * Omit specific fields from the MaintenanceEntry
      */
-    omit?: Maintenance_EntryOmit<ExtArgs> | null
+    omit?: MaintenanceEntryOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Maintenance_EntryInclude<ExtArgs> | null
-    where?: Maintenance_EntryWhereInput
-    orderBy?: Maintenance_EntryOrderByWithRelationInput | Maintenance_EntryOrderByWithRelationInput[]
-    cursor?: Maintenance_EntryWhereUniqueInput
+    include?: MaintenanceEntryInclude<ExtArgs> | null
+    where?: MaintenanceEntryWhereInput
+    orderBy?: MaintenanceEntryOrderByWithRelationInput | MaintenanceEntryOrderByWithRelationInput[]
+    cursor?: MaintenanceEntryWhereUniqueInput
     take?: number
     skip?: number
-    distinct?: Maintenance_EntryScalarFieldEnum | Maintenance_EntryScalarFieldEnum[]
+    distinct?: MaintenanceEntryScalarFieldEnum | MaintenanceEntryScalarFieldEnum[]
   }
 
   /**
@@ -3481,421 +3494,421 @@ export namespace Prisma {
 
 
   /**
-   * Model Maintenance_Item
+   * Model MaintenanceItem
    */
 
-  export type AggregateMaintenance_Item = {
-    _count: Maintenance_ItemCountAggregateOutputType | null
-    _avg: Maintenance_ItemAvgAggregateOutputType | null
-    _sum: Maintenance_ItemSumAggregateOutputType | null
-    _min: Maintenance_ItemMinAggregateOutputType | null
-    _max: Maintenance_ItemMaxAggregateOutputType | null
+  export type AggregateMaintenanceItem = {
+    _count: MaintenanceItemCountAggregateOutputType | null
+    _avg: MaintenanceItemAvgAggregateOutputType | null
+    _sum: MaintenanceItemSumAggregateOutputType | null
+    _min: MaintenanceItemMinAggregateOutputType | null
+    _max: MaintenanceItemMaxAggregateOutputType | null
   }
 
-  export type Maintenance_ItemAvgAggregateOutputType = {
+  export type MaintenanceItemAvgAggregateOutputType = {
     id: number | null
-    time_interval_days: number | null
-    usage_interval_miles: number | null
+    timeIntervalDays: number | null
+    usageIntervalMiles: number | null
   }
 
-  export type Maintenance_ItemSumAggregateOutputType = {
+  export type MaintenanceItemSumAggregateOutputType = {
     id: number | null
-    time_interval_days: number | null
-    usage_interval_miles: number | null
+    timeIntervalDays: number | null
+    usageIntervalMiles: number | null
   }
 
-  export type Maintenance_ItemMinAggregateOutputType = {
+  export type MaintenanceItemMinAggregateOutputType = {
     id: number | null
     name: string | null
     comments: string | null
-    time_interval_days: number | null
-    usage_interval_miles: number | null
+    timeIntervalDays: number | null
+    usageIntervalMiles: number | null
     recurring: boolean | null
     vehicleId: string | null
   }
 
-  export type Maintenance_ItemMaxAggregateOutputType = {
+  export type MaintenanceItemMaxAggregateOutputType = {
     id: number | null
     name: string | null
     comments: string | null
-    time_interval_days: number | null
-    usage_interval_miles: number | null
+    timeIntervalDays: number | null
+    usageIntervalMiles: number | null
     recurring: boolean | null
     vehicleId: string | null
   }
 
-  export type Maintenance_ItemCountAggregateOutputType = {
+  export type MaintenanceItemCountAggregateOutputType = {
     id: number
     name: number
     comments: number
-    time_interval_days: number
-    usage_interval_miles: number
+    timeIntervalDays: number
+    usageIntervalMiles: number
     recurring: number
     vehicleId: number
     _all: number
   }
 
 
-  export type Maintenance_ItemAvgAggregateInputType = {
+  export type MaintenanceItemAvgAggregateInputType = {
     id?: true
-    time_interval_days?: true
-    usage_interval_miles?: true
+    timeIntervalDays?: true
+    usageIntervalMiles?: true
   }
 
-  export type Maintenance_ItemSumAggregateInputType = {
+  export type MaintenanceItemSumAggregateInputType = {
     id?: true
-    time_interval_days?: true
-    usage_interval_miles?: true
+    timeIntervalDays?: true
+    usageIntervalMiles?: true
   }
 
-  export type Maintenance_ItemMinAggregateInputType = {
+  export type MaintenanceItemMinAggregateInputType = {
     id?: true
     name?: true
     comments?: true
-    time_interval_days?: true
-    usage_interval_miles?: true
+    timeIntervalDays?: true
+    usageIntervalMiles?: true
     recurring?: true
     vehicleId?: true
   }
 
-  export type Maintenance_ItemMaxAggregateInputType = {
+  export type MaintenanceItemMaxAggregateInputType = {
     id?: true
     name?: true
     comments?: true
-    time_interval_days?: true
-    usage_interval_miles?: true
+    timeIntervalDays?: true
+    usageIntervalMiles?: true
     recurring?: true
     vehicleId?: true
   }
 
-  export type Maintenance_ItemCountAggregateInputType = {
+  export type MaintenanceItemCountAggregateInputType = {
     id?: true
     name?: true
     comments?: true
-    time_interval_days?: true
-    usage_interval_miles?: true
+    timeIntervalDays?: true
+    usageIntervalMiles?: true
     recurring?: true
     vehicleId?: true
     _all?: true
   }
 
-  export type Maintenance_ItemAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenanceItemAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Maintenance_Item to aggregate.
+     * Filter which MaintenanceItem to aggregate.
      */
-    where?: Maintenance_ItemWhereInput
+    where?: MaintenanceItemWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Maintenance_Items to fetch.
+     * Determine the order of MaintenanceItems to fetch.
      */
-    orderBy?: Maintenance_ItemOrderByWithRelationInput | Maintenance_ItemOrderByWithRelationInput[]
+    orderBy?: MaintenanceItemOrderByWithRelationInput | MaintenanceItemOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: Maintenance_ItemWhereUniqueInput
+    cursor?: MaintenanceItemWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Maintenance_Items from the position of the cursor.
+     * Take `±n` MaintenanceItems from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Maintenance_Items.
+     * Skip the first `n` MaintenanceItems.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned Maintenance_Items
+     * Count returned MaintenanceItems
     **/
-    _count?: true | Maintenance_ItemCountAggregateInputType
+    _count?: true | MaintenanceItemCountAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to average
     **/
-    _avg?: Maintenance_ItemAvgAggregateInputType
+    _avg?: MaintenanceItemAvgAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to sum
     **/
-    _sum?: Maintenance_ItemSumAggregateInputType
+    _sum?: MaintenanceItemSumAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
-    _min?: Maintenance_ItemMinAggregateInputType
+    _min?: MaintenanceItemMinAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
-    _max?: Maintenance_ItemMaxAggregateInputType
+    _max?: MaintenanceItemMaxAggregateInputType
   }
 
-  export type GetMaintenance_ItemAggregateType<T extends Maintenance_ItemAggregateArgs> = {
-        [P in keyof T & keyof AggregateMaintenance_Item]: P extends '_count' | 'count'
+  export type GetMaintenanceItemAggregateType<T extends MaintenanceItemAggregateArgs> = {
+        [P in keyof T & keyof AggregateMaintenanceItem]: P extends '_count' | 'count'
       ? T[P] extends true
         ? number
-        : GetScalarType<T[P], AggregateMaintenance_Item[P]>
-      : GetScalarType<T[P], AggregateMaintenance_Item[P]>
+        : GetScalarType<T[P], AggregateMaintenanceItem[P]>
+      : GetScalarType<T[P], AggregateMaintenanceItem[P]>
   }
 
 
 
 
-  export type Maintenance_ItemGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: Maintenance_ItemWhereInput
-    orderBy?: Maintenance_ItemOrderByWithAggregationInput | Maintenance_ItemOrderByWithAggregationInput[]
-    by: Maintenance_ItemScalarFieldEnum[] | Maintenance_ItemScalarFieldEnum
-    having?: Maintenance_ItemScalarWhereWithAggregatesInput
+  export type MaintenanceItemGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: MaintenanceItemWhereInput
+    orderBy?: MaintenanceItemOrderByWithAggregationInput | MaintenanceItemOrderByWithAggregationInput[]
+    by: MaintenanceItemScalarFieldEnum[] | MaintenanceItemScalarFieldEnum
+    having?: MaintenanceItemScalarWhereWithAggregatesInput
     take?: number
     skip?: number
-    _count?: Maintenance_ItemCountAggregateInputType | true
-    _avg?: Maintenance_ItemAvgAggregateInputType
-    _sum?: Maintenance_ItemSumAggregateInputType
-    _min?: Maintenance_ItemMinAggregateInputType
-    _max?: Maintenance_ItemMaxAggregateInputType
+    _count?: MaintenanceItemCountAggregateInputType | true
+    _avg?: MaintenanceItemAvgAggregateInputType
+    _sum?: MaintenanceItemSumAggregateInputType
+    _min?: MaintenanceItemMinAggregateInputType
+    _max?: MaintenanceItemMaxAggregateInputType
   }
 
-  export type Maintenance_ItemGroupByOutputType = {
+  export type MaintenanceItemGroupByOutputType = {
     id: number
     name: string
     comments: string | null
-    time_interval_days: number | null
-    usage_interval_miles: number | null
+    timeIntervalDays: number | null
+    usageIntervalMiles: number | null
     recurring: boolean
     vehicleId: string
-    _count: Maintenance_ItemCountAggregateOutputType | null
-    _avg: Maintenance_ItemAvgAggregateOutputType | null
-    _sum: Maintenance_ItemSumAggregateOutputType | null
-    _min: Maintenance_ItemMinAggregateOutputType | null
-    _max: Maintenance_ItemMaxAggregateOutputType | null
+    _count: MaintenanceItemCountAggregateOutputType | null
+    _avg: MaintenanceItemAvgAggregateOutputType | null
+    _sum: MaintenanceItemSumAggregateOutputType | null
+    _min: MaintenanceItemMinAggregateOutputType | null
+    _max: MaintenanceItemMaxAggregateOutputType | null
   }
 
-  type GetMaintenance_ItemGroupByPayload<T extends Maintenance_ItemGroupByArgs> = Prisma.PrismaPromise<
+  type GetMaintenanceItemGroupByPayload<T extends MaintenanceItemGroupByArgs> = Prisma.PrismaPromise<
     Array<
-      PickEnumerable<Maintenance_ItemGroupByOutputType, T['by']> &
+      PickEnumerable<MaintenanceItemGroupByOutputType, T['by']> &
         {
-          [P in ((keyof T) & (keyof Maintenance_ItemGroupByOutputType))]: P extends '_count'
+          [P in ((keyof T) & (keyof MaintenanceItemGroupByOutputType))]: P extends '_count'
             ? T[P] extends boolean
               ? number
-              : GetScalarType<T[P], Maintenance_ItemGroupByOutputType[P]>
-            : GetScalarType<T[P], Maintenance_ItemGroupByOutputType[P]>
+              : GetScalarType<T[P], MaintenanceItemGroupByOutputType[P]>
+            : GetScalarType<T[P], MaintenanceItemGroupByOutputType[P]>
         }
       >
     >
 
 
-  export type Maintenance_ItemSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type MaintenanceItemSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
     comments?: boolean
-    time_interval_days?: boolean
-    usage_interval_miles?: boolean
+    timeIntervalDays?: boolean
+    usageIntervalMiles?: boolean
     recurring?: boolean
     vehicleId?: boolean
     vehicle?: boolean | VehicleDefaultArgs<ExtArgs>
-    Maintenance_Entry?: boolean | Maintenance_Item$Maintenance_EntryArgs<ExtArgs>
-    _count?: boolean | Maintenance_ItemCountOutputTypeDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["maintenance_Item"]>
+    MaintenanceEntry?: boolean | MaintenanceItem$MaintenanceEntryArgs<ExtArgs>
+    _count?: boolean | MaintenanceItemCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["maintenanceItem"]>
 
-  export type Maintenance_ItemSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type MaintenanceItemSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
     comments?: boolean
-    time_interval_days?: boolean
-    usage_interval_miles?: boolean
+    timeIntervalDays?: boolean
+    usageIntervalMiles?: boolean
     recurring?: boolean
     vehicleId?: boolean
     vehicle?: boolean | VehicleDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["maintenance_Item"]>
+  }, ExtArgs["result"]["maintenanceItem"]>
 
-  export type Maintenance_ItemSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type MaintenanceItemSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
     comments?: boolean
-    time_interval_days?: boolean
-    usage_interval_miles?: boolean
+    timeIntervalDays?: boolean
+    usageIntervalMiles?: boolean
     recurring?: boolean
     vehicleId?: boolean
     vehicle?: boolean | VehicleDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["maintenance_Item"]>
+  }, ExtArgs["result"]["maintenanceItem"]>
 
-  export type Maintenance_ItemSelectScalar = {
+  export type MaintenanceItemSelectScalar = {
     id?: boolean
     name?: boolean
     comments?: boolean
-    time_interval_days?: boolean
-    usage_interval_miles?: boolean
+    timeIntervalDays?: boolean
+    usageIntervalMiles?: boolean
     recurring?: boolean
     vehicleId?: boolean
   }
 
-  export type Maintenance_ItemOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "comments" | "time_interval_days" | "usage_interval_miles" | "recurring" | "vehicleId", ExtArgs["result"]["maintenance_Item"]>
-  export type Maintenance_ItemInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenanceItemOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "comments" | "timeIntervalDays" | "usageIntervalMiles" | "recurring" | "vehicleId", ExtArgs["result"]["maintenanceItem"]>
+  export type MaintenanceItemInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     vehicle?: boolean | VehicleDefaultArgs<ExtArgs>
-    Maintenance_Entry?: boolean | Maintenance_Item$Maintenance_EntryArgs<ExtArgs>
-    _count?: boolean | Maintenance_ItemCountOutputTypeDefaultArgs<ExtArgs>
+    MaintenanceEntry?: boolean | MaintenanceItem$MaintenanceEntryArgs<ExtArgs>
+    _count?: boolean | MaintenanceItemCountOutputTypeDefaultArgs<ExtArgs>
   }
-  export type Maintenance_ItemIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenanceItemIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     vehicle?: boolean | VehicleDefaultArgs<ExtArgs>
   }
-  export type Maintenance_ItemIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenanceItemIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     vehicle?: boolean | VehicleDefaultArgs<ExtArgs>
   }
 
-  export type $Maintenance_ItemPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Maintenance_Item"
+  export type $MaintenanceItemPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "MaintenanceItem"
     objects: {
       vehicle: Prisma.$VehiclePayload<ExtArgs>
-      Maintenance_Entry: Prisma.$Maintenance_EntryPayload<ExtArgs>[]
+      MaintenanceEntry: Prisma.$MaintenanceEntryPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
       name: string
       comments: string | null
-      time_interval_days: number | null
-      usage_interval_miles: number | null
+      timeIntervalDays: number | null
+      usageIntervalMiles: number | null
       recurring: boolean
       vehicleId: string
-    }, ExtArgs["result"]["maintenance_Item"]>
+    }, ExtArgs["result"]["maintenanceItem"]>
     composites: {}
   }
 
-  type Maintenance_ItemGetPayload<S extends boolean | null | undefined | Maintenance_ItemDefaultArgs> = $Result.GetResult<Prisma.$Maintenance_ItemPayload, S>
+  type MaintenanceItemGetPayload<S extends boolean | null | undefined | MaintenanceItemDefaultArgs> = $Result.GetResult<Prisma.$MaintenanceItemPayload, S>
 
-  type Maintenance_ItemCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<Maintenance_ItemFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: Maintenance_ItemCountAggregateInputType | true
+  type MaintenanceItemCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<MaintenanceItemFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: MaintenanceItemCountAggregateInputType | true
     }
 
-  export interface Maintenance_ItemDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Maintenance_Item'], meta: { name: 'Maintenance_Item' } }
+  export interface MaintenanceItemDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['MaintenanceItem'], meta: { name: 'MaintenanceItem' } }
     /**
-     * Find zero or one Maintenance_Item that matches the filter.
-     * @param {Maintenance_ItemFindUniqueArgs} args - Arguments to find a Maintenance_Item
+     * Find zero or one MaintenanceItem that matches the filter.
+     * @param {MaintenanceItemFindUniqueArgs} args - Arguments to find a MaintenanceItem
      * @example
-     * // Get one Maintenance_Item
-     * const maintenance_Item = await prisma.maintenance_Item.findUnique({
+     * // Get one MaintenanceItem
+     * const maintenanceItem = await prisma.maintenanceItem.findUnique({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUnique<T extends Maintenance_ItemFindUniqueArgs>(args: SelectSubset<T, Maintenance_ItemFindUniqueArgs<ExtArgs>>): Prisma__Maintenance_ItemClient<$Result.GetResult<Prisma.$Maintenance_ItemPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends MaintenanceItemFindUniqueArgs>(args: SelectSubset<T, MaintenanceItemFindUniqueArgs<ExtArgs>>): Prisma__MaintenanceItemClient<$Result.GetResult<Prisma.$MaintenanceItemPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find one Maintenance_Item that matches the filter or throw an error with `error.code='P2025'`
+     * Find one MaintenanceItem that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {Maintenance_ItemFindUniqueOrThrowArgs} args - Arguments to find a Maintenance_Item
+     * @param {MaintenanceItemFindUniqueOrThrowArgs} args - Arguments to find a MaintenanceItem
      * @example
-     * // Get one Maintenance_Item
-     * const maintenance_Item = await prisma.maintenance_Item.findUniqueOrThrow({
+     * // Get one MaintenanceItem
+     * const maintenanceItem = await prisma.maintenanceItem.findUniqueOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUniqueOrThrow<T extends Maintenance_ItemFindUniqueOrThrowArgs>(args: SelectSubset<T, Maintenance_ItemFindUniqueOrThrowArgs<ExtArgs>>): Prisma__Maintenance_ItemClient<$Result.GetResult<Prisma.$Maintenance_ItemPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends MaintenanceItemFindUniqueOrThrowArgs>(args: SelectSubset<T, MaintenanceItemFindUniqueOrThrowArgs<ExtArgs>>): Prisma__MaintenanceItemClient<$Result.GetResult<Prisma.$MaintenanceItemPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Maintenance_Item that matches the filter.
+     * Find the first MaintenanceItem that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Maintenance_ItemFindFirstArgs} args - Arguments to find a Maintenance_Item
+     * @param {MaintenanceItemFindFirstArgs} args - Arguments to find a MaintenanceItem
      * @example
-     * // Get one Maintenance_Item
-     * const maintenance_Item = await prisma.maintenance_Item.findFirst({
+     * // Get one MaintenanceItem
+     * const maintenanceItem = await prisma.maintenanceItem.findFirst({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirst<T extends Maintenance_ItemFindFirstArgs>(args?: SelectSubset<T, Maintenance_ItemFindFirstArgs<ExtArgs>>): Prisma__Maintenance_ItemClient<$Result.GetResult<Prisma.$Maintenance_ItemPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends MaintenanceItemFindFirstArgs>(args?: SelectSubset<T, MaintenanceItemFindFirstArgs<ExtArgs>>): Prisma__MaintenanceItemClient<$Result.GetResult<Prisma.$MaintenanceItemPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Maintenance_Item that matches the filter or
+     * Find the first MaintenanceItem that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Maintenance_ItemFindFirstOrThrowArgs} args - Arguments to find a Maintenance_Item
+     * @param {MaintenanceItemFindFirstOrThrowArgs} args - Arguments to find a MaintenanceItem
      * @example
-     * // Get one Maintenance_Item
-     * const maintenance_Item = await prisma.maintenance_Item.findFirstOrThrow({
+     * // Get one MaintenanceItem
+     * const maintenanceItem = await prisma.maintenanceItem.findFirstOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirstOrThrow<T extends Maintenance_ItemFindFirstOrThrowArgs>(args?: SelectSubset<T, Maintenance_ItemFindFirstOrThrowArgs<ExtArgs>>): Prisma__Maintenance_ItemClient<$Result.GetResult<Prisma.$Maintenance_ItemPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends MaintenanceItemFindFirstOrThrowArgs>(args?: SelectSubset<T, MaintenanceItemFindFirstOrThrowArgs<ExtArgs>>): Prisma__MaintenanceItemClient<$Result.GetResult<Prisma.$MaintenanceItemPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find zero or more Maintenance_Items that matches the filter.
+     * Find zero or more MaintenanceItems that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Maintenance_ItemFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {MaintenanceItemFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
-     * // Get all Maintenance_Items
-     * const maintenance_Items = await prisma.maintenance_Item.findMany()
+     * // Get all MaintenanceItems
+     * const maintenanceItems = await prisma.maintenanceItem.findMany()
      * 
-     * // Get first 10 Maintenance_Items
-     * const maintenance_Items = await prisma.maintenance_Item.findMany({ take: 10 })
+     * // Get first 10 MaintenanceItems
+     * const maintenanceItems = await prisma.maintenanceItem.findMany({ take: 10 })
      * 
      * // Only select the `id`
-     * const maintenance_ItemWithIdOnly = await prisma.maintenance_Item.findMany({ select: { id: true } })
+     * const maintenanceItemWithIdOnly = await prisma.maintenanceItem.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends Maintenance_ItemFindManyArgs>(args?: SelectSubset<T, Maintenance_ItemFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Maintenance_ItemPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends MaintenanceItemFindManyArgs>(args?: SelectSubset<T, MaintenanceItemFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MaintenanceItemPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
-     * Create a Maintenance_Item.
-     * @param {Maintenance_ItemCreateArgs} args - Arguments to create a Maintenance_Item.
+     * Create a MaintenanceItem.
+     * @param {MaintenanceItemCreateArgs} args - Arguments to create a MaintenanceItem.
      * @example
-     * // Create one Maintenance_Item
-     * const Maintenance_Item = await prisma.maintenance_Item.create({
+     * // Create one MaintenanceItem
+     * const MaintenanceItem = await prisma.maintenanceItem.create({
      *   data: {
-     *     // ... data to create a Maintenance_Item
+     *     // ... data to create a MaintenanceItem
      *   }
      * })
      * 
      */
-    create<T extends Maintenance_ItemCreateArgs>(args: SelectSubset<T, Maintenance_ItemCreateArgs<ExtArgs>>): Prisma__Maintenance_ItemClient<$Result.GetResult<Prisma.$Maintenance_ItemPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends MaintenanceItemCreateArgs>(args: SelectSubset<T, MaintenanceItemCreateArgs<ExtArgs>>): Prisma__MaintenanceItemClient<$Result.GetResult<Prisma.$MaintenanceItemPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Create many Maintenance_Items.
-     * @param {Maintenance_ItemCreateManyArgs} args - Arguments to create many Maintenance_Items.
+     * Create many MaintenanceItems.
+     * @param {MaintenanceItemCreateManyArgs} args - Arguments to create many MaintenanceItems.
      * @example
-     * // Create many Maintenance_Items
-     * const maintenance_Item = await prisma.maintenance_Item.createMany({
+     * // Create many MaintenanceItems
+     * const maintenanceItem = await prisma.maintenanceItem.createMany({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      *     
      */
-    createMany<T extends Maintenance_ItemCreateManyArgs>(args?: SelectSubset<T, Maintenance_ItemCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends MaintenanceItemCreateManyArgs>(args?: SelectSubset<T, MaintenanceItemCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Create many Maintenance_Items and returns the data saved in the database.
-     * @param {Maintenance_ItemCreateManyAndReturnArgs} args - Arguments to create many Maintenance_Items.
+     * Create many MaintenanceItems and returns the data saved in the database.
+     * @param {MaintenanceItemCreateManyAndReturnArgs} args - Arguments to create many MaintenanceItems.
      * @example
-     * // Create many Maintenance_Items
-     * const maintenance_Item = await prisma.maintenance_Item.createManyAndReturn({
+     * // Create many MaintenanceItems
+     * const maintenanceItem = await prisma.maintenanceItem.createManyAndReturn({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      * 
-     * // Create many Maintenance_Items and only return the `id`
-     * const maintenance_ItemWithIdOnly = await prisma.maintenance_Item.createManyAndReturn({
+     * // Create many MaintenanceItems and only return the `id`
+     * const maintenanceItemWithIdOnly = await prisma.maintenanceItem.createManyAndReturn({
      *   select: { id: true },
      *   data: [
      *     // ... provide data here
@@ -3905,28 +3918,28 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    createManyAndReturn<T extends Maintenance_ItemCreateManyAndReturnArgs>(args?: SelectSubset<T, Maintenance_ItemCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Maintenance_ItemPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+    createManyAndReturn<T extends MaintenanceItemCreateManyAndReturnArgs>(args?: SelectSubset<T, MaintenanceItemCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MaintenanceItemPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Delete a Maintenance_Item.
-     * @param {Maintenance_ItemDeleteArgs} args - Arguments to delete one Maintenance_Item.
+     * Delete a MaintenanceItem.
+     * @param {MaintenanceItemDeleteArgs} args - Arguments to delete one MaintenanceItem.
      * @example
-     * // Delete one Maintenance_Item
-     * const Maintenance_Item = await prisma.maintenance_Item.delete({
+     * // Delete one MaintenanceItem
+     * const MaintenanceItem = await prisma.maintenanceItem.delete({
      *   where: {
-     *     // ... filter to delete one Maintenance_Item
+     *     // ... filter to delete one MaintenanceItem
      *   }
      * })
      * 
      */
-    delete<T extends Maintenance_ItemDeleteArgs>(args: SelectSubset<T, Maintenance_ItemDeleteArgs<ExtArgs>>): Prisma__Maintenance_ItemClient<$Result.GetResult<Prisma.$Maintenance_ItemPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends MaintenanceItemDeleteArgs>(args: SelectSubset<T, MaintenanceItemDeleteArgs<ExtArgs>>): Prisma__MaintenanceItemClient<$Result.GetResult<Prisma.$MaintenanceItemPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Update one Maintenance_Item.
-     * @param {Maintenance_ItemUpdateArgs} args - Arguments to update one Maintenance_Item.
+     * Update one MaintenanceItem.
+     * @param {MaintenanceItemUpdateArgs} args - Arguments to update one MaintenanceItem.
      * @example
-     * // Update one Maintenance_Item
-     * const maintenance_Item = await prisma.maintenance_Item.update({
+     * // Update one MaintenanceItem
+     * const maintenanceItem = await prisma.maintenanceItem.update({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -3936,30 +3949,30 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends Maintenance_ItemUpdateArgs>(args: SelectSubset<T, Maintenance_ItemUpdateArgs<ExtArgs>>): Prisma__Maintenance_ItemClient<$Result.GetResult<Prisma.$Maintenance_ItemPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends MaintenanceItemUpdateArgs>(args: SelectSubset<T, MaintenanceItemUpdateArgs<ExtArgs>>): Prisma__MaintenanceItemClient<$Result.GetResult<Prisma.$MaintenanceItemPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Delete zero or more Maintenance_Items.
-     * @param {Maintenance_ItemDeleteManyArgs} args - Arguments to filter Maintenance_Items to delete.
+     * Delete zero or more MaintenanceItems.
+     * @param {MaintenanceItemDeleteManyArgs} args - Arguments to filter MaintenanceItems to delete.
      * @example
-     * // Delete a few Maintenance_Items
-     * const { count } = await prisma.maintenance_Item.deleteMany({
+     * // Delete a few MaintenanceItems
+     * const { count } = await prisma.maintenanceItem.deleteMany({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
      */
-    deleteMany<T extends Maintenance_ItemDeleteManyArgs>(args?: SelectSubset<T, Maintenance_ItemDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends MaintenanceItemDeleteManyArgs>(args?: SelectSubset<T, MaintenanceItemDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more Maintenance_Items.
+     * Update zero or more MaintenanceItems.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Maintenance_ItemUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {MaintenanceItemUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
-     * // Update many Maintenance_Items
-     * const maintenance_Item = await prisma.maintenance_Item.updateMany({
+     * // Update many MaintenanceItems
+     * const maintenanceItem = await prisma.maintenanceItem.updateMany({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -3969,14 +3982,14 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends Maintenance_ItemUpdateManyArgs>(args: SelectSubset<T, Maintenance_ItemUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends MaintenanceItemUpdateManyArgs>(args: SelectSubset<T, MaintenanceItemUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more Maintenance_Items and returns the data updated in the database.
-     * @param {Maintenance_ItemUpdateManyAndReturnArgs} args - Arguments to update many Maintenance_Items.
+     * Update zero or more MaintenanceItems and returns the data updated in the database.
+     * @param {MaintenanceItemUpdateManyAndReturnArgs} args - Arguments to update many MaintenanceItems.
      * @example
-     * // Update many Maintenance_Items
-     * const maintenance_Item = await prisma.maintenance_Item.updateManyAndReturn({
+     * // Update many MaintenanceItems
+     * const maintenanceItem = await prisma.maintenanceItem.updateManyAndReturn({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -3985,8 +3998,8 @@ export namespace Prisma {
      *   ]
      * })
      * 
-     * // Update zero or more Maintenance_Items and only return the `id`
-     * const maintenance_ItemWithIdOnly = await prisma.maintenance_Item.updateManyAndReturn({
+     * // Update zero or more MaintenanceItems and only return the `id`
+     * const maintenanceItemWithIdOnly = await prisma.maintenanceItem.updateManyAndReturn({
      *   select: { id: true },
      *   where: {
      *     // ... provide filter here
@@ -3999,56 +4012,56 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    updateManyAndReturn<T extends Maintenance_ItemUpdateManyAndReturnArgs>(args: SelectSubset<T, Maintenance_ItemUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Maintenance_ItemPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+    updateManyAndReturn<T extends MaintenanceItemUpdateManyAndReturnArgs>(args: SelectSubset<T, MaintenanceItemUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MaintenanceItemPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Create or update one Maintenance_Item.
-     * @param {Maintenance_ItemUpsertArgs} args - Arguments to update or create a Maintenance_Item.
+     * Create or update one MaintenanceItem.
+     * @param {MaintenanceItemUpsertArgs} args - Arguments to update or create a MaintenanceItem.
      * @example
-     * // Update or create a Maintenance_Item
-     * const maintenance_Item = await prisma.maintenance_Item.upsert({
+     * // Update or create a MaintenanceItem
+     * const maintenanceItem = await prisma.maintenanceItem.upsert({
      *   create: {
-     *     // ... data to create a Maintenance_Item
+     *     // ... data to create a MaintenanceItem
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
-     *     // ... the filter for the Maintenance_Item we want to update
+     *     // ... the filter for the MaintenanceItem we want to update
      *   }
      * })
      */
-    upsert<T extends Maintenance_ItemUpsertArgs>(args: SelectSubset<T, Maintenance_ItemUpsertArgs<ExtArgs>>): Prisma__Maintenance_ItemClient<$Result.GetResult<Prisma.$Maintenance_ItemPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends MaintenanceItemUpsertArgs>(args: SelectSubset<T, MaintenanceItemUpsertArgs<ExtArgs>>): Prisma__MaintenanceItemClient<$Result.GetResult<Prisma.$MaintenanceItemPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
     /**
-     * Count the number of Maintenance_Items.
+     * Count the number of MaintenanceItems.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Maintenance_ItemCountArgs} args - Arguments to filter Maintenance_Items to count.
+     * @param {MaintenanceItemCountArgs} args - Arguments to filter MaintenanceItems to count.
      * @example
-     * // Count the number of Maintenance_Items
-     * const count = await prisma.maintenance_Item.count({
+     * // Count the number of MaintenanceItems
+     * const count = await prisma.maintenanceItem.count({
      *   where: {
-     *     // ... the filter for the Maintenance_Items we want to count
+     *     // ... the filter for the MaintenanceItems we want to count
      *   }
      * })
     **/
-    count<T extends Maintenance_ItemCountArgs>(
-      args?: Subset<T, Maintenance_ItemCountArgs>,
+    count<T extends MaintenanceItemCountArgs>(
+      args?: Subset<T, MaintenanceItemCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
-          : GetScalarType<T['select'], Maintenance_ItemCountAggregateOutputType>
+          : GetScalarType<T['select'], MaintenanceItemCountAggregateOutputType>
         : number
     >
 
     /**
-     * Allows you to perform aggregations operations on a Maintenance_Item.
+     * Allows you to perform aggregations operations on a MaintenanceItem.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Maintenance_ItemAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @param {MaintenanceItemAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -4068,13 +4081,13 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
-    aggregate<T extends Maintenance_ItemAggregateArgs>(args: Subset<T, Maintenance_ItemAggregateArgs>): Prisma.PrismaPromise<GetMaintenance_ItemAggregateType<T>>
+    aggregate<T extends MaintenanceItemAggregateArgs>(args: Subset<T, MaintenanceItemAggregateArgs>): Prisma.PrismaPromise<GetMaintenanceItemAggregateType<T>>
 
     /**
-     * Group by Maintenance_Item.
+     * Group by MaintenanceItem.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Maintenance_ItemGroupByArgs} args - Group by arguments.
+     * @param {MaintenanceItemGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -4089,14 +4102,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends Maintenance_ItemGroupByArgs,
+      T extends MaintenanceItemGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: Maintenance_ItemGroupByArgs['orderBy'] }
-        : { orderBy?: Maintenance_ItemGroupByArgs['orderBy'] },
+        ? { orderBy: MaintenanceItemGroupByArgs['orderBy'] }
+        : { orderBy?: MaintenanceItemGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -4145,23 +4158,23 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, Maintenance_ItemGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetMaintenance_ItemGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, MaintenanceItemGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetMaintenanceItemGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Maintenance_Item model
+   * Fields of the MaintenanceItem model
    */
-  readonly fields: Maintenance_ItemFieldRefs;
+  readonly fields: MaintenanceItemFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Maintenance_Item.
+   * The delegate class that acts as a "Promise-like" for MaintenanceItem.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__Maintenance_ItemClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__MaintenanceItemClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     vehicle<T extends VehicleDefaultArgs<ExtArgs> = {}>(args?: Subset<T, VehicleDefaultArgs<ExtArgs>>): Prisma__VehicleClient<$Result.GetResult<Prisma.$VehiclePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-    Maintenance_Entry<T extends Maintenance_Item$Maintenance_EntryArgs<ExtArgs> = {}>(args?: Subset<T, Maintenance_Item$Maintenance_EntryArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Maintenance_EntryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    MaintenanceEntry<T extends MaintenanceItem$MaintenanceEntryArgs<ExtArgs> = {}>(args?: Subset<T, MaintenanceItem$MaintenanceEntryArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MaintenanceEntryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -4188,718 +4201,718 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Maintenance_Item model
+   * Fields of the MaintenanceItem model
    */
-  interface Maintenance_ItemFieldRefs {
-    readonly id: FieldRef<"Maintenance_Item", 'Int'>
-    readonly name: FieldRef<"Maintenance_Item", 'String'>
-    readonly comments: FieldRef<"Maintenance_Item", 'String'>
-    readonly time_interval_days: FieldRef<"Maintenance_Item", 'Int'>
-    readonly usage_interval_miles: FieldRef<"Maintenance_Item", 'Float'>
-    readonly recurring: FieldRef<"Maintenance_Item", 'Boolean'>
-    readonly vehicleId: FieldRef<"Maintenance_Item", 'String'>
+  interface MaintenanceItemFieldRefs {
+    readonly id: FieldRef<"MaintenanceItem", 'Int'>
+    readonly name: FieldRef<"MaintenanceItem", 'String'>
+    readonly comments: FieldRef<"MaintenanceItem", 'String'>
+    readonly timeIntervalDays: FieldRef<"MaintenanceItem", 'Int'>
+    readonly usageIntervalMiles: FieldRef<"MaintenanceItem", 'Float'>
+    readonly recurring: FieldRef<"MaintenanceItem", 'Boolean'>
+    readonly vehicleId: FieldRef<"MaintenanceItem", 'String'>
   }
     
 
   // Custom InputTypes
   /**
-   * Maintenance_Item findUnique
+   * MaintenanceItem findUnique
    */
-  export type Maintenance_ItemFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenanceItemFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Maintenance_Item
+     * Select specific fields to fetch from the MaintenanceItem
      */
-    select?: Maintenance_ItemSelect<ExtArgs> | null
+    select?: MaintenanceItemSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Maintenance_Item
+     * Omit specific fields from the MaintenanceItem
      */
-    omit?: Maintenance_ItemOmit<ExtArgs> | null
+    omit?: MaintenanceItemOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Maintenance_ItemInclude<ExtArgs> | null
+    include?: MaintenanceItemInclude<ExtArgs> | null
     /**
-     * Filter, which Maintenance_Item to fetch.
+     * Filter, which MaintenanceItem to fetch.
      */
-    where: Maintenance_ItemWhereUniqueInput
+    where: MaintenanceItemWhereUniqueInput
   }
 
   /**
-   * Maintenance_Item findUniqueOrThrow
+   * MaintenanceItem findUniqueOrThrow
    */
-  export type Maintenance_ItemFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenanceItemFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Maintenance_Item
+     * Select specific fields to fetch from the MaintenanceItem
      */
-    select?: Maintenance_ItemSelect<ExtArgs> | null
+    select?: MaintenanceItemSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Maintenance_Item
+     * Omit specific fields from the MaintenanceItem
      */
-    omit?: Maintenance_ItemOmit<ExtArgs> | null
+    omit?: MaintenanceItemOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Maintenance_ItemInclude<ExtArgs> | null
+    include?: MaintenanceItemInclude<ExtArgs> | null
     /**
-     * Filter, which Maintenance_Item to fetch.
+     * Filter, which MaintenanceItem to fetch.
      */
-    where: Maintenance_ItemWhereUniqueInput
+    where: MaintenanceItemWhereUniqueInput
   }
 
   /**
-   * Maintenance_Item findFirst
+   * MaintenanceItem findFirst
    */
-  export type Maintenance_ItemFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenanceItemFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Maintenance_Item
+     * Select specific fields to fetch from the MaintenanceItem
      */
-    select?: Maintenance_ItemSelect<ExtArgs> | null
+    select?: MaintenanceItemSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Maintenance_Item
+     * Omit specific fields from the MaintenanceItem
      */
-    omit?: Maintenance_ItemOmit<ExtArgs> | null
+    omit?: MaintenanceItemOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Maintenance_ItemInclude<ExtArgs> | null
+    include?: MaintenanceItemInclude<ExtArgs> | null
     /**
-     * Filter, which Maintenance_Item to fetch.
+     * Filter, which MaintenanceItem to fetch.
      */
-    where?: Maintenance_ItemWhereInput
+    where?: MaintenanceItemWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Maintenance_Items to fetch.
+     * Determine the order of MaintenanceItems to fetch.
      */
-    orderBy?: Maintenance_ItemOrderByWithRelationInput | Maintenance_ItemOrderByWithRelationInput[]
+    orderBy?: MaintenanceItemOrderByWithRelationInput | MaintenanceItemOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Maintenance_Items.
+     * Sets the position for searching for MaintenanceItems.
      */
-    cursor?: Maintenance_ItemWhereUniqueInput
+    cursor?: MaintenanceItemWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Maintenance_Items from the position of the cursor.
+     * Take `±n` MaintenanceItems from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Maintenance_Items.
+     * Skip the first `n` MaintenanceItems.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Maintenance_Items.
+     * Filter by unique combinations of MaintenanceItems.
      */
-    distinct?: Maintenance_ItemScalarFieldEnum | Maintenance_ItemScalarFieldEnum[]
+    distinct?: MaintenanceItemScalarFieldEnum | MaintenanceItemScalarFieldEnum[]
   }
 
   /**
-   * Maintenance_Item findFirstOrThrow
+   * MaintenanceItem findFirstOrThrow
    */
-  export type Maintenance_ItemFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenanceItemFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Maintenance_Item
+     * Select specific fields to fetch from the MaintenanceItem
      */
-    select?: Maintenance_ItemSelect<ExtArgs> | null
+    select?: MaintenanceItemSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Maintenance_Item
+     * Omit specific fields from the MaintenanceItem
      */
-    omit?: Maintenance_ItemOmit<ExtArgs> | null
+    omit?: MaintenanceItemOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Maintenance_ItemInclude<ExtArgs> | null
+    include?: MaintenanceItemInclude<ExtArgs> | null
     /**
-     * Filter, which Maintenance_Item to fetch.
+     * Filter, which MaintenanceItem to fetch.
      */
-    where?: Maintenance_ItemWhereInput
+    where?: MaintenanceItemWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Maintenance_Items to fetch.
+     * Determine the order of MaintenanceItems to fetch.
      */
-    orderBy?: Maintenance_ItemOrderByWithRelationInput | Maintenance_ItemOrderByWithRelationInput[]
+    orderBy?: MaintenanceItemOrderByWithRelationInput | MaintenanceItemOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Maintenance_Items.
+     * Sets the position for searching for MaintenanceItems.
      */
-    cursor?: Maintenance_ItemWhereUniqueInput
+    cursor?: MaintenanceItemWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Maintenance_Items from the position of the cursor.
+     * Take `±n` MaintenanceItems from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Maintenance_Items.
+     * Skip the first `n` MaintenanceItems.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Maintenance_Items.
+     * Filter by unique combinations of MaintenanceItems.
      */
-    distinct?: Maintenance_ItemScalarFieldEnum | Maintenance_ItemScalarFieldEnum[]
+    distinct?: MaintenanceItemScalarFieldEnum | MaintenanceItemScalarFieldEnum[]
   }
 
   /**
-   * Maintenance_Item findMany
+   * MaintenanceItem findMany
    */
-  export type Maintenance_ItemFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenanceItemFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Maintenance_Item
+     * Select specific fields to fetch from the MaintenanceItem
      */
-    select?: Maintenance_ItemSelect<ExtArgs> | null
+    select?: MaintenanceItemSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Maintenance_Item
+     * Omit specific fields from the MaintenanceItem
      */
-    omit?: Maintenance_ItemOmit<ExtArgs> | null
+    omit?: MaintenanceItemOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Maintenance_ItemInclude<ExtArgs> | null
+    include?: MaintenanceItemInclude<ExtArgs> | null
     /**
-     * Filter, which Maintenance_Items to fetch.
+     * Filter, which MaintenanceItems to fetch.
      */
-    where?: Maintenance_ItemWhereInput
+    where?: MaintenanceItemWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Maintenance_Items to fetch.
+     * Determine the order of MaintenanceItems to fetch.
      */
-    orderBy?: Maintenance_ItemOrderByWithRelationInput | Maintenance_ItemOrderByWithRelationInput[]
+    orderBy?: MaintenanceItemOrderByWithRelationInput | MaintenanceItemOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing Maintenance_Items.
+     * Sets the position for listing MaintenanceItems.
      */
-    cursor?: Maintenance_ItemWhereUniqueInput
+    cursor?: MaintenanceItemWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Maintenance_Items from the position of the cursor.
+     * Take `±n` MaintenanceItems from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Maintenance_Items.
+     * Skip the first `n` MaintenanceItems.
      */
     skip?: number
-    distinct?: Maintenance_ItemScalarFieldEnum | Maintenance_ItemScalarFieldEnum[]
+    distinct?: MaintenanceItemScalarFieldEnum | MaintenanceItemScalarFieldEnum[]
   }
 
   /**
-   * Maintenance_Item create
+   * MaintenanceItem create
    */
-  export type Maintenance_ItemCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenanceItemCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Maintenance_Item
+     * Select specific fields to fetch from the MaintenanceItem
      */
-    select?: Maintenance_ItemSelect<ExtArgs> | null
+    select?: MaintenanceItemSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Maintenance_Item
+     * Omit specific fields from the MaintenanceItem
      */
-    omit?: Maintenance_ItemOmit<ExtArgs> | null
+    omit?: MaintenanceItemOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Maintenance_ItemInclude<ExtArgs> | null
+    include?: MaintenanceItemInclude<ExtArgs> | null
     /**
-     * The data needed to create a Maintenance_Item.
+     * The data needed to create a MaintenanceItem.
      */
-    data: XOR<Maintenance_ItemCreateInput, Maintenance_ItemUncheckedCreateInput>
+    data: XOR<MaintenanceItemCreateInput, MaintenanceItemUncheckedCreateInput>
   }
 
   /**
-   * Maintenance_Item createMany
+   * MaintenanceItem createMany
    */
-  export type Maintenance_ItemCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenanceItemCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many Maintenance_Items.
+     * The data used to create many MaintenanceItems.
      */
-    data: Maintenance_ItemCreateManyInput | Maintenance_ItemCreateManyInput[]
+    data: MaintenanceItemCreateManyInput | MaintenanceItemCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Maintenance_Item createManyAndReturn
+   * MaintenanceItem createManyAndReturn
    */
-  export type Maintenance_ItemCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenanceItemCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Maintenance_Item
+     * Select specific fields to fetch from the MaintenanceItem
      */
-    select?: Maintenance_ItemSelectCreateManyAndReturn<ExtArgs> | null
+    select?: MaintenanceItemSelectCreateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Maintenance_Item
+     * Omit specific fields from the MaintenanceItem
      */
-    omit?: Maintenance_ItemOmit<ExtArgs> | null
+    omit?: MaintenanceItemOmit<ExtArgs> | null
     /**
-     * The data used to create many Maintenance_Items.
+     * The data used to create many MaintenanceItems.
      */
-    data: Maintenance_ItemCreateManyInput | Maintenance_ItemCreateManyInput[]
+    data: MaintenanceItemCreateManyInput | MaintenanceItemCreateManyInput[]
     skipDuplicates?: boolean
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Maintenance_ItemIncludeCreateManyAndReturn<ExtArgs> | null
+    include?: MaintenanceItemIncludeCreateManyAndReturn<ExtArgs> | null
   }
 
   /**
-   * Maintenance_Item update
+   * MaintenanceItem update
    */
-  export type Maintenance_ItemUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenanceItemUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Maintenance_Item
+     * Select specific fields to fetch from the MaintenanceItem
      */
-    select?: Maintenance_ItemSelect<ExtArgs> | null
+    select?: MaintenanceItemSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Maintenance_Item
+     * Omit specific fields from the MaintenanceItem
      */
-    omit?: Maintenance_ItemOmit<ExtArgs> | null
+    omit?: MaintenanceItemOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Maintenance_ItemInclude<ExtArgs> | null
+    include?: MaintenanceItemInclude<ExtArgs> | null
     /**
-     * The data needed to update a Maintenance_Item.
+     * The data needed to update a MaintenanceItem.
      */
-    data: XOR<Maintenance_ItemUpdateInput, Maintenance_ItemUncheckedUpdateInput>
+    data: XOR<MaintenanceItemUpdateInput, MaintenanceItemUncheckedUpdateInput>
     /**
-     * Choose, which Maintenance_Item to update.
+     * Choose, which MaintenanceItem to update.
      */
-    where: Maintenance_ItemWhereUniqueInput
+    where: MaintenanceItemWhereUniqueInput
   }
 
   /**
-   * Maintenance_Item updateMany
+   * MaintenanceItem updateMany
    */
-  export type Maintenance_ItemUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenanceItemUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update Maintenance_Items.
+     * The data used to update MaintenanceItems.
      */
-    data: XOR<Maintenance_ItemUpdateManyMutationInput, Maintenance_ItemUncheckedUpdateManyInput>
+    data: XOR<MaintenanceItemUpdateManyMutationInput, MaintenanceItemUncheckedUpdateManyInput>
     /**
-     * Filter which Maintenance_Items to update
+     * Filter which MaintenanceItems to update
      */
-    where?: Maintenance_ItemWhereInput
+    where?: MaintenanceItemWhereInput
     /**
-     * Limit how many Maintenance_Items to update.
+     * Limit how many MaintenanceItems to update.
      */
     limit?: number
   }
 
   /**
-   * Maintenance_Item updateManyAndReturn
+   * MaintenanceItem updateManyAndReturn
    */
-  export type Maintenance_ItemUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenanceItemUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Maintenance_Item
+     * Select specific fields to fetch from the MaintenanceItem
      */
-    select?: Maintenance_ItemSelectUpdateManyAndReturn<ExtArgs> | null
+    select?: MaintenanceItemSelectUpdateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Maintenance_Item
+     * Omit specific fields from the MaintenanceItem
      */
-    omit?: Maintenance_ItemOmit<ExtArgs> | null
+    omit?: MaintenanceItemOmit<ExtArgs> | null
     /**
-     * The data used to update Maintenance_Items.
+     * The data used to update MaintenanceItems.
      */
-    data: XOR<Maintenance_ItemUpdateManyMutationInput, Maintenance_ItemUncheckedUpdateManyInput>
+    data: XOR<MaintenanceItemUpdateManyMutationInput, MaintenanceItemUncheckedUpdateManyInput>
     /**
-     * Filter which Maintenance_Items to update
+     * Filter which MaintenanceItems to update
      */
-    where?: Maintenance_ItemWhereInput
+    where?: MaintenanceItemWhereInput
     /**
-     * Limit how many Maintenance_Items to update.
+     * Limit how many MaintenanceItems to update.
      */
     limit?: number
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Maintenance_ItemIncludeUpdateManyAndReturn<ExtArgs> | null
+    include?: MaintenanceItemIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
-   * Maintenance_Item upsert
+   * MaintenanceItem upsert
    */
-  export type Maintenance_ItemUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenanceItemUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Maintenance_Item
+     * Select specific fields to fetch from the MaintenanceItem
      */
-    select?: Maintenance_ItemSelect<ExtArgs> | null
+    select?: MaintenanceItemSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Maintenance_Item
+     * Omit specific fields from the MaintenanceItem
      */
-    omit?: Maintenance_ItemOmit<ExtArgs> | null
+    omit?: MaintenanceItemOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Maintenance_ItemInclude<ExtArgs> | null
+    include?: MaintenanceItemInclude<ExtArgs> | null
     /**
-     * The filter to search for the Maintenance_Item to update in case it exists.
+     * The filter to search for the MaintenanceItem to update in case it exists.
      */
-    where: Maintenance_ItemWhereUniqueInput
+    where: MaintenanceItemWhereUniqueInput
     /**
-     * In case the Maintenance_Item found by the `where` argument doesn't exist, create a new Maintenance_Item with this data.
+     * In case the MaintenanceItem found by the `where` argument doesn't exist, create a new MaintenanceItem with this data.
      */
-    create: XOR<Maintenance_ItemCreateInput, Maintenance_ItemUncheckedCreateInput>
+    create: XOR<MaintenanceItemCreateInput, MaintenanceItemUncheckedCreateInput>
     /**
-     * In case the Maintenance_Item was found with the provided `where` argument, update it with this data.
+     * In case the MaintenanceItem was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<Maintenance_ItemUpdateInput, Maintenance_ItemUncheckedUpdateInput>
+    update: XOR<MaintenanceItemUpdateInput, MaintenanceItemUncheckedUpdateInput>
   }
 
   /**
-   * Maintenance_Item delete
+   * MaintenanceItem delete
    */
-  export type Maintenance_ItemDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenanceItemDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Maintenance_Item
+     * Select specific fields to fetch from the MaintenanceItem
      */
-    select?: Maintenance_ItemSelect<ExtArgs> | null
+    select?: MaintenanceItemSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Maintenance_Item
+     * Omit specific fields from the MaintenanceItem
      */
-    omit?: Maintenance_ItemOmit<ExtArgs> | null
+    omit?: MaintenanceItemOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Maintenance_ItemInclude<ExtArgs> | null
+    include?: MaintenanceItemInclude<ExtArgs> | null
     /**
-     * Filter which Maintenance_Item to delete.
+     * Filter which MaintenanceItem to delete.
      */
-    where: Maintenance_ItemWhereUniqueInput
+    where: MaintenanceItemWhereUniqueInput
   }
 
   /**
-   * Maintenance_Item deleteMany
+   * MaintenanceItem deleteMany
    */
-  export type Maintenance_ItemDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenanceItemDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Maintenance_Items to delete
+     * Filter which MaintenanceItems to delete
      */
-    where?: Maintenance_ItemWhereInput
+    where?: MaintenanceItemWhereInput
     /**
-     * Limit how many Maintenance_Items to delete.
+     * Limit how many MaintenanceItems to delete.
      */
     limit?: number
   }
 
   /**
-   * Maintenance_Item.Maintenance_Entry
+   * MaintenanceItem.MaintenanceEntry
    */
-  export type Maintenance_Item$Maintenance_EntryArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenanceItem$MaintenanceEntryArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Maintenance_Entry
+     * Select specific fields to fetch from the MaintenanceEntry
      */
-    select?: Maintenance_EntrySelect<ExtArgs> | null
+    select?: MaintenanceEntrySelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Maintenance_Entry
+     * Omit specific fields from the MaintenanceEntry
      */
-    omit?: Maintenance_EntryOmit<ExtArgs> | null
+    omit?: MaintenanceEntryOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Maintenance_EntryInclude<ExtArgs> | null
-    where?: Maintenance_EntryWhereInput
-    orderBy?: Maintenance_EntryOrderByWithRelationInput | Maintenance_EntryOrderByWithRelationInput[]
-    cursor?: Maintenance_EntryWhereUniqueInput
+    include?: MaintenanceEntryInclude<ExtArgs> | null
+    where?: MaintenanceEntryWhereInput
+    orderBy?: MaintenanceEntryOrderByWithRelationInput | MaintenanceEntryOrderByWithRelationInput[]
+    cursor?: MaintenanceEntryWhereUniqueInput
     take?: number
     skip?: number
-    distinct?: Maintenance_EntryScalarFieldEnum | Maintenance_EntryScalarFieldEnum[]
+    distinct?: MaintenanceEntryScalarFieldEnum | MaintenanceEntryScalarFieldEnum[]
   }
 
   /**
-   * Maintenance_Item without action
+   * MaintenanceItem without action
    */
-  export type Maintenance_ItemDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenanceItemDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Maintenance_Item
+     * Select specific fields to fetch from the MaintenanceItem
      */
-    select?: Maintenance_ItemSelect<ExtArgs> | null
+    select?: MaintenanceItemSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Maintenance_Item
+     * Omit specific fields from the MaintenanceItem
      */
-    omit?: Maintenance_ItemOmit<ExtArgs> | null
+    omit?: MaintenanceItemOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Maintenance_ItemInclude<ExtArgs> | null
+    include?: MaintenanceItemInclude<ExtArgs> | null
   }
 
 
   /**
-   * Model Maintenance_Entry
+   * Model MaintenanceEntry
    */
 
-  export type AggregateMaintenance_Entry = {
-    _count: Maintenance_EntryCountAggregateOutputType | null
-    _avg: Maintenance_EntryAvgAggregateOutputType | null
-    _sum: Maintenance_EntrySumAggregateOutputType | null
-    _min: Maintenance_EntryMinAggregateOutputType | null
-    _max: Maintenance_EntryMaxAggregateOutputType | null
+  export type AggregateMaintenanceEntry = {
+    _count: MaintenanceEntryCountAggregateOutputType | null
+    _avg: MaintenanceEntryAvgAggregateOutputType | null
+    _sum: MaintenanceEntrySumAggregateOutputType | null
+    _min: MaintenanceEntryMinAggregateOutputType | null
+    _max: MaintenanceEntryMaxAggregateOutputType | null
   }
 
-  export type Maintenance_EntryAvgAggregateOutputType = {
+  export type MaintenanceEntryAvgAggregateOutputType = {
     id: number | null
-    maintenance_ItemId: number | null
+    maintenanceItemId: number | null
   }
 
-  export type Maintenance_EntrySumAggregateOutputType = {
+  export type MaintenanceEntrySumAggregateOutputType = {
     id: number | null
-    maintenance_ItemId: number | null
+    maintenanceItemId: number | null
   }
 
-  export type Maintenance_EntryMinAggregateOutputType = {
-    id: number | null
-    title: string | null
-    details: string | null
-    date: Date | null
-    vehicleId: string | null
-    maintenance_ItemId: number | null
-  }
-
-  export type Maintenance_EntryMaxAggregateOutputType = {
+  export type MaintenanceEntryMinAggregateOutputType = {
     id: number | null
     title: string | null
     details: string | null
     date: Date | null
     vehicleId: string | null
-    maintenance_ItemId: number | null
+    maintenanceItemId: number | null
   }
 
-  export type Maintenance_EntryCountAggregateOutputType = {
+  export type MaintenanceEntryMaxAggregateOutputType = {
+    id: number | null
+    title: string | null
+    details: string | null
+    date: Date | null
+    vehicleId: string | null
+    maintenanceItemId: number | null
+  }
+
+  export type MaintenanceEntryCountAggregateOutputType = {
     id: number
     title: number
     details: number
     date: number
     vehicleId: number
-    maintenance_ItemId: number
+    maintenanceItemId: number
     _all: number
   }
 
 
-  export type Maintenance_EntryAvgAggregateInputType = {
+  export type MaintenanceEntryAvgAggregateInputType = {
     id?: true
-    maintenance_ItemId?: true
+    maintenanceItemId?: true
   }
 
-  export type Maintenance_EntrySumAggregateInputType = {
+  export type MaintenanceEntrySumAggregateInputType = {
     id?: true
-    maintenance_ItemId?: true
+    maintenanceItemId?: true
   }
 
-  export type Maintenance_EntryMinAggregateInputType = {
+  export type MaintenanceEntryMinAggregateInputType = {
     id?: true
     title?: true
     details?: true
     date?: true
     vehicleId?: true
-    maintenance_ItemId?: true
+    maintenanceItemId?: true
   }
 
-  export type Maintenance_EntryMaxAggregateInputType = {
+  export type MaintenanceEntryMaxAggregateInputType = {
     id?: true
     title?: true
     details?: true
     date?: true
     vehicleId?: true
-    maintenance_ItemId?: true
+    maintenanceItemId?: true
   }
 
-  export type Maintenance_EntryCountAggregateInputType = {
+  export type MaintenanceEntryCountAggregateInputType = {
     id?: true
     title?: true
     details?: true
     date?: true
     vehicleId?: true
-    maintenance_ItemId?: true
+    maintenanceItemId?: true
     _all?: true
   }
 
-  export type Maintenance_EntryAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenanceEntryAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Maintenance_Entry to aggregate.
+     * Filter which MaintenanceEntry to aggregate.
      */
-    where?: Maintenance_EntryWhereInput
+    where?: MaintenanceEntryWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Maintenance_Entries to fetch.
+     * Determine the order of MaintenanceEntries to fetch.
      */
-    orderBy?: Maintenance_EntryOrderByWithRelationInput | Maintenance_EntryOrderByWithRelationInput[]
+    orderBy?: MaintenanceEntryOrderByWithRelationInput | MaintenanceEntryOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: Maintenance_EntryWhereUniqueInput
+    cursor?: MaintenanceEntryWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Maintenance_Entries from the position of the cursor.
+     * Take `±n` MaintenanceEntries from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Maintenance_Entries.
+     * Skip the first `n` MaintenanceEntries.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned Maintenance_Entries
+     * Count returned MaintenanceEntries
     **/
-    _count?: true | Maintenance_EntryCountAggregateInputType
+    _count?: true | MaintenanceEntryCountAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to average
     **/
-    _avg?: Maintenance_EntryAvgAggregateInputType
+    _avg?: MaintenanceEntryAvgAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to sum
     **/
-    _sum?: Maintenance_EntrySumAggregateInputType
+    _sum?: MaintenanceEntrySumAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
-    _min?: Maintenance_EntryMinAggregateInputType
+    _min?: MaintenanceEntryMinAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
-    _max?: Maintenance_EntryMaxAggregateInputType
+    _max?: MaintenanceEntryMaxAggregateInputType
   }
 
-  export type GetMaintenance_EntryAggregateType<T extends Maintenance_EntryAggregateArgs> = {
-        [P in keyof T & keyof AggregateMaintenance_Entry]: P extends '_count' | 'count'
+  export type GetMaintenanceEntryAggregateType<T extends MaintenanceEntryAggregateArgs> = {
+        [P in keyof T & keyof AggregateMaintenanceEntry]: P extends '_count' | 'count'
       ? T[P] extends true
         ? number
-        : GetScalarType<T[P], AggregateMaintenance_Entry[P]>
-      : GetScalarType<T[P], AggregateMaintenance_Entry[P]>
+        : GetScalarType<T[P], AggregateMaintenanceEntry[P]>
+      : GetScalarType<T[P], AggregateMaintenanceEntry[P]>
   }
 
 
 
 
-  export type Maintenance_EntryGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: Maintenance_EntryWhereInput
-    orderBy?: Maintenance_EntryOrderByWithAggregationInput | Maintenance_EntryOrderByWithAggregationInput[]
-    by: Maintenance_EntryScalarFieldEnum[] | Maintenance_EntryScalarFieldEnum
-    having?: Maintenance_EntryScalarWhereWithAggregatesInput
+  export type MaintenanceEntryGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: MaintenanceEntryWhereInput
+    orderBy?: MaintenanceEntryOrderByWithAggregationInput | MaintenanceEntryOrderByWithAggregationInput[]
+    by: MaintenanceEntryScalarFieldEnum[] | MaintenanceEntryScalarFieldEnum
+    having?: MaintenanceEntryScalarWhereWithAggregatesInput
     take?: number
     skip?: number
-    _count?: Maintenance_EntryCountAggregateInputType | true
-    _avg?: Maintenance_EntryAvgAggregateInputType
-    _sum?: Maintenance_EntrySumAggregateInputType
-    _min?: Maintenance_EntryMinAggregateInputType
-    _max?: Maintenance_EntryMaxAggregateInputType
+    _count?: MaintenanceEntryCountAggregateInputType | true
+    _avg?: MaintenanceEntryAvgAggregateInputType
+    _sum?: MaintenanceEntrySumAggregateInputType
+    _min?: MaintenanceEntryMinAggregateInputType
+    _max?: MaintenanceEntryMaxAggregateInputType
   }
 
-  export type Maintenance_EntryGroupByOutputType = {
+  export type MaintenanceEntryGroupByOutputType = {
     id: number
     title: string
     details: string
     date: Date
     vehicleId: string
-    maintenance_ItemId: number | null
-    _count: Maintenance_EntryCountAggregateOutputType | null
-    _avg: Maintenance_EntryAvgAggregateOutputType | null
-    _sum: Maintenance_EntrySumAggregateOutputType | null
-    _min: Maintenance_EntryMinAggregateOutputType | null
-    _max: Maintenance_EntryMaxAggregateOutputType | null
+    maintenanceItemId: number | null
+    _count: MaintenanceEntryCountAggregateOutputType | null
+    _avg: MaintenanceEntryAvgAggregateOutputType | null
+    _sum: MaintenanceEntrySumAggregateOutputType | null
+    _min: MaintenanceEntryMinAggregateOutputType | null
+    _max: MaintenanceEntryMaxAggregateOutputType | null
   }
 
-  type GetMaintenance_EntryGroupByPayload<T extends Maintenance_EntryGroupByArgs> = Prisma.PrismaPromise<
+  type GetMaintenanceEntryGroupByPayload<T extends MaintenanceEntryGroupByArgs> = Prisma.PrismaPromise<
     Array<
-      PickEnumerable<Maintenance_EntryGroupByOutputType, T['by']> &
+      PickEnumerable<MaintenanceEntryGroupByOutputType, T['by']> &
         {
-          [P in ((keyof T) & (keyof Maintenance_EntryGroupByOutputType))]: P extends '_count'
+          [P in ((keyof T) & (keyof MaintenanceEntryGroupByOutputType))]: P extends '_count'
             ? T[P] extends boolean
               ? number
-              : GetScalarType<T[P], Maintenance_EntryGroupByOutputType[P]>
-            : GetScalarType<T[P], Maintenance_EntryGroupByOutputType[P]>
+              : GetScalarType<T[P], MaintenanceEntryGroupByOutputType[P]>
+            : GetScalarType<T[P], MaintenanceEntryGroupByOutputType[P]>
         }
       >
     >
 
 
-  export type Maintenance_EntrySelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type MaintenanceEntrySelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     title?: boolean
     details?: boolean
     date?: boolean
     vehicleId?: boolean
-    maintenance_ItemId?: boolean
+    maintenanceItemId?: boolean
     vehicle?: boolean | VehicleDefaultArgs<ExtArgs>
-    maintenance_item?: boolean | Maintenance_Entry$maintenance_itemArgs<ExtArgs>
-  }, ExtArgs["result"]["maintenance_Entry"]>
+    MaintenanceItem?: boolean | MaintenanceEntry$MaintenanceItemArgs<ExtArgs>
+  }, ExtArgs["result"]["maintenanceEntry"]>
 
-  export type Maintenance_EntrySelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type MaintenanceEntrySelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     title?: boolean
     details?: boolean
     date?: boolean
     vehicleId?: boolean
-    maintenance_ItemId?: boolean
+    maintenanceItemId?: boolean
     vehicle?: boolean | VehicleDefaultArgs<ExtArgs>
-    maintenance_item?: boolean | Maintenance_Entry$maintenance_itemArgs<ExtArgs>
-  }, ExtArgs["result"]["maintenance_Entry"]>
+    MaintenanceItem?: boolean | MaintenanceEntry$MaintenanceItemArgs<ExtArgs>
+  }, ExtArgs["result"]["maintenanceEntry"]>
 
-  export type Maintenance_EntrySelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type MaintenanceEntrySelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     title?: boolean
     details?: boolean
     date?: boolean
     vehicleId?: boolean
-    maintenance_ItemId?: boolean
+    maintenanceItemId?: boolean
     vehicle?: boolean | VehicleDefaultArgs<ExtArgs>
-    maintenance_item?: boolean | Maintenance_Entry$maintenance_itemArgs<ExtArgs>
-  }, ExtArgs["result"]["maintenance_Entry"]>
+    MaintenanceItem?: boolean | MaintenanceEntry$MaintenanceItemArgs<ExtArgs>
+  }, ExtArgs["result"]["maintenanceEntry"]>
 
-  export type Maintenance_EntrySelectScalar = {
+  export type MaintenanceEntrySelectScalar = {
     id?: boolean
     title?: boolean
     details?: boolean
     date?: boolean
     vehicleId?: boolean
-    maintenance_ItemId?: boolean
+    maintenanceItemId?: boolean
   }
 
-  export type Maintenance_EntryOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "details" | "date" | "vehicleId" | "maintenance_ItemId", ExtArgs["result"]["maintenance_Entry"]>
-  export type Maintenance_EntryInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenanceEntryOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "details" | "date" | "vehicleId" | "maintenanceItemId", ExtArgs["result"]["maintenanceEntry"]>
+  export type MaintenanceEntryInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     vehicle?: boolean | VehicleDefaultArgs<ExtArgs>
-    maintenance_item?: boolean | Maintenance_Entry$maintenance_itemArgs<ExtArgs>
+    MaintenanceItem?: boolean | MaintenanceEntry$MaintenanceItemArgs<ExtArgs>
   }
-  export type Maintenance_EntryIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenanceEntryIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     vehicle?: boolean | VehicleDefaultArgs<ExtArgs>
-    maintenance_item?: boolean | Maintenance_Entry$maintenance_itemArgs<ExtArgs>
+    MaintenanceItem?: boolean | MaintenanceEntry$MaintenanceItemArgs<ExtArgs>
   }
-  export type Maintenance_EntryIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenanceEntryIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     vehicle?: boolean | VehicleDefaultArgs<ExtArgs>
-    maintenance_item?: boolean | Maintenance_Entry$maintenance_itemArgs<ExtArgs>
+    MaintenanceItem?: boolean | MaintenanceEntry$MaintenanceItemArgs<ExtArgs>
   }
 
-  export type $Maintenance_EntryPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Maintenance_Entry"
+  export type $MaintenanceEntryPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "MaintenanceEntry"
     objects: {
       vehicle: Prisma.$VehiclePayload<ExtArgs>
-      maintenance_item: Prisma.$Maintenance_ItemPayload<ExtArgs> | null
+      MaintenanceItem: Prisma.$MaintenanceItemPayload<ExtArgs> | null
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -4907,137 +4920,137 @@ export namespace Prisma {
       details: string
       date: Date
       vehicleId: string
-      maintenance_ItemId: number | null
-    }, ExtArgs["result"]["maintenance_Entry"]>
+      maintenanceItemId: number | null
+    }, ExtArgs["result"]["maintenanceEntry"]>
     composites: {}
   }
 
-  type Maintenance_EntryGetPayload<S extends boolean | null | undefined | Maintenance_EntryDefaultArgs> = $Result.GetResult<Prisma.$Maintenance_EntryPayload, S>
+  type MaintenanceEntryGetPayload<S extends boolean | null | undefined | MaintenanceEntryDefaultArgs> = $Result.GetResult<Prisma.$MaintenanceEntryPayload, S>
 
-  type Maintenance_EntryCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<Maintenance_EntryFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: Maintenance_EntryCountAggregateInputType | true
+  type MaintenanceEntryCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<MaintenanceEntryFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: MaintenanceEntryCountAggregateInputType | true
     }
 
-  export interface Maintenance_EntryDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Maintenance_Entry'], meta: { name: 'Maintenance_Entry' } }
+  export interface MaintenanceEntryDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['MaintenanceEntry'], meta: { name: 'MaintenanceEntry' } }
     /**
-     * Find zero or one Maintenance_Entry that matches the filter.
-     * @param {Maintenance_EntryFindUniqueArgs} args - Arguments to find a Maintenance_Entry
+     * Find zero or one MaintenanceEntry that matches the filter.
+     * @param {MaintenanceEntryFindUniqueArgs} args - Arguments to find a MaintenanceEntry
      * @example
-     * // Get one Maintenance_Entry
-     * const maintenance_Entry = await prisma.maintenance_Entry.findUnique({
+     * // Get one MaintenanceEntry
+     * const maintenanceEntry = await prisma.maintenanceEntry.findUnique({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUnique<T extends Maintenance_EntryFindUniqueArgs>(args: SelectSubset<T, Maintenance_EntryFindUniqueArgs<ExtArgs>>): Prisma__Maintenance_EntryClient<$Result.GetResult<Prisma.$Maintenance_EntryPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends MaintenanceEntryFindUniqueArgs>(args: SelectSubset<T, MaintenanceEntryFindUniqueArgs<ExtArgs>>): Prisma__MaintenanceEntryClient<$Result.GetResult<Prisma.$MaintenanceEntryPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find one Maintenance_Entry that matches the filter or throw an error with `error.code='P2025'`
+     * Find one MaintenanceEntry that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {Maintenance_EntryFindUniqueOrThrowArgs} args - Arguments to find a Maintenance_Entry
+     * @param {MaintenanceEntryFindUniqueOrThrowArgs} args - Arguments to find a MaintenanceEntry
      * @example
-     * // Get one Maintenance_Entry
-     * const maintenance_Entry = await prisma.maintenance_Entry.findUniqueOrThrow({
+     * // Get one MaintenanceEntry
+     * const maintenanceEntry = await prisma.maintenanceEntry.findUniqueOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUniqueOrThrow<T extends Maintenance_EntryFindUniqueOrThrowArgs>(args: SelectSubset<T, Maintenance_EntryFindUniqueOrThrowArgs<ExtArgs>>): Prisma__Maintenance_EntryClient<$Result.GetResult<Prisma.$Maintenance_EntryPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends MaintenanceEntryFindUniqueOrThrowArgs>(args: SelectSubset<T, MaintenanceEntryFindUniqueOrThrowArgs<ExtArgs>>): Prisma__MaintenanceEntryClient<$Result.GetResult<Prisma.$MaintenanceEntryPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Maintenance_Entry that matches the filter.
+     * Find the first MaintenanceEntry that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Maintenance_EntryFindFirstArgs} args - Arguments to find a Maintenance_Entry
+     * @param {MaintenanceEntryFindFirstArgs} args - Arguments to find a MaintenanceEntry
      * @example
-     * // Get one Maintenance_Entry
-     * const maintenance_Entry = await prisma.maintenance_Entry.findFirst({
+     * // Get one MaintenanceEntry
+     * const maintenanceEntry = await prisma.maintenanceEntry.findFirst({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirst<T extends Maintenance_EntryFindFirstArgs>(args?: SelectSubset<T, Maintenance_EntryFindFirstArgs<ExtArgs>>): Prisma__Maintenance_EntryClient<$Result.GetResult<Prisma.$Maintenance_EntryPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends MaintenanceEntryFindFirstArgs>(args?: SelectSubset<T, MaintenanceEntryFindFirstArgs<ExtArgs>>): Prisma__MaintenanceEntryClient<$Result.GetResult<Prisma.$MaintenanceEntryPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Maintenance_Entry that matches the filter or
+     * Find the first MaintenanceEntry that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Maintenance_EntryFindFirstOrThrowArgs} args - Arguments to find a Maintenance_Entry
+     * @param {MaintenanceEntryFindFirstOrThrowArgs} args - Arguments to find a MaintenanceEntry
      * @example
-     * // Get one Maintenance_Entry
-     * const maintenance_Entry = await prisma.maintenance_Entry.findFirstOrThrow({
+     * // Get one MaintenanceEntry
+     * const maintenanceEntry = await prisma.maintenanceEntry.findFirstOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirstOrThrow<T extends Maintenance_EntryFindFirstOrThrowArgs>(args?: SelectSubset<T, Maintenance_EntryFindFirstOrThrowArgs<ExtArgs>>): Prisma__Maintenance_EntryClient<$Result.GetResult<Prisma.$Maintenance_EntryPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends MaintenanceEntryFindFirstOrThrowArgs>(args?: SelectSubset<T, MaintenanceEntryFindFirstOrThrowArgs<ExtArgs>>): Prisma__MaintenanceEntryClient<$Result.GetResult<Prisma.$MaintenanceEntryPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find zero or more Maintenance_Entries that matches the filter.
+     * Find zero or more MaintenanceEntries that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Maintenance_EntryFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {MaintenanceEntryFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
-     * // Get all Maintenance_Entries
-     * const maintenance_Entries = await prisma.maintenance_Entry.findMany()
+     * // Get all MaintenanceEntries
+     * const maintenanceEntries = await prisma.maintenanceEntry.findMany()
      * 
-     * // Get first 10 Maintenance_Entries
-     * const maintenance_Entries = await prisma.maintenance_Entry.findMany({ take: 10 })
+     * // Get first 10 MaintenanceEntries
+     * const maintenanceEntries = await prisma.maintenanceEntry.findMany({ take: 10 })
      * 
      * // Only select the `id`
-     * const maintenance_EntryWithIdOnly = await prisma.maintenance_Entry.findMany({ select: { id: true } })
+     * const maintenanceEntryWithIdOnly = await prisma.maintenanceEntry.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends Maintenance_EntryFindManyArgs>(args?: SelectSubset<T, Maintenance_EntryFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Maintenance_EntryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends MaintenanceEntryFindManyArgs>(args?: SelectSubset<T, MaintenanceEntryFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MaintenanceEntryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
-     * Create a Maintenance_Entry.
-     * @param {Maintenance_EntryCreateArgs} args - Arguments to create a Maintenance_Entry.
+     * Create a MaintenanceEntry.
+     * @param {MaintenanceEntryCreateArgs} args - Arguments to create a MaintenanceEntry.
      * @example
-     * // Create one Maintenance_Entry
-     * const Maintenance_Entry = await prisma.maintenance_Entry.create({
+     * // Create one MaintenanceEntry
+     * const MaintenanceEntry = await prisma.maintenanceEntry.create({
      *   data: {
-     *     // ... data to create a Maintenance_Entry
+     *     // ... data to create a MaintenanceEntry
      *   }
      * })
      * 
      */
-    create<T extends Maintenance_EntryCreateArgs>(args: SelectSubset<T, Maintenance_EntryCreateArgs<ExtArgs>>): Prisma__Maintenance_EntryClient<$Result.GetResult<Prisma.$Maintenance_EntryPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends MaintenanceEntryCreateArgs>(args: SelectSubset<T, MaintenanceEntryCreateArgs<ExtArgs>>): Prisma__MaintenanceEntryClient<$Result.GetResult<Prisma.$MaintenanceEntryPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Create many Maintenance_Entries.
-     * @param {Maintenance_EntryCreateManyArgs} args - Arguments to create many Maintenance_Entries.
+     * Create many MaintenanceEntries.
+     * @param {MaintenanceEntryCreateManyArgs} args - Arguments to create many MaintenanceEntries.
      * @example
-     * // Create many Maintenance_Entries
-     * const maintenance_Entry = await prisma.maintenance_Entry.createMany({
+     * // Create many MaintenanceEntries
+     * const maintenanceEntry = await prisma.maintenanceEntry.createMany({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      *     
      */
-    createMany<T extends Maintenance_EntryCreateManyArgs>(args?: SelectSubset<T, Maintenance_EntryCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends MaintenanceEntryCreateManyArgs>(args?: SelectSubset<T, MaintenanceEntryCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Create many Maintenance_Entries and returns the data saved in the database.
-     * @param {Maintenance_EntryCreateManyAndReturnArgs} args - Arguments to create many Maintenance_Entries.
+     * Create many MaintenanceEntries and returns the data saved in the database.
+     * @param {MaintenanceEntryCreateManyAndReturnArgs} args - Arguments to create many MaintenanceEntries.
      * @example
-     * // Create many Maintenance_Entries
-     * const maintenance_Entry = await prisma.maintenance_Entry.createManyAndReturn({
+     * // Create many MaintenanceEntries
+     * const maintenanceEntry = await prisma.maintenanceEntry.createManyAndReturn({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      * 
-     * // Create many Maintenance_Entries and only return the `id`
-     * const maintenance_EntryWithIdOnly = await prisma.maintenance_Entry.createManyAndReturn({
+     * // Create many MaintenanceEntries and only return the `id`
+     * const maintenanceEntryWithIdOnly = await prisma.maintenanceEntry.createManyAndReturn({
      *   select: { id: true },
      *   data: [
      *     // ... provide data here
@@ -5047,28 +5060,28 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    createManyAndReturn<T extends Maintenance_EntryCreateManyAndReturnArgs>(args?: SelectSubset<T, Maintenance_EntryCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Maintenance_EntryPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+    createManyAndReturn<T extends MaintenanceEntryCreateManyAndReturnArgs>(args?: SelectSubset<T, MaintenanceEntryCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MaintenanceEntryPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Delete a Maintenance_Entry.
-     * @param {Maintenance_EntryDeleteArgs} args - Arguments to delete one Maintenance_Entry.
+     * Delete a MaintenanceEntry.
+     * @param {MaintenanceEntryDeleteArgs} args - Arguments to delete one MaintenanceEntry.
      * @example
-     * // Delete one Maintenance_Entry
-     * const Maintenance_Entry = await prisma.maintenance_Entry.delete({
+     * // Delete one MaintenanceEntry
+     * const MaintenanceEntry = await prisma.maintenanceEntry.delete({
      *   where: {
-     *     // ... filter to delete one Maintenance_Entry
+     *     // ... filter to delete one MaintenanceEntry
      *   }
      * })
      * 
      */
-    delete<T extends Maintenance_EntryDeleteArgs>(args: SelectSubset<T, Maintenance_EntryDeleteArgs<ExtArgs>>): Prisma__Maintenance_EntryClient<$Result.GetResult<Prisma.$Maintenance_EntryPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends MaintenanceEntryDeleteArgs>(args: SelectSubset<T, MaintenanceEntryDeleteArgs<ExtArgs>>): Prisma__MaintenanceEntryClient<$Result.GetResult<Prisma.$MaintenanceEntryPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Update one Maintenance_Entry.
-     * @param {Maintenance_EntryUpdateArgs} args - Arguments to update one Maintenance_Entry.
+     * Update one MaintenanceEntry.
+     * @param {MaintenanceEntryUpdateArgs} args - Arguments to update one MaintenanceEntry.
      * @example
-     * // Update one Maintenance_Entry
-     * const maintenance_Entry = await prisma.maintenance_Entry.update({
+     * // Update one MaintenanceEntry
+     * const maintenanceEntry = await prisma.maintenanceEntry.update({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -5078,30 +5091,30 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends Maintenance_EntryUpdateArgs>(args: SelectSubset<T, Maintenance_EntryUpdateArgs<ExtArgs>>): Prisma__Maintenance_EntryClient<$Result.GetResult<Prisma.$Maintenance_EntryPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends MaintenanceEntryUpdateArgs>(args: SelectSubset<T, MaintenanceEntryUpdateArgs<ExtArgs>>): Prisma__MaintenanceEntryClient<$Result.GetResult<Prisma.$MaintenanceEntryPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Delete zero or more Maintenance_Entries.
-     * @param {Maintenance_EntryDeleteManyArgs} args - Arguments to filter Maintenance_Entries to delete.
+     * Delete zero or more MaintenanceEntries.
+     * @param {MaintenanceEntryDeleteManyArgs} args - Arguments to filter MaintenanceEntries to delete.
      * @example
-     * // Delete a few Maintenance_Entries
-     * const { count } = await prisma.maintenance_Entry.deleteMany({
+     * // Delete a few MaintenanceEntries
+     * const { count } = await prisma.maintenanceEntry.deleteMany({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
      */
-    deleteMany<T extends Maintenance_EntryDeleteManyArgs>(args?: SelectSubset<T, Maintenance_EntryDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends MaintenanceEntryDeleteManyArgs>(args?: SelectSubset<T, MaintenanceEntryDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more Maintenance_Entries.
+     * Update zero or more MaintenanceEntries.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Maintenance_EntryUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {MaintenanceEntryUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
-     * // Update many Maintenance_Entries
-     * const maintenance_Entry = await prisma.maintenance_Entry.updateMany({
+     * // Update many MaintenanceEntries
+     * const maintenanceEntry = await prisma.maintenanceEntry.updateMany({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -5111,14 +5124,14 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends Maintenance_EntryUpdateManyArgs>(args: SelectSubset<T, Maintenance_EntryUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends MaintenanceEntryUpdateManyArgs>(args: SelectSubset<T, MaintenanceEntryUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more Maintenance_Entries and returns the data updated in the database.
-     * @param {Maintenance_EntryUpdateManyAndReturnArgs} args - Arguments to update many Maintenance_Entries.
+     * Update zero or more MaintenanceEntries and returns the data updated in the database.
+     * @param {MaintenanceEntryUpdateManyAndReturnArgs} args - Arguments to update many MaintenanceEntries.
      * @example
-     * // Update many Maintenance_Entries
-     * const maintenance_Entry = await prisma.maintenance_Entry.updateManyAndReturn({
+     * // Update many MaintenanceEntries
+     * const maintenanceEntry = await prisma.maintenanceEntry.updateManyAndReturn({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -5127,8 +5140,8 @@ export namespace Prisma {
      *   ]
      * })
      * 
-     * // Update zero or more Maintenance_Entries and only return the `id`
-     * const maintenance_EntryWithIdOnly = await prisma.maintenance_Entry.updateManyAndReturn({
+     * // Update zero or more MaintenanceEntries and only return the `id`
+     * const maintenanceEntryWithIdOnly = await prisma.maintenanceEntry.updateManyAndReturn({
      *   select: { id: true },
      *   where: {
      *     // ... provide filter here
@@ -5141,56 +5154,56 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    updateManyAndReturn<T extends Maintenance_EntryUpdateManyAndReturnArgs>(args: SelectSubset<T, Maintenance_EntryUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Maintenance_EntryPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+    updateManyAndReturn<T extends MaintenanceEntryUpdateManyAndReturnArgs>(args: SelectSubset<T, MaintenanceEntryUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MaintenanceEntryPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Create or update one Maintenance_Entry.
-     * @param {Maintenance_EntryUpsertArgs} args - Arguments to update or create a Maintenance_Entry.
+     * Create or update one MaintenanceEntry.
+     * @param {MaintenanceEntryUpsertArgs} args - Arguments to update or create a MaintenanceEntry.
      * @example
-     * // Update or create a Maintenance_Entry
-     * const maintenance_Entry = await prisma.maintenance_Entry.upsert({
+     * // Update or create a MaintenanceEntry
+     * const maintenanceEntry = await prisma.maintenanceEntry.upsert({
      *   create: {
-     *     // ... data to create a Maintenance_Entry
+     *     // ... data to create a MaintenanceEntry
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
-     *     // ... the filter for the Maintenance_Entry we want to update
+     *     // ... the filter for the MaintenanceEntry we want to update
      *   }
      * })
      */
-    upsert<T extends Maintenance_EntryUpsertArgs>(args: SelectSubset<T, Maintenance_EntryUpsertArgs<ExtArgs>>): Prisma__Maintenance_EntryClient<$Result.GetResult<Prisma.$Maintenance_EntryPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends MaintenanceEntryUpsertArgs>(args: SelectSubset<T, MaintenanceEntryUpsertArgs<ExtArgs>>): Prisma__MaintenanceEntryClient<$Result.GetResult<Prisma.$MaintenanceEntryPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
     /**
-     * Count the number of Maintenance_Entries.
+     * Count the number of MaintenanceEntries.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Maintenance_EntryCountArgs} args - Arguments to filter Maintenance_Entries to count.
+     * @param {MaintenanceEntryCountArgs} args - Arguments to filter MaintenanceEntries to count.
      * @example
-     * // Count the number of Maintenance_Entries
-     * const count = await prisma.maintenance_Entry.count({
+     * // Count the number of MaintenanceEntries
+     * const count = await prisma.maintenanceEntry.count({
      *   where: {
-     *     // ... the filter for the Maintenance_Entries we want to count
+     *     // ... the filter for the MaintenanceEntries we want to count
      *   }
      * })
     **/
-    count<T extends Maintenance_EntryCountArgs>(
-      args?: Subset<T, Maintenance_EntryCountArgs>,
+    count<T extends MaintenanceEntryCountArgs>(
+      args?: Subset<T, MaintenanceEntryCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
-          : GetScalarType<T['select'], Maintenance_EntryCountAggregateOutputType>
+          : GetScalarType<T['select'], MaintenanceEntryCountAggregateOutputType>
         : number
     >
 
     /**
-     * Allows you to perform aggregations operations on a Maintenance_Entry.
+     * Allows you to perform aggregations operations on a MaintenanceEntry.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Maintenance_EntryAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @param {MaintenanceEntryAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -5210,13 +5223,13 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
-    aggregate<T extends Maintenance_EntryAggregateArgs>(args: Subset<T, Maintenance_EntryAggregateArgs>): Prisma.PrismaPromise<GetMaintenance_EntryAggregateType<T>>
+    aggregate<T extends MaintenanceEntryAggregateArgs>(args: Subset<T, MaintenanceEntryAggregateArgs>): Prisma.PrismaPromise<GetMaintenanceEntryAggregateType<T>>
 
     /**
-     * Group by Maintenance_Entry.
+     * Group by MaintenanceEntry.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Maintenance_EntryGroupByArgs} args - Group by arguments.
+     * @param {MaintenanceEntryGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -5231,14 +5244,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends Maintenance_EntryGroupByArgs,
+      T extends MaintenanceEntryGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: Maintenance_EntryGroupByArgs['orderBy'] }
-        : { orderBy?: Maintenance_EntryGroupByArgs['orderBy'] },
+        ? { orderBy: MaintenanceEntryGroupByArgs['orderBy'] }
+        : { orderBy?: MaintenanceEntryGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -5287,23 +5300,23 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, Maintenance_EntryGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetMaintenance_EntryGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, MaintenanceEntryGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetMaintenanceEntryGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Maintenance_Entry model
+   * Fields of the MaintenanceEntry model
    */
-  readonly fields: Maintenance_EntryFieldRefs;
+  readonly fields: MaintenanceEntryFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Maintenance_Entry.
+   * The delegate class that acts as a "Promise-like" for MaintenanceEntry.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__Maintenance_EntryClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__MaintenanceEntryClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     vehicle<T extends VehicleDefaultArgs<ExtArgs> = {}>(args?: Subset<T, VehicleDefaultArgs<ExtArgs>>): Prisma__VehicleClient<$Result.GetResult<Prisma.$VehiclePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-    maintenance_item<T extends Maintenance_Entry$maintenance_itemArgs<ExtArgs> = {}>(args?: Subset<T, Maintenance_Entry$maintenance_itemArgs<ExtArgs>>): Prisma__Maintenance_ItemClient<$Result.GetResult<Prisma.$Maintenance_ItemPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    MaintenanceItem<T extends MaintenanceEntry$MaintenanceItemArgs<ExtArgs> = {}>(args?: Subset<T, MaintenanceEntry$MaintenanceItemArgs<ExtArgs>>): Prisma__MaintenanceItemClient<$Result.GetResult<Prisma.$MaintenanceItemPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -5330,445 +5343,445 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Maintenance_Entry model
+   * Fields of the MaintenanceEntry model
    */
-  interface Maintenance_EntryFieldRefs {
-    readonly id: FieldRef<"Maintenance_Entry", 'Int'>
-    readonly title: FieldRef<"Maintenance_Entry", 'String'>
-    readonly details: FieldRef<"Maintenance_Entry", 'String'>
-    readonly date: FieldRef<"Maintenance_Entry", 'DateTime'>
-    readonly vehicleId: FieldRef<"Maintenance_Entry", 'String'>
-    readonly maintenance_ItemId: FieldRef<"Maintenance_Entry", 'Int'>
+  interface MaintenanceEntryFieldRefs {
+    readonly id: FieldRef<"MaintenanceEntry", 'Int'>
+    readonly title: FieldRef<"MaintenanceEntry", 'String'>
+    readonly details: FieldRef<"MaintenanceEntry", 'String'>
+    readonly date: FieldRef<"MaintenanceEntry", 'DateTime'>
+    readonly vehicleId: FieldRef<"MaintenanceEntry", 'String'>
+    readonly maintenanceItemId: FieldRef<"MaintenanceEntry", 'Int'>
   }
     
 
   // Custom InputTypes
   /**
-   * Maintenance_Entry findUnique
+   * MaintenanceEntry findUnique
    */
-  export type Maintenance_EntryFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenanceEntryFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Maintenance_Entry
+     * Select specific fields to fetch from the MaintenanceEntry
      */
-    select?: Maintenance_EntrySelect<ExtArgs> | null
+    select?: MaintenanceEntrySelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Maintenance_Entry
+     * Omit specific fields from the MaintenanceEntry
      */
-    omit?: Maintenance_EntryOmit<ExtArgs> | null
+    omit?: MaintenanceEntryOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Maintenance_EntryInclude<ExtArgs> | null
+    include?: MaintenanceEntryInclude<ExtArgs> | null
     /**
-     * Filter, which Maintenance_Entry to fetch.
+     * Filter, which MaintenanceEntry to fetch.
      */
-    where: Maintenance_EntryWhereUniqueInput
+    where: MaintenanceEntryWhereUniqueInput
   }
 
   /**
-   * Maintenance_Entry findUniqueOrThrow
+   * MaintenanceEntry findUniqueOrThrow
    */
-  export type Maintenance_EntryFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenanceEntryFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Maintenance_Entry
+     * Select specific fields to fetch from the MaintenanceEntry
      */
-    select?: Maintenance_EntrySelect<ExtArgs> | null
+    select?: MaintenanceEntrySelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Maintenance_Entry
+     * Omit specific fields from the MaintenanceEntry
      */
-    omit?: Maintenance_EntryOmit<ExtArgs> | null
+    omit?: MaintenanceEntryOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Maintenance_EntryInclude<ExtArgs> | null
+    include?: MaintenanceEntryInclude<ExtArgs> | null
     /**
-     * Filter, which Maintenance_Entry to fetch.
+     * Filter, which MaintenanceEntry to fetch.
      */
-    where: Maintenance_EntryWhereUniqueInput
+    where: MaintenanceEntryWhereUniqueInput
   }
 
   /**
-   * Maintenance_Entry findFirst
+   * MaintenanceEntry findFirst
    */
-  export type Maintenance_EntryFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenanceEntryFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Maintenance_Entry
+     * Select specific fields to fetch from the MaintenanceEntry
      */
-    select?: Maintenance_EntrySelect<ExtArgs> | null
+    select?: MaintenanceEntrySelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Maintenance_Entry
+     * Omit specific fields from the MaintenanceEntry
      */
-    omit?: Maintenance_EntryOmit<ExtArgs> | null
+    omit?: MaintenanceEntryOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Maintenance_EntryInclude<ExtArgs> | null
+    include?: MaintenanceEntryInclude<ExtArgs> | null
     /**
-     * Filter, which Maintenance_Entry to fetch.
+     * Filter, which MaintenanceEntry to fetch.
      */
-    where?: Maintenance_EntryWhereInput
+    where?: MaintenanceEntryWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Maintenance_Entries to fetch.
+     * Determine the order of MaintenanceEntries to fetch.
      */
-    orderBy?: Maintenance_EntryOrderByWithRelationInput | Maintenance_EntryOrderByWithRelationInput[]
+    orderBy?: MaintenanceEntryOrderByWithRelationInput | MaintenanceEntryOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Maintenance_Entries.
+     * Sets the position for searching for MaintenanceEntries.
      */
-    cursor?: Maintenance_EntryWhereUniqueInput
+    cursor?: MaintenanceEntryWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Maintenance_Entries from the position of the cursor.
+     * Take `±n` MaintenanceEntries from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Maintenance_Entries.
+     * Skip the first `n` MaintenanceEntries.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Maintenance_Entries.
+     * Filter by unique combinations of MaintenanceEntries.
      */
-    distinct?: Maintenance_EntryScalarFieldEnum | Maintenance_EntryScalarFieldEnum[]
+    distinct?: MaintenanceEntryScalarFieldEnum | MaintenanceEntryScalarFieldEnum[]
   }
 
   /**
-   * Maintenance_Entry findFirstOrThrow
+   * MaintenanceEntry findFirstOrThrow
    */
-  export type Maintenance_EntryFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenanceEntryFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Maintenance_Entry
+     * Select specific fields to fetch from the MaintenanceEntry
      */
-    select?: Maintenance_EntrySelect<ExtArgs> | null
+    select?: MaintenanceEntrySelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Maintenance_Entry
+     * Omit specific fields from the MaintenanceEntry
      */
-    omit?: Maintenance_EntryOmit<ExtArgs> | null
+    omit?: MaintenanceEntryOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Maintenance_EntryInclude<ExtArgs> | null
+    include?: MaintenanceEntryInclude<ExtArgs> | null
     /**
-     * Filter, which Maintenance_Entry to fetch.
+     * Filter, which MaintenanceEntry to fetch.
      */
-    where?: Maintenance_EntryWhereInput
+    where?: MaintenanceEntryWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Maintenance_Entries to fetch.
+     * Determine the order of MaintenanceEntries to fetch.
      */
-    orderBy?: Maintenance_EntryOrderByWithRelationInput | Maintenance_EntryOrderByWithRelationInput[]
+    orderBy?: MaintenanceEntryOrderByWithRelationInput | MaintenanceEntryOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Maintenance_Entries.
+     * Sets the position for searching for MaintenanceEntries.
      */
-    cursor?: Maintenance_EntryWhereUniqueInput
+    cursor?: MaintenanceEntryWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Maintenance_Entries from the position of the cursor.
+     * Take `±n` MaintenanceEntries from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Maintenance_Entries.
+     * Skip the first `n` MaintenanceEntries.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Maintenance_Entries.
+     * Filter by unique combinations of MaintenanceEntries.
      */
-    distinct?: Maintenance_EntryScalarFieldEnum | Maintenance_EntryScalarFieldEnum[]
+    distinct?: MaintenanceEntryScalarFieldEnum | MaintenanceEntryScalarFieldEnum[]
   }
 
   /**
-   * Maintenance_Entry findMany
+   * MaintenanceEntry findMany
    */
-  export type Maintenance_EntryFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenanceEntryFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Maintenance_Entry
+     * Select specific fields to fetch from the MaintenanceEntry
      */
-    select?: Maintenance_EntrySelect<ExtArgs> | null
+    select?: MaintenanceEntrySelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Maintenance_Entry
+     * Omit specific fields from the MaintenanceEntry
      */
-    omit?: Maintenance_EntryOmit<ExtArgs> | null
+    omit?: MaintenanceEntryOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Maintenance_EntryInclude<ExtArgs> | null
+    include?: MaintenanceEntryInclude<ExtArgs> | null
     /**
-     * Filter, which Maintenance_Entries to fetch.
+     * Filter, which MaintenanceEntries to fetch.
      */
-    where?: Maintenance_EntryWhereInput
+    where?: MaintenanceEntryWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Maintenance_Entries to fetch.
+     * Determine the order of MaintenanceEntries to fetch.
      */
-    orderBy?: Maintenance_EntryOrderByWithRelationInput | Maintenance_EntryOrderByWithRelationInput[]
+    orderBy?: MaintenanceEntryOrderByWithRelationInput | MaintenanceEntryOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing Maintenance_Entries.
+     * Sets the position for listing MaintenanceEntries.
      */
-    cursor?: Maintenance_EntryWhereUniqueInput
+    cursor?: MaintenanceEntryWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Maintenance_Entries from the position of the cursor.
+     * Take `±n` MaintenanceEntries from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Maintenance_Entries.
+     * Skip the first `n` MaintenanceEntries.
      */
     skip?: number
-    distinct?: Maintenance_EntryScalarFieldEnum | Maintenance_EntryScalarFieldEnum[]
+    distinct?: MaintenanceEntryScalarFieldEnum | MaintenanceEntryScalarFieldEnum[]
   }
 
   /**
-   * Maintenance_Entry create
+   * MaintenanceEntry create
    */
-  export type Maintenance_EntryCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenanceEntryCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Maintenance_Entry
+     * Select specific fields to fetch from the MaintenanceEntry
      */
-    select?: Maintenance_EntrySelect<ExtArgs> | null
+    select?: MaintenanceEntrySelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Maintenance_Entry
+     * Omit specific fields from the MaintenanceEntry
      */
-    omit?: Maintenance_EntryOmit<ExtArgs> | null
+    omit?: MaintenanceEntryOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Maintenance_EntryInclude<ExtArgs> | null
+    include?: MaintenanceEntryInclude<ExtArgs> | null
     /**
-     * The data needed to create a Maintenance_Entry.
+     * The data needed to create a MaintenanceEntry.
      */
-    data: XOR<Maintenance_EntryCreateInput, Maintenance_EntryUncheckedCreateInput>
+    data: XOR<MaintenanceEntryCreateInput, MaintenanceEntryUncheckedCreateInput>
   }
 
   /**
-   * Maintenance_Entry createMany
+   * MaintenanceEntry createMany
    */
-  export type Maintenance_EntryCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenanceEntryCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many Maintenance_Entries.
+     * The data used to create many MaintenanceEntries.
      */
-    data: Maintenance_EntryCreateManyInput | Maintenance_EntryCreateManyInput[]
+    data: MaintenanceEntryCreateManyInput | MaintenanceEntryCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Maintenance_Entry createManyAndReturn
+   * MaintenanceEntry createManyAndReturn
    */
-  export type Maintenance_EntryCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenanceEntryCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Maintenance_Entry
+     * Select specific fields to fetch from the MaintenanceEntry
      */
-    select?: Maintenance_EntrySelectCreateManyAndReturn<ExtArgs> | null
+    select?: MaintenanceEntrySelectCreateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Maintenance_Entry
+     * Omit specific fields from the MaintenanceEntry
      */
-    omit?: Maintenance_EntryOmit<ExtArgs> | null
+    omit?: MaintenanceEntryOmit<ExtArgs> | null
     /**
-     * The data used to create many Maintenance_Entries.
+     * The data used to create many MaintenanceEntries.
      */
-    data: Maintenance_EntryCreateManyInput | Maintenance_EntryCreateManyInput[]
+    data: MaintenanceEntryCreateManyInput | MaintenanceEntryCreateManyInput[]
     skipDuplicates?: boolean
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Maintenance_EntryIncludeCreateManyAndReturn<ExtArgs> | null
+    include?: MaintenanceEntryIncludeCreateManyAndReturn<ExtArgs> | null
   }
 
   /**
-   * Maintenance_Entry update
+   * MaintenanceEntry update
    */
-  export type Maintenance_EntryUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenanceEntryUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Maintenance_Entry
+     * Select specific fields to fetch from the MaintenanceEntry
      */
-    select?: Maintenance_EntrySelect<ExtArgs> | null
+    select?: MaintenanceEntrySelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Maintenance_Entry
+     * Omit specific fields from the MaintenanceEntry
      */
-    omit?: Maintenance_EntryOmit<ExtArgs> | null
+    omit?: MaintenanceEntryOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Maintenance_EntryInclude<ExtArgs> | null
+    include?: MaintenanceEntryInclude<ExtArgs> | null
     /**
-     * The data needed to update a Maintenance_Entry.
+     * The data needed to update a MaintenanceEntry.
      */
-    data: XOR<Maintenance_EntryUpdateInput, Maintenance_EntryUncheckedUpdateInput>
+    data: XOR<MaintenanceEntryUpdateInput, MaintenanceEntryUncheckedUpdateInput>
     /**
-     * Choose, which Maintenance_Entry to update.
+     * Choose, which MaintenanceEntry to update.
      */
-    where: Maintenance_EntryWhereUniqueInput
+    where: MaintenanceEntryWhereUniqueInput
   }
 
   /**
-   * Maintenance_Entry updateMany
+   * MaintenanceEntry updateMany
    */
-  export type Maintenance_EntryUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenanceEntryUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update Maintenance_Entries.
+     * The data used to update MaintenanceEntries.
      */
-    data: XOR<Maintenance_EntryUpdateManyMutationInput, Maintenance_EntryUncheckedUpdateManyInput>
+    data: XOR<MaintenanceEntryUpdateManyMutationInput, MaintenanceEntryUncheckedUpdateManyInput>
     /**
-     * Filter which Maintenance_Entries to update
+     * Filter which MaintenanceEntries to update
      */
-    where?: Maintenance_EntryWhereInput
+    where?: MaintenanceEntryWhereInput
     /**
-     * Limit how many Maintenance_Entries to update.
+     * Limit how many MaintenanceEntries to update.
      */
     limit?: number
   }
 
   /**
-   * Maintenance_Entry updateManyAndReturn
+   * MaintenanceEntry updateManyAndReturn
    */
-  export type Maintenance_EntryUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenanceEntryUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Maintenance_Entry
+     * Select specific fields to fetch from the MaintenanceEntry
      */
-    select?: Maintenance_EntrySelectUpdateManyAndReturn<ExtArgs> | null
+    select?: MaintenanceEntrySelectUpdateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Maintenance_Entry
+     * Omit specific fields from the MaintenanceEntry
      */
-    omit?: Maintenance_EntryOmit<ExtArgs> | null
+    omit?: MaintenanceEntryOmit<ExtArgs> | null
     /**
-     * The data used to update Maintenance_Entries.
+     * The data used to update MaintenanceEntries.
      */
-    data: XOR<Maintenance_EntryUpdateManyMutationInput, Maintenance_EntryUncheckedUpdateManyInput>
+    data: XOR<MaintenanceEntryUpdateManyMutationInput, MaintenanceEntryUncheckedUpdateManyInput>
     /**
-     * Filter which Maintenance_Entries to update
+     * Filter which MaintenanceEntries to update
      */
-    where?: Maintenance_EntryWhereInput
+    where?: MaintenanceEntryWhereInput
     /**
-     * Limit how many Maintenance_Entries to update.
+     * Limit how many MaintenanceEntries to update.
      */
     limit?: number
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Maintenance_EntryIncludeUpdateManyAndReturn<ExtArgs> | null
+    include?: MaintenanceEntryIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
-   * Maintenance_Entry upsert
+   * MaintenanceEntry upsert
    */
-  export type Maintenance_EntryUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenanceEntryUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Maintenance_Entry
+     * Select specific fields to fetch from the MaintenanceEntry
      */
-    select?: Maintenance_EntrySelect<ExtArgs> | null
+    select?: MaintenanceEntrySelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Maintenance_Entry
+     * Omit specific fields from the MaintenanceEntry
      */
-    omit?: Maintenance_EntryOmit<ExtArgs> | null
+    omit?: MaintenanceEntryOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Maintenance_EntryInclude<ExtArgs> | null
+    include?: MaintenanceEntryInclude<ExtArgs> | null
     /**
-     * The filter to search for the Maintenance_Entry to update in case it exists.
+     * The filter to search for the MaintenanceEntry to update in case it exists.
      */
-    where: Maintenance_EntryWhereUniqueInput
+    where: MaintenanceEntryWhereUniqueInput
     /**
-     * In case the Maintenance_Entry found by the `where` argument doesn't exist, create a new Maintenance_Entry with this data.
+     * In case the MaintenanceEntry found by the `where` argument doesn't exist, create a new MaintenanceEntry with this data.
      */
-    create: XOR<Maintenance_EntryCreateInput, Maintenance_EntryUncheckedCreateInput>
+    create: XOR<MaintenanceEntryCreateInput, MaintenanceEntryUncheckedCreateInput>
     /**
-     * In case the Maintenance_Entry was found with the provided `where` argument, update it with this data.
+     * In case the MaintenanceEntry was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<Maintenance_EntryUpdateInput, Maintenance_EntryUncheckedUpdateInput>
+    update: XOR<MaintenanceEntryUpdateInput, MaintenanceEntryUncheckedUpdateInput>
   }
 
   /**
-   * Maintenance_Entry delete
+   * MaintenanceEntry delete
    */
-  export type Maintenance_EntryDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenanceEntryDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Maintenance_Entry
+     * Select specific fields to fetch from the MaintenanceEntry
      */
-    select?: Maintenance_EntrySelect<ExtArgs> | null
+    select?: MaintenanceEntrySelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Maintenance_Entry
+     * Omit specific fields from the MaintenanceEntry
      */
-    omit?: Maintenance_EntryOmit<ExtArgs> | null
+    omit?: MaintenanceEntryOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Maintenance_EntryInclude<ExtArgs> | null
+    include?: MaintenanceEntryInclude<ExtArgs> | null
     /**
-     * Filter which Maintenance_Entry to delete.
+     * Filter which MaintenanceEntry to delete.
      */
-    where: Maintenance_EntryWhereUniqueInput
+    where: MaintenanceEntryWhereUniqueInput
   }
 
   /**
-   * Maintenance_Entry deleteMany
+   * MaintenanceEntry deleteMany
    */
-  export type Maintenance_EntryDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenanceEntryDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Maintenance_Entries to delete
+     * Filter which MaintenanceEntries to delete
      */
-    where?: Maintenance_EntryWhereInput
+    where?: MaintenanceEntryWhereInput
     /**
-     * Limit how many Maintenance_Entries to delete.
+     * Limit how many MaintenanceEntries to delete.
      */
     limit?: number
   }
 
   /**
-   * Maintenance_Entry.maintenance_item
+   * MaintenanceEntry.MaintenanceItem
    */
-  export type Maintenance_Entry$maintenance_itemArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenanceEntry$MaintenanceItemArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Maintenance_Item
+     * Select specific fields to fetch from the MaintenanceItem
      */
-    select?: Maintenance_ItemSelect<ExtArgs> | null
+    select?: MaintenanceItemSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Maintenance_Item
+     * Omit specific fields from the MaintenanceItem
      */
-    omit?: Maintenance_ItemOmit<ExtArgs> | null
+    omit?: MaintenanceItemOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Maintenance_ItemInclude<ExtArgs> | null
-    where?: Maintenance_ItemWhereInput
+    include?: MaintenanceItemInclude<ExtArgs> | null
+    where?: MaintenanceItemWhereInput
   }
 
   /**
-   * Maintenance_Entry without action
+   * MaintenanceEntry without action
    */
-  export type Maintenance_EntryDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenanceEntryDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Maintenance_Entry
+     * Select specific fields to fetch from the MaintenanceEntry
      */
-    select?: Maintenance_EntrySelect<ExtArgs> | null
+    select?: MaintenanceEntrySelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Maintenance_Entry
+     * Omit specific fields from the MaintenanceEntry
      */
-    omit?: Maintenance_EntryOmit<ExtArgs> | null
+    omit?: MaintenanceEntryOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Maintenance_EntryInclude<ExtArgs> | null
+    include?: MaintenanceEntryInclude<ExtArgs> | null
   }
 
 
@@ -5802,36 +5815,37 @@ export namespace Prisma {
     model: 'model',
     make: 'make',
     year: 'year',
-    odometer_miles: 'odometer_miles',
+    odometer: 'odometer',
+    useKm: 'useKm',
     userId: 'userId'
   };
 
   export type VehicleScalarFieldEnum = (typeof VehicleScalarFieldEnum)[keyof typeof VehicleScalarFieldEnum]
 
 
-  export const Maintenance_ItemScalarFieldEnum: {
+  export const MaintenanceItemScalarFieldEnum: {
     id: 'id',
     name: 'name',
     comments: 'comments',
-    time_interval_days: 'time_interval_days',
-    usage_interval_miles: 'usage_interval_miles',
+    timeIntervalDays: 'timeIntervalDays',
+    usageIntervalMiles: 'usageIntervalMiles',
     recurring: 'recurring',
     vehicleId: 'vehicleId'
   };
 
-  export type Maintenance_ItemScalarFieldEnum = (typeof Maintenance_ItemScalarFieldEnum)[keyof typeof Maintenance_ItemScalarFieldEnum]
+  export type MaintenanceItemScalarFieldEnum = (typeof MaintenanceItemScalarFieldEnum)[keyof typeof MaintenanceItemScalarFieldEnum]
 
 
-  export const Maintenance_EntryScalarFieldEnum: {
+  export const MaintenanceEntryScalarFieldEnum: {
     id: 'id',
     title: 'title',
     details: 'details',
     date: 'date',
     vehicleId: 'vehicleId',
-    maintenance_ItemId: 'maintenance_ItemId'
+    maintenanceItemId: 'maintenanceItemId'
   };
 
-  export type Maintenance_EntryScalarFieldEnum = (typeof Maintenance_EntryScalarFieldEnum)[keyof typeof Maintenance_EntryScalarFieldEnum]
+  export type MaintenanceEntryScalarFieldEnum = (typeof MaintenanceEntryScalarFieldEnum)[keyof typeof MaintenanceEntryScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -5892,6 +5906,13 @@ export namespace Prisma {
 
 
   /**
+   * Reference to a field of type 'Boolean'
+   */
+  export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
+    
+
+
+  /**
    * Reference to a field of type 'Float'
    */
   export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
@@ -5902,13 +5923,6 @@ export namespace Prisma {
    * Reference to a field of type 'Float[]'
    */
   export type ListFloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float[]'>
-    
-
-
-  /**
-   * Reference to a field of type 'Boolean'
-   */
-  export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
     
 
 
@@ -5988,11 +6002,12 @@ export namespace Prisma {
     model?: StringNullableFilter<"Vehicle"> | string | null
     make?: StringNullableFilter<"Vehicle"> | string | null
     year?: IntNullableFilter<"Vehicle"> | number | null
-    odometer_miles?: IntNullableFilter<"Vehicle"> | number | null
+    odometer?: IntNullableFilter<"Vehicle"> | number | null
+    useKm?: BoolFilter<"Vehicle"> | boolean
     userId?: StringFilter<"Vehicle"> | string
     owner?: XOR<UserScalarRelationFilter, UserWhereInput>
-    Maintenance_Item?: Maintenance_ItemListRelationFilter
-    Maintenance_Entry?: Maintenance_EntryListRelationFilter
+    MaintenanceItem?: MaintenanceItemListRelationFilter
+    MaintenanceEntry?: MaintenanceEntryListRelationFilter
   }
 
   export type VehicleOrderByWithRelationInput = {
@@ -6001,11 +6016,12 @@ export namespace Prisma {
     model?: SortOrderInput | SortOrder
     make?: SortOrderInput | SortOrder
     year?: SortOrderInput | SortOrder
-    odometer_miles?: SortOrderInput | SortOrder
+    odometer?: SortOrderInput | SortOrder
+    useKm?: SortOrder
     userId?: SortOrder
     owner?: UserOrderByWithRelationInput
-    Maintenance_Item?: Maintenance_ItemOrderByRelationAggregateInput
-    Maintenance_Entry?: Maintenance_EntryOrderByRelationAggregateInput
+    MaintenanceItem?: MaintenanceItemOrderByRelationAggregateInput
+    MaintenanceEntry?: MaintenanceEntryOrderByRelationAggregateInput
   }
 
   export type VehicleWhereUniqueInput = Prisma.AtLeast<{
@@ -6017,11 +6033,12 @@ export namespace Prisma {
     model?: StringNullableFilter<"Vehicle"> | string | null
     make?: StringNullableFilter<"Vehicle"> | string | null
     year?: IntNullableFilter<"Vehicle"> | number | null
-    odometer_miles?: IntNullableFilter<"Vehicle"> | number | null
+    odometer?: IntNullableFilter<"Vehicle"> | number | null
+    useKm?: BoolFilter<"Vehicle"> | boolean
     userId?: StringFilter<"Vehicle"> | string
     owner?: XOR<UserScalarRelationFilter, UserWhereInput>
-    Maintenance_Item?: Maintenance_ItemListRelationFilter
-    Maintenance_Entry?: Maintenance_EntryListRelationFilter
+    MaintenanceItem?: MaintenanceItemListRelationFilter
+    MaintenanceEntry?: MaintenanceEntryListRelationFilter
   }, "id">
 
   export type VehicleOrderByWithAggregationInput = {
@@ -6030,7 +6047,8 @@ export namespace Prisma {
     model?: SortOrderInput | SortOrder
     make?: SortOrderInput | SortOrder
     year?: SortOrderInput | SortOrder
-    odometer_miles?: SortOrderInput | SortOrder
+    odometer?: SortOrderInput | SortOrder
+    useKm?: SortOrder
     userId?: SortOrder
     _count?: VehicleCountOrderByAggregateInput
     _avg?: VehicleAvgOrderByAggregateInput
@@ -6048,143 +6066,144 @@ export namespace Prisma {
     model?: StringNullableWithAggregatesFilter<"Vehicle"> | string | null
     make?: StringNullableWithAggregatesFilter<"Vehicle"> | string | null
     year?: IntNullableWithAggregatesFilter<"Vehicle"> | number | null
-    odometer_miles?: IntNullableWithAggregatesFilter<"Vehicle"> | number | null
+    odometer?: IntNullableWithAggregatesFilter<"Vehicle"> | number | null
+    useKm?: BoolWithAggregatesFilter<"Vehicle"> | boolean
     userId?: StringWithAggregatesFilter<"Vehicle"> | string
   }
 
-  export type Maintenance_ItemWhereInput = {
-    AND?: Maintenance_ItemWhereInput | Maintenance_ItemWhereInput[]
-    OR?: Maintenance_ItemWhereInput[]
-    NOT?: Maintenance_ItemWhereInput | Maintenance_ItemWhereInput[]
-    id?: IntFilter<"Maintenance_Item"> | number
-    name?: StringFilter<"Maintenance_Item"> | string
-    comments?: StringNullableFilter<"Maintenance_Item"> | string | null
-    time_interval_days?: IntNullableFilter<"Maintenance_Item"> | number | null
-    usage_interval_miles?: FloatNullableFilter<"Maintenance_Item"> | number | null
-    recurring?: BoolFilter<"Maintenance_Item"> | boolean
-    vehicleId?: StringFilter<"Maintenance_Item"> | string
+  export type MaintenanceItemWhereInput = {
+    AND?: MaintenanceItemWhereInput | MaintenanceItemWhereInput[]
+    OR?: MaintenanceItemWhereInput[]
+    NOT?: MaintenanceItemWhereInput | MaintenanceItemWhereInput[]
+    id?: IntFilter<"MaintenanceItem"> | number
+    name?: StringFilter<"MaintenanceItem"> | string
+    comments?: StringNullableFilter<"MaintenanceItem"> | string | null
+    timeIntervalDays?: IntNullableFilter<"MaintenanceItem"> | number | null
+    usageIntervalMiles?: FloatNullableFilter<"MaintenanceItem"> | number | null
+    recurring?: BoolFilter<"MaintenanceItem"> | boolean
+    vehicleId?: StringFilter<"MaintenanceItem"> | string
     vehicle?: XOR<VehicleScalarRelationFilter, VehicleWhereInput>
-    Maintenance_Entry?: Maintenance_EntryListRelationFilter
+    MaintenanceEntry?: MaintenanceEntryListRelationFilter
   }
 
-  export type Maintenance_ItemOrderByWithRelationInput = {
+  export type MaintenanceItemOrderByWithRelationInput = {
     id?: SortOrder
     name?: SortOrder
     comments?: SortOrderInput | SortOrder
-    time_interval_days?: SortOrderInput | SortOrder
-    usage_interval_miles?: SortOrderInput | SortOrder
+    timeIntervalDays?: SortOrderInput | SortOrder
+    usageIntervalMiles?: SortOrderInput | SortOrder
     recurring?: SortOrder
     vehicleId?: SortOrder
     vehicle?: VehicleOrderByWithRelationInput
-    Maintenance_Entry?: Maintenance_EntryOrderByRelationAggregateInput
+    MaintenanceEntry?: MaintenanceEntryOrderByRelationAggregateInput
   }
 
-  export type Maintenance_ItemWhereUniqueInput = Prisma.AtLeast<{
+  export type MaintenanceItemWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    AND?: Maintenance_ItemWhereInput | Maintenance_ItemWhereInput[]
-    OR?: Maintenance_ItemWhereInput[]
-    NOT?: Maintenance_ItemWhereInput | Maintenance_ItemWhereInput[]
-    name?: StringFilter<"Maintenance_Item"> | string
-    comments?: StringNullableFilter<"Maintenance_Item"> | string | null
-    time_interval_days?: IntNullableFilter<"Maintenance_Item"> | number | null
-    usage_interval_miles?: FloatNullableFilter<"Maintenance_Item"> | number | null
-    recurring?: BoolFilter<"Maintenance_Item"> | boolean
-    vehicleId?: StringFilter<"Maintenance_Item"> | string
+    AND?: MaintenanceItemWhereInput | MaintenanceItemWhereInput[]
+    OR?: MaintenanceItemWhereInput[]
+    NOT?: MaintenanceItemWhereInput | MaintenanceItemWhereInput[]
+    name?: StringFilter<"MaintenanceItem"> | string
+    comments?: StringNullableFilter<"MaintenanceItem"> | string | null
+    timeIntervalDays?: IntNullableFilter<"MaintenanceItem"> | number | null
+    usageIntervalMiles?: FloatNullableFilter<"MaintenanceItem"> | number | null
+    recurring?: BoolFilter<"MaintenanceItem"> | boolean
+    vehicleId?: StringFilter<"MaintenanceItem"> | string
     vehicle?: XOR<VehicleScalarRelationFilter, VehicleWhereInput>
-    Maintenance_Entry?: Maintenance_EntryListRelationFilter
+    MaintenanceEntry?: MaintenanceEntryListRelationFilter
   }, "id">
 
-  export type Maintenance_ItemOrderByWithAggregationInput = {
+  export type MaintenanceItemOrderByWithAggregationInput = {
     id?: SortOrder
     name?: SortOrder
     comments?: SortOrderInput | SortOrder
-    time_interval_days?: SortOrderInput | SortOrder
-    usage_interval_miles?: SortOrderInput | SortOrder
+    timeIntervalDays?: SortOrderInput | SortOrder
+    usageIntervalMiles?: SortOrderInput | SortOrder
     recurring?: SortOrder
     vehicleId?: SortOrder
-    _count?: Maintenance_ItemCountOrderByAggregateInput
-    _avg?: Maintenance_ItemAvgOrderByAggregateInput
-    _max?: Maintenance_ItemMaxOrderByAggregateInput
-    _min?: Maintenance_ItemMinOrderByAggregateInput
-    _sum?: Maintenance_ItemSumOrderByAggregateInput
+    _count?: MaintenanceItemCountOrderByAggregateInput
+    _avg?: MaintenanceItemAvgOrderByAggregateInput
+    _max?: MaintenanceItemMaxOrderByAggregateInput
+    _min?: MaintenanceItemMinOrderByAggregateInput
+    _sum?: MaintenanceItemSumOrderByAggregateInput
   }
 
-  export type Maintenance_ItemScalarWhereWithAggregatesInput = {
-    AND?: Maintenance_ItemScalarWhereWithAggregatesInput | Maintenance_ItemScalarWhereWithAggregatesInput[]
-    OR?: Maintenance_ItemScalarWhereWithAggregatesInput[]
-    NOT?: Maintenance_ItemScalarWhereWithAggregatesInput | Maintenance_ItemScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"Maintenance_Item"> | number
-    name?: StringWithAggregatesFilter<"Maintenance_Item"> | string
-    comments?: StringNullableWithAggregatesFilter<"Maintenance_Item"> | string | null
-    time_interval_days?: IntNullableWithAggregatesFilter<"Maintenance_Item"> | number | null
-    usage_interval_miles?: FloatNullableWithAggregatesFilter<"Maintenance_Item"> | number | null
-    recurring?: BoolWithAggregatesFilter<"Maintenance_Item"> | boolean
-    vehicleId?: StringWithAggregatesFilter<"Maintenance_Item"> | string
+  export type MaintenanceItemScalarWhereWithAggregatesInput = {
+    AND?: MaintenanceItemScalarWhereWithAggregatesInput | MaintenanceItemScalarWhereWithAggregatesInput[]
+    OR?: MaintenanceItemScalarWhereWithAggregatesInput[]
+    NOT?: MaintenanceItemScalarWhereWithAggregatesInput | MaintenanceItemScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"MaintenanceItem"> | number
+    name?: StringWithAggregatesFilter<"MaintenanceItem"> | string
+    comments?: StringNullableWithAggregatesFilter<"MaintenanceItem"> | string | null
+    timeIntervalDays?: IntNullableWithAggregatesFilter<"MaintenanceItem"> | number | null
+    usageIntervalMiles?: FloatNullableWithAggregatesFilter<"MaintenanceItem"> | number | null
+    recurring?: BoolWithAggregatesFilter<"MaintenanceItem"> | boolean
+    vehicleId?: StringWithAggregatesFilter<"MaintenanceItem"> | string
   }
 
-  export type Maintenance_EntryWhereInput = {
-    AND?: Maintenance_EntryWhereInput | Maintenance_EntryWhereInput[]
-    OR?: Maintenance_EntryWhereInput[]
-    NOT?: Maintenance_EntryWhereInput | Maintenance_EntryWhereInput[]
-    id?: IntFilter<"Maintenance_Entry"> | number
-    title?: StringFilter<"Maintenance_Entry"> | string
-    details?: StringFilter<"Maintenance_Entry"> | string
-    date?: DateTimeFilter<"Maintenance_Entry"> | Date | string
-    vehicleId?: StringFilter<"Maintenance_Entry"> | string
-    maintenance_ItemId?: IntNullableFilter<"Maintenance_Entry"> | number | null
+  export type MaintenanceEntryWhereInput = {
+    AND?: MaintenanceEntryWhereInput | MaintenanceEntryWhereInput[]
+    OR?: MaintenanceEntryWhereInput[]
+    NOT?: MaintenanceEntryWhereInput | MaintenanceEntryWhereInput[]
+    id?: IntFilter<"MaintenanceEntry"> | number
+    title?: StringFilter<"MaintenanceEntry"> | string
+    details?: StringFilter<"MaintenanceEntry"> | string
+    date?: DateTimeFilter<"MaintenanceEntry"> | Date | string
+    vehicleId?: StringFilter<"MaintenanceEntry"> | string
+    maintenanceItemId?: IntNullableFilter<"MaintenanceEntry"> | number | null
     vehicle?: XOR<VehicleScalarRelationFilter, VehicleWhereInput>
-    maintenance_item?: XOR<Maintenance_ItemNullableScalarRelationFilter, Maintenance_ItemWhereInput> | null
+    MaintenanceItem?: XOR<MaintenanceItemNullableScalarRelationFilter, MaintenanceItemWhereInput> | null
   }
 
-  export type Maintenance_EntryOrderByWithRelationInput = {
+  export type MaintenanceEntryOrderByWithRelationInput = {
     id?: SortOrder
     title?: SortOrder
     details?: SortOrder
     date?: SortOrder
     vehicleId?: SortOrder
-    maintenance_ItemId?: SortOrderInput | SortOrder
+    maintenanceItemId?: SortOrderInput | SortOrder
     vehicle?: VehicleOrderByWithRelationInput
-    maintenance_item?: Maintenance_ItemOrderByWithRelationInput
+    MaintenanceItem?: MaintenanceItemOrderByWithRelationInput
   }
 
-  export type Maintenance_EntryWhereUniqueInput = Prisma.AtLeast<{
+  export type MaintenanceEntryWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    AND?: Maintenance_EntryWhereInput | Maintenance_EntryWhereInput[]
-    OR?: Maintenance_EntryWhereInput[]
-    NOT?: Maintenance_EntryWhereInput | Maintenance_EntryWhereInput[]
-    title?: StringFilter<"Maintenance_Entry"> | string
-    details?: StringFilter<"Maintenance_Entry"> | string
-    date?: DateTimeFilter<"Maintenance_Entry"> | Date | string
-    vehicleId?: StringFilter<"Maintenance_Entry"> | string
-    maintenance_ItemId?: IntNullableFilter<"Maintenance_Entry"> | number | null
+    AND?: MaintenanceEntryWhereInput | MaintenanceEntryWhereInput[]
+    OR?: MaintenanceEntryWhereInput[]
+    NOT?: MaintenanceEntryWhereInput | MaintenanceEntryWhereInput[]
+    title?: StringFilter<"MaintenanceEntry"> | string
+    details?: StringFilter<"MaintenanceEntry"> | string
+    date?: DateTimeFilter<"MaintenanceEntry"> | Date | string
+    vehicleId?: StringFilter<"MaintenanceEntry"> | string
+    maintenanceItemId?: IntNullableFilter<"MaintenanceEntry"> | number | null
     vehicle?: XOR<VehicleScalarRelationFilter, VehicleWhereInput>
-    maintenance_item?: XOR<Maintenance_ItemNullableScalarRelationFilter, Maintenance_ItemWhereInput> | null
+    MaintenanceItem?: XOR<MaintenanceItemNullableScalarRelationFilter, MaintenanceItemWhereInput> | null
   }, "id">
 
-  export type Maintenance_EntryOrderByWithAggregationInput = {
+  export type MaintenanceEntryOrderByWithAggregationInput = {
     id?: SortOrder
     title?: SortOrder
     details?: SortOrder
     date?: SortOrder
     vehicleId?: SortOrder
-    maintenance_ItemId?: SortOrderInput | SortOrder
-    _count?: Maintenance_EntryCountOrderByAggregateInput
-    _avg?: Maintenance_EntryAvgOrderByAggregateInput
-    _max?: Maintenance_EntryMaxOrderByAggregateInput
-    _min?: Maintenance_EntryMinOrderByAggregateInput
-    _sum?: Maintenance_EntrySumOrderByAggregateInput
+    maintenanceItemId?: SortOrderInput | SortOrder
+    _count?: MaintenanceEntryCountOrderByAggregateInput
+    _avg?: MaintenanceEntryAvgOrderByAggregateInput
+    _max?: MaintenanceEntryMaxOrderByAggregateInput
+    _min?: MaintenanceEntryMinOrderByAggregateInput
+    _sum?: MaintenanceEntrySumOrderByAggregateInput
   }
 
-  export type Maintenance_EntryScalarWhereWithAggregatesInput = {
-    AND?: Maintenance_EntryScalarWhereWithAggregatesInput | Maintenance_EntryScalarWhereWithAggregatesInput[]
-    OR?: Maintenance_EntryScalarWhereWithAggregatesInput[]
-    NOT?: Maintenance_EntryScalarWhereWithAggregatesInput | Maintenance_EntryScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"Maintenance_Entry"> | number
-    title?: StringWithAggregatesFilter<"Maintenance_Entry"> | string
-    details?: StringWithAggregatesFilter<"Maintenance_Entry"> | string
-    date?: DateTimeWithAggregatesFilter<"Maintenance_Entry"> | Date | string
-    vehicleId?: StringWithAggregatesFilter<"Maintenance_Entry"> | string
-    maintenance_ItemId?: IntNullableWithAggregatesFilter<"Maintenance_Entry"> | number | null
+  export type MaintenanceEntryScalarWhereWithAggregatesInput = {
+    AND?: MaintenanceEntryScalarWhereWithAggregatesInput | MaintenanceEntryScalarWhereWithAggregatesInput[]
+    OR?: MaintenanceEntryScalarWhereWithAggregatesInput[]
+    NOT?: MaintenanceEntryScalarWhereWithAggregatesInput | MaintenanceEntryScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"MaintenanceEntry"> | number
+    title?: StringWithAggregatesFilter<"MaintenanceEntry"> | string
+    details?: StringWithAggregatesFilter<"MaintenanceEntry"> | string
+    date?: DateTimeWithAggregatesFilter<"MaintenanceEntry"> | Date | string
+    vehicleId?: StringWithAggregatesFilter<"MaintenanceEntry"> | string
+    maintenanceItemId?: IntNullableWithAggregatesFilter<"MaintenanceEntry"> | number | null
   }
 
   export type UserCreateInput = {
@@ -6246,10 +6265,11 @@ export namespace Prisma {
     model?: string | null
     make?: string | null
     year?: number | null
-    odometer_miles?: number | null
+    odometer?: number | null
+    useKm: boolean
     owner: UserCreateNestedOneWithoutVehicleInput
-    Maintenance_Item?: Maintenance_ItemCreateNestedManyWithoutVehicleInput
-    Maintenance_Entry?: Maintenance_EntryCreateNestedManyWithoutVehicleInput
+    MaintenanceItem?: MaintenanceItemCreateNestedManyWithoutVehicleInput
+    MaintenanceEntry?: MaintenanceEntryCreateNestedManyWithoutVehicleInput
   }
 
   export type VehicleUncheckedCreateInput = {
@@ -6258,10 +6278,11 @@ export namespace Prisma {
     model?: string | null
     make?: string | null
     year?: number | null
-    odometer_miles?: number | null
+    odometer?: number | null
+    useKm: boolean
     userId: string
-    Maintenance_Item?: Maintenance_ItemUncheckedCreateNestedManyWithoutVehicleInput
-    Maintenance_Entry?: Maintenance_EntryUncheckedCreateNestedManyWithoutVehicleInput
+    MaintenanceItem?: MaintenanceItemUncheckedCreateNestedManyWithoutVehicleInput
+    MaintenanceEntry?: MaintenanceEntryUncheckedCreateNestedManyWithoutVehicleInput
   }
 
   export type VehicleUpdateInput = {
@@ -6270,10 +6291,11 @@ export namespace Prisma {
     model?: NullableStringFieldUpdateOperationsInput | string | null
     make?: NullableStringFieldUpdateOperationsInput | string | null
     year?: NullableIntFieldUpdateOperationsInput | number | null
-    odometer_miles?: NullableIntFieldUpdateOperationsInput | number | null
+    odometer?: NullableIntFieldUpdateOperationsInput | number | null
+    useKm?: BoolFieldUpdateOperationsInput | boolean
     owner?: UserUpdateOneRequiredWithoutVehicleNestedInput
-    Maintenance_Item?: Maintenance_ItemUpdateManyWithoutVehicleNestedInput
-    Maintenance_Entry?: Maintenance_EntryUpdateManyWithoutVehicleNestedInput
+    MaintenanceItem?: MaintenanceItemUpdateManyWithoutVehicleNestedInput
+    MaintenanceEntry?: MaintenanceEntryUpdateManyWithoutVehicleNestedInput
   }
 
   export type VehicleUncheckedUpdateInput = {
@@ -6282,10 +6304,11 @@ export namespace Prisma {
     model?: NullableStringFieldUpdateOperationsInput | string | null
     make?: NullableStringFieldUpdateOperationsInput | string | null
     year?: NullableIntFieldUpdateOperationsInput | number | null
-    odometer_miles?: NullableIntFieldUpdateOperationsInput | number | null
+    odometer?: NullableIntFieldUpdateOperationsInput | number | null
+    useKm?: BoolFieldUpdateOperationsInput | boolean
     userId?: StringFieldUpdateOperationsInput | string
-    Maintenance_Item?: Maintenance_ItemUncheckedUpdateManyWithoutVehicleNestedInput
-    Maintenance_Entry?: Maintenance_EntryUncheckedUpdateManyWithoutVehicleNestedInput
+    MaintenanceItem?: MaintenanceItemUncheckedUpdateManyWithoutVehicleNestedInput
+    MaintenanceEntry?: MaintenanceEntryUncheckedUpdateManyWithoutVehicleNestedInput
   }
 
   export type VehicleCreateManyInput = {
@@ -6294,7 +6317,8 @@ export namespace Prisma {
     model?: string | null
     make?: string | null
     year?: number | null
-    odometer_miles?: number | null
+    odometer?: number | null
+    useKm: boolean
     userId: string
   }
 
@@ -6304,7 +6328,8 @@ export namespace Prisma {
     model?: NullableStringFieldUpdateOperationsInput | string | null
     make?: NullableStringFieldUpdateOperationsInput | string | null
     year?: NullableIntFieldUpdateOperationsInput | number | null
-    odometer_miles?: NullableIntFieldUpdateOperationsInput | number | null
+    odometer?: NullableIntFieldUpdateOperationsInput | number | null
+    useKm?: BoolFieldUpdateOperationsInput | boolean
   }
 
   export type VehicleUncheckedUpdateManyInput = {
@@ -6313,136 +6338,137 @@ export namespace Prisma {
     model?: NullableStringFieldUpdateOperationsInput | string | null
     make?: NullableStringFieldUpdateOperationsInput | string | null
     year?: NullableIntFieldUpdateOperationsInput | number | null
-    odometer_miles?: NullableIntFieldUpdateOperationsInput | number | null
+    odometer?: NullableIntFieldUpdateOperationsInput | number | null
+    useKm?: BoolFieldUpdateOperationsInput | boolean
     userId?: StringFieldUpdateOperationsInput | string
   }
 
-  export type Maintenance_ItemCreateInput = {
+  export type MaintenanceItemCreateInput = {
     name: string
     comments?: string | null
-    time_interval_days?: number | null
-    usage_interval_miles?: number | null
+    timeIntervalDays?: number | null
+    usageIntervalMiles?: number | null
     recurring: boolean
-    vehicle: VehicleCreateNestedOneWithoutMaintenance_ItemInput
-    Maintenance_Entry?: Maintenance_EntryCreateNestedManyWithoutMaintenance_itemInput
+    vehicle: VehicleCreateNestedOneWithoutMaintenanceItemInput
+    MaintenanceEntry?: MaintenanceEntryCreateNestedManyWithoutMaintenanceItemInput
   }
 
-  export type Maintenance_ItemUncheckedCreateInput = {
+  export type MaintenanceItemUncheckedCreateInput = {
     id?: number
     name: string
     comments?: string | null
-    time_interval_days?: number | null
-    usage_interval_miles?: number | null
+    timeIntervalDays?: number | null
+    usageIntervalMiles?: number | null
     recurring: boolean
     vehicleId: string
-    Maintenance_Entry?: Maintenance_EntryUncheckedCreateNestedManyWithoutMaintenance_itemInput
+    MaintenanceEntry?: MaintenanceEntryUncheckedCreateNestedManyWithoutMaintenanceItemInput
   }
 
-  export type Maintenance_ItemUpdateInput = {
+  export type MaintenanceItemUpdateInput = {
     name?: StringFieldUpdateOperationsInput | string
     comments?: NullableStringFieldUpdateOperationsInput | string | null
-    time_interval_days?: NullableIntFieldUpdateOperationsInput | number | null
-    usage_interval_miles?: NullableFloatFieldUpdateOperationsInput | number | null
+    timeIntervalDays?: NullableIntFieldUpdateOperationsInput | number | null
+    usageIntervalMiles?: NullableFloatFieldUpdateOperationsInput | number | null
     recurring?: BoolFieldUpdateOperationsInput | boolean
-    vehicle?: VehicleUpdateOneRequiredWithoutMaintenance_ItemNestedInput
-    Maintenance_Entry?: Maintenance_EntryUpdateManyWithoutMaintenance_itemNestedInput
+    vehicle?: VehicleUpdateOneRequiredWithoutMaintenanceItemNestedInput
+    MaintenanceEntry?: MaintenanceEntryUpdateManyWithoutMaintenanceItemNestedInput
   }
 
-  export type Maintenance_ItemUncheckedUpdateInput = {
+  export type MaintenanceItemUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     comments?: NullableStringFieldUpdateOperationsInput | string | null
-    time_interval_days?: NullableIntFieldUpdateOperationsInput | number | null
-    usage_interval_miles?: NullableFloatFieldUpdateOperationsInput | number | null
+    timeIntervalDays?: NullableIntFieldUpdateOperationsInput | number | null
+    usageIntervalMiles?: NullableFloatFieldUpdateOperationsInput | number | null
     recurring?: BoolFieldUpdateOperationsInput | boolean
     vehicleId?: StringFieldUpdateOperationsInput | string
-    Maintenance_Entry?: Maintenance_EntryUncheckedUpdateManyWithoutMaintenance_itemNestedInput
+    MaintenanceEntry?: MaintenanceEntryUncheckedUpdateManyWithoutMaintenanceItemNestedInput
   }
 
-  export type Maintenance_ItemCreateManyInput = {
+  export type MaintenanceItemCreateManyInput = {
     id?: number
     name: string
     comments?: string | null
-    time_interval_days?: number | null
-    usage_interval_miles?: number | null
+    timeIntervalDays?: number | null
+    usageIntervalMiles?: number | null
     recurring: boolean
     vehicleId: string
   }
 
-  export type Maintenance_ItemUpdateManyMutationInput = {
+  export type MaintenanceItemUpdateManyMutationInput = {
     name?: StringFieldUpdateOperationsInput | string
     comments?: NullableStringFieldUpdateOperationsInput | string | null
-    time_interval_days?: NullableIntFieldUpdateOperationsInput | number | null
-    usage_interval_miles?: NullableFloatFieldUpdateOperationsInput | number | null
+    timeIntervalDays?: NullableIntFieldUpdateOperationsInput | number | null
+    usageIntervalMiles?: NullableFloatFieldUpdateOperationsInput | number | null
     recurring?: BoolFieldUpdateOperationsInput | boolean
   }
 
-  export type Maintenance_ItemUncheckedUpdateManyInput = {
+  export type MaintenanceItemUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     comments?: NullableStringFieldUpdateOperationsInput | string | null
-    time_interval_days?: NullableIntFieldUpdateOperationsInput | number | null
-    usage_interval_miles?: NullableFloatFieldUpdateOperationsInput | number | null
+    timeIntervalDays?: NullableIntFieldUpdateOperationsInput | number | null
+    usageIntervalMiles?: NullableFloatFieldUpdateOperationsInput | number | null
     recurring?: BoolFieldUpdateOperationsInput | boolean
     vehicleId?: StringFieldUpdateOperationsInput | string
   }
 
-  export type Maintenance_EntryCreateInput = {
+  export type MaintenanceEntryCreateInput = {
     title: string
     details: string
     date: Date | string
-    vehicle: VehicleCreateNestedOneWithoutMaintenance_EntryInput
-    maintenance_item?: Maintenance_ItemCreateNestedOneWithoutMaintenance_EntryInput
+    vehicle: VehicleCreateNestedOneWithoutMaintenanceEntryInput
+    MaintenanceItem?: MaintenanceItemCreateNestedOneWithoutMaintenanceEntryInput
   }
 
-  export type Maintenance_EntryUncheckedCreateInput = {
-    id?: number
-    title: string
-    details: string
-    date: Date | string
-    vehicleId: string
-    maintenance_ItemId?: number | null
-  }
-
-  export type Maintenance_EntryUpdateInput = {
-    title?: StringFieldUpdateOperationsInput | string
-    details?: StringFieldUpdateOperationsInput | string
-    date?: DateTimeFieldUpdateOperationsInput | Date | string
-    vehicle?: VehicleUpdateOneRequiredWithoutMaintenance_EntryNestedInput
-    maintenance_item?: Maintenance_ItemUpdateOneWithoutMaintenance_EntryNestedInput
-  }
-
-  export type Maintenance_EntryUncheckedUpdateInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    title?: StringFieldUpdateOperationsInput | string
-    details?: StringFieldUpdateOperationsInput | string
-    date?: DateTimeFieldUpdateOperationsInput | Date | string
-    vehicleId?: StringFieldUpdateOperationsInput | string
-    maintenance_ItemId?: NullableIntFieldUpdateOperationsInput | number | null
-  }
-
-  export type Maintenance_EntryCreateManyInput = {
+  export type MaintenanceEntryUncheckedCreateInput = {
     id?: number
     title: string
     details: string
     date: Date | string
     vehicleId: string
-    maintenance_ItemId?: number | null
+    maintenanceItemId?: number | null
   }
 
-  export type Maintenance_EntryUpdateManyMutationInput = {
+  export type MaintenanceEntryUpdateInput = {
     title?: StringFieldUpdateOperationsInput | string
     details?: StringFieldUpdateOperationsInput | string
     date?: DateTimeFieldUpdateOperationsInput | Date | string
+    vehicle?: VehicleUpdateOneRequiredWithoutMaintenanceEntryNestedInput
+    MaintenanceItem?: MaintenanceItemUpdateOneWithoutMaintenanceEntryNestedInput
   }
 
-  export type Maintenance_EntryUncheckedUpdateManyInput = {
+  export type MaintenanceEntryUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     title?: StringFieldUpdateOperationsInput | string
     details?: StringFieldUpdateOperationsInput | string
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     vehicleId?: StringFieldUpdateOperationsInput | string
-    maintenance_ItemId?: NullableIntFieldUpdateOperationsInput | number | null
+    maintenanceItemId?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type MaintenanceEntryCreateManyInput = {
+    id?: number
+    title: string
+    details: string
+    date: Date | string
+    vehicleId: string
+    maintenanceItemId?: number | null
+  }
+
+  export type MaintenanceEntryUpdateManyMutationInput = {
+    title?: StringFieldUpdateOperationsInput | string
+    details?: StringFieldUpdateOperationsInput | string
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type MaintenanceEntryUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    title?: StringFieldUpdateOperationsInput | string
+    details?: StringFieldUpdateOperationsInput | string
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
+    vehicleId?: StringFieldUpdateOperationsInput | string
+    maintenanceItemId?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
   export type StringFilter<$PrismaModel = never> = {
@@ -6558,28 +6584,33 @@ export namespace Prisma {
     not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
+  export type BoolFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolFilter<$PrismaModel> | boolean
+  }
+
   export type UserScalarRelationFilter = {
     is?: UserWhereInput
     isNot?: UserWhereInput
   }
 
-  export type Maintenance_ItemListRelationFilter = {
-    every?: Maintenance_ItemWhereInput
-    some?: Maintenance_ItemWhereInput
-    none?: Maintenance_ItemWhereInput
+  export type MaintenanceItemListRelationFilter = {
+    every?: MaintenanceItemWhereInput
+    some?: MaintenanceItemWhereInput
+    none?: MaintenanceItemWhereInput
   }
 
-  export type Maintenance_EntryListRelationFilter = {
-    every?: Maintenance_EntryWhereInput
-    some?: Maintenance_EntryWhereInput
-    none?: Maintenance_EntryWhereInput
+  export type MaintenanceEntryListRelationFilter = {
+    every?: MaintenanceEntryWhereInput
+    some?: MaintenanceEntryWhereInput
+    none?: MaintenanceEntryWhereInput
   }
 
-  export type Maintenance_ItemOrderByRelationAggregateInput = {
+  export type MaintenanceItemOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
-  export type Maintenance_EntryOrderByRelationAggregateInput = {
+  export type MaintenanceEntryOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -6589,13 +6620,14 @@ export namespace Prisma {
     model?: SortOrder
     make?: SortOrder
     year?: SortOrder
-    odometer_miles?: SortOrder
+    odometer?: SortOrder
+    useKm?: SortOrder
     userId?: SortOrder
   }
 
   export type VehicleAvgOrderByAggregateInput = {
     year?: SortOrder
-    odometer_miles?: SortOrder
+    odometer?: SortOrder
   }
 
   export type VehicleMaxOrderByAggregateInput = {
@@ -6604,7 +6636,8 @@ export namespace Prisma {
     model?: SortOrder
     make?: SortOrder
     year?: SortOrder
-    odometer_miles?: SortOrder
+    odometer?: SortOrder
+    useKm?: SortOrder
     userId?: SortOrder
   }
 
@@ -6614,13 +6647,14 @@ export namespace Prisma {
     model?: SortOrder
     make?: SortOrder
     year?: SortOrder
-    odometer_miles?: SortOrder
+    odometer?: SortOrder
+    useKm?: SortOrder
     userId?: SortOrder
   }
 
   export type VehicleSumOrderByAggregateInput = {
     year?: SortOrder
-    odometer_miles?: SortOrder
+    odometer?: SortOrder
   }
 
   export type IntNullableWithAggregatesFilter<$PrismaModel = never> = {
@@ -6637,6 +6671,14 @@ export namespace Prisma {
     _sum?: NestedIntNullableFilter<$PrismaModel>
     _min?: NestedIntNullableFilter<$PrismaModel>
     _max?: NestedIntNullableFilter<$PrismaModel>
+  }
+
+  export type BoolWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedBoolFilter<$PrismaModel>
+    _max?: NestedBoolFilter<$PrismaModel>
   }
 
   export type IntFilter<$PrismaModel = never> = {
@@ -6661,56 +6703,51 @@ export namespace Prisma {
     not?: NestedFloatNullableFilter<$PrismaModel> | number | null
   }
 
-  export type BoolFilter<$PrismaModel = never> = {
-    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
-    not?: NestedBoolFilter<$PrismaModel> | boolean
-  }
-
   export type VehicleScalarRelationFilter = {
     is?: VehicleWhereInput
     isNot?: VehicleWhereInput
   }
 
-  export type Maintenance_ItemCountOrderByAggregateInput = {
+  export type MaintenanceItemCountOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
     comments?: SortOrder
-    time_interval_days?: SortOrder
-    usage_interval_miles?: SortOrder
+    timeIntervalDays?: SortOrder
+    usageIntervalMiles?: SortOrder
     recurring?: SortOrder
     vehicleId?: SortOrder
   }
 
-  export type Maintenance_ItemAvgOrderByAggregateInput = {
+  export type MaintenanceItemAvgOrderByAggregateInput = {
     id?: SortOrder
-    time_interval_days?: SortOrder
-    usage_interval_miles?: SortOrder
+    timeIntervalDays?: SortOrder
+    usageIntervalMiles?: SortOrder
   }
 
-  export type Maintenance_ItemMaxOrderByAggregateInput = {
+  export type MaintenanceItemMaxOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
     comments?: SortOrder
-    time_interval_days?: SortOrder
-    usage_interval_miles?: SortOrder
+    timeIntervalDays?: SortOrder
+    usageIntervalMiles?: SortOrder
     recurring?: SortOrder
     vehicleId?: SortOrder
   }
 
-  export type Maintenance_ItemMinOrderByAggregateInput = {
+  export type MaintenanceItemMinOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
     comments?: SortOrder
-    time_interval_days?: SortOrder
-    usage_interval_miles?: SortOrder
+    timeIntervalDays?: SortOrder
+    usageIntervalMiles?: SortOrder
     recurring?: SortOrder
     vehicleId?: SortOrder
   }
 
-  export type Maintenance_ItemSumOrderByAggregateInput = {
+  export type MaintenanceItemSumOrderByAggregateInput = {
     id?: SortOrder
-    time_interval_days?: SortOrder
-    usage_interval_miles?: SortOrder
+    timeIntervalDays?: SortOrder
+    usageIntervalMiles?: SortOrder
   }
 
   export type IntWithAggregatesFilter<$PrismaModel = never> = {
@@ -6745,14 +6782,6 @@ export namespace Prisma {
     _max?: NestedFloatNullableFilter<$PrismaModel>
   }
 
-  export type BoolWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
-    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedBoolFilter<$PrismaModel>
-    _max?: NestedBoolFilter<$PrismaModel>
-  }
-
   export type DateTimeFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
@@ -6764,46 +6793,46 @@ export namespace Prisma {
     not?: NestedDateTimeFilter<$PrismaModel> | Date | string
   }
 
-  export type Maintenance_ItemNullableScalarRelationFilter = {
-    is?: Maintenance_ItemWhereInput | null
-    isNot?: Maintenance_ItemWhereInput | null
+  export type MaintenanceItemNullableScalarRelationFilter = {
+    is?: MaintenanceItemWhereInput | null
+    isNot?: MaintenanceItemWhereInput | null
   }
 
-  export type Maintenance_EntryCountOrderByAggregateInput = {
+  export type MaintenanceEntryCountOrderByAggregateInput = {
     id?: SortOrder
     title?: SortOrder
     details?: SortOrder
     date?: SortOrder
     vehicleId?: SortOrder
-    maintenance_ItemId?: SortOrder
+    maintenanceItemId?: SortOrder
   }
 
-  export type Maintenance_EntryAvgOrderByAggregateInput = {
+  export type MaintenanceEntryAvgOrderByAggregateInput = {
     id?: SortOrder
-    maintenance_ItemId?: SortOrder
+    maintenanceItemId?: SortOrder
   }
 
-  export type Maintenance_EntryMaxOrderByAggregateInput = {
-    id?: SortOrder
-    title?: SortOrder
-    details?: SortOrder
-    date?: SortOrder
-    vehicleId?: SortOrder
-    maintenance_ItemId?: SortOrder
-  }
-
-  export type Maintenance_EntryMinOrderByAggregateInput = {
+  export type MaintenanceEntryMaxOrderByAggregateInput = {
     id?: SortOrder
     title?: SortOrder
     details?: SortOrder
     date?: SortOrder
     vehicleId?: SortOrder
-    maintenance_ItemId?: SortOrder
+    maintenanceItemId?: SortOrder
   }
 
-  export type Maintenance_EntrySumOrderByAggregateInput = {
+  export type MaintenanceEntryMinOrderByAggregateInput = {
     id?: SortOrder
-    maintenance_ItemId?: SortOrder
+    title?: SortOrder
+    details?: SortOrder
+    date?: SortOrder
+    vehicleId?: SortOrder
+    maintenanceItemId?: SortOrder
+  }
+
+  export type MaintenanceEntrySumOrderByAggregateInput = {
+    id?: SortOrder
+    maintenanceItemId?: SortOrder
   }
 
   export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
@@ -6876,127 +6905,35 @@ export namespace Prisma {
     connect?: UserWhereUniqueInput
   }
 
-  export type Maintenance_ItemCreateNestedManyWithoutVehicleInput = {
-    create?: XOR<Maintenance_ItemCreateWithoutVehicleInput, Maintenance_ItemUncheckedCreateWithoutVehicleInput> | Maintenance_ItemCreateWithoutVehicleInput[] | Maintenance_ItemUncheckedCreateWithoutVehicleInput[]
-    connectOrCreate?: Maintenance_ItemCreateOrConnectWithoutVehicleInput | Maintenance_ItemCreateOrConnectWithoutVehicleInput[]
-    createMany?: Maintenance_ItemCreateManyVehicleInputEnvelope
-    connect?: Maintenance_ItemWhereUniqueInput | Maintenance_ItemWhereUniqueInput[]
+  export type MaintenanceItemCreateNestedManyWithoutVehicleInput = {
+    create?: XOR<MaintenanceItemCreateWithoutVehicleInput, MaintenanceItemUncheckedCreateWithoutVehicleInput> | MaintenanceItemCreateWithoutVehicleInput[] | MaintenanceItemUncheckedCreateWithoutVehicleInput[]
+    connectOrCreate?: MaintenanceItemCreateOrConnectWithoutVehicleInput | MaintenanceItemCreateOrConnectWithoutVehicleInput[]
+    createMany?: MaintenanceItemCreateManyVehicleInputEnvelope
+    connect?: MaintenanceItemWhereUniqueInput | MaintenanceItemWhereUniqueInput[]
   }
 
-  export type Maintenance_EntryCreateNestedManyWithoutVehicleInput = {
-    create?: XOR<Maintenance_EntryCreateWithoutVehicleInput, Maintenance_EntryUncheckedCreateWithoutVehicleInput> | Maintenance_EntryCreateWithoutVehicleInput[] | Maintenance_EntryUncheckedCreateWithoutVehicleInput[]
-    connectOrCreate?: Maintenance_EntryCreateOrConnectWithoutVehicleInput | Maintenance_EntryCreateOrConnectWithoutVehicleInput[]
-    createMany?: Maintenance_EntryCreateManyVehicleInputEnvelope
-    connect?: Maintenance_EntryWhereUniqueInput | Maintenance_EntryWhereUniqueInput[]
+  export type MaintenanceEntryCreateNestedManyWithoutVehicleInput = {
+    create?: XOR<MaintenanceEntryCreateWithoutVehicleInput, MaintenanceEntryUncheckedCreateWithoutVehicleInput> | MaintenanceEntryCreateWithoutVehicleInput[] | MaintenanceEntryUncheckedCreateWithoutVehicleInput[]
+    connectOrCreate?: MaintenanceEntryCreateOrConnectWithoutVehicleInput | MaintenanceEntryCreateOrConnectWithoutVehicleInput[]
+    createMany?: MaintenanceEntryCreateManyVehicleInputEnvelope
+    connect?: MaintenanceEntryWhereUniqueInput | MaintenanceEntryWhereUniqueInput[]
   }
 
-  export type Maintenance_ItemUncheckedCreateNestedManyWithoutVehicleInput = {
-    create?: XOR<Maintenance_ItemCreateWithoutVehicleInput, Maintenance_ItemUncheckedCreateWithoutVehicleInput> | Maintenance_ItemCreateWithoutVehicleInput[] | Maintenance_ItemUncheckedCreateWithoutVehicleInput[]
-    connectOrCreate?: Maintenance_ItemCreateOrConnectWithoutVehicleInput | Maintenance_ItemCreateOrConnectWithoutVehicleInput[]
-    createMany?: Maintenance_ItemCreateManyVehicleInputEnvelope
-    connect?: Maintenance_ItemWhereUniqueInput | Maintenance_ItemWhereUniqueInput[]
+  export type MaintenanceItemUncheckedCreateNestedManyWithoutVehicleInput = {
+    create?: XOR<MaintenanceItemCreateWithoutVehicleInput, MaintenanceItemUncheckedCreateWithoutVehicleInput> | MaintenanceItemCreateWithoutVehicleInput[] | MaintenanceItemUncheckedCreateWithoutVehicleInput[]
+    connectOrCreate?: MaintenanceItemCreateOrConnectWithoutVehicleInput | MaintenanceItemCreateOrConnectWithoutVehicleInput[]
+    createMany?: MaintenanceItemCreateManyVehicleInputEnvelope
+    connect?: MaintenanceItemWhereUniqueInput | MaintenanceItemWhereUniqueInput[]
   }
 
-  export type Maintenance_EntryUncheckedCreateNestedManyWithoutVehicleInput = {
-    create?: XOR<Maintenance_EntryCreateWithoutVehicleInput, Maintenance_EntryUncheckedCreateWithoutVehicleInput> | Maintenance_EntryCreateWithoutVehicleInput[] | Maintenance_EntryUncheckedCreateWithoutVehicleInput[]
-    connectOrCreate?: Maintenance_EntryCreateOrConnectWithoutVehicleInput | Maintenance_EntryCreateOrConnectWithoutVehicleInput[]
-    createMany?: Maintenance_EntryCreateManyVehicleInputEnvelope
-    connect?: Maintenance_EntryWhereUniqueInput | Maintenance_EntryWhereUniqueInput[]
+  export type MaintenanceEntryUncheckedCreateNestedManyWithoutVehicleInput = {
+    create?: XOR<MaintenanceEntryCreateWithoutVehicleInput, MaintenanceEntryUncheckedCreateWithoutVehicleInput> | MaintenanceEntryCreateWithoutVehicleInput[] | MaintenanceEntryUncheckedCreateWithoutVehicleInput[]
+    connectOrCreate?: MaintenanceEntryCreateOrConnectWithoutVehicleInput | MaintenanceEntryCreateOrConnectWithoutVehicleInput[]
+    createMany?: MaintenanceEntryCreateManyVehicleInputEnvelope
+    connect?: MaintenanceEntryWhereUniqueInput | MaintenanceEntryWhereUniqueInput[]
   }
 
   export type NullableIntFieldUpdateOperationsInput = {
-    set?: number | null
-    increment?: number
-    decrement?: number
-    multiply?: number
-    divide?: number
-  }
-
-  export type UserUpdateOneRequiredWithoutVehicleNestedInput = {
-    create?: XOR<UserCreateWithoutVehicleInput, UserUncheckedCreateWithoutVehicleInput>
-    connectOrCreate?: UserCreateOrConnectWithoutVehicleInput
-    upsert?: UserUpsertWithoutVehicleInput
-    connect?: UserWhereUniqueInput
-    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutVehicleInput, UserUpdateWithoutVehicleInput>, UserUncheckedUpdateWithoutVehicleInput>
-  }
-
-  export type Maintenance_ItemUpdateManyWithoutVehicleNestedInput = {
-    create?: XOR<Maintenance_ItemCreateWithoutVehicleInput, Maintenance_ItemUncheckedCreateWithoutVehicleInput> | Maintenance_ItemCreateWithoutVehicleInput[] | Maintenance_ItemUncheckedCreateWithoutVehicleInput[]
-    connectOrCreate?: Maintenance_ItemCreateOrConnectWithoutVehicleInput | Maintenance_ItemCreateOrConnectWithoutVehicleInput[]
-    upsert?: Maintenance_ItemUpsertWithWhereUniqueWithoutVehicleInput | Maintenance_ItemUpsertWithWhereUniqueWithoutVehicleInput[]
-    createMany?: Maintenance_ItemCreateManyVehicleInputEnvelope
-    set?: Maintenance_ItemWhereUniqueInput | Maintenance_ItemWhereUniqueInput[]
-    disconnect?: Maintenance_ItemWhereUniqueInput | Maintenance_ItemWhereUniqueInput[]
-    delete?: Maintenance_ItemWhereUniqueInput | Maintenance_ItemWhereUniqueInput[]
-    connect?: Maintenance_ItemWhereUniqueInput | Maintenance_ItemWhereUniqueInput[]
-    update?: Maintenance_ItemUpdateWithWhereUniqueWithoutVehicleInput | Maintenance_ItemUpdateWithWhereUniqueWithoutVehicleInput[]
-    updateMany?: Maintenance_ItemUpdateManyWithWhereWithoutVehicleInput | Maintenance_ItemUpdateManyWithWhereWithoutVehicleInput[]
-    deleteMany?: Maintenance_ItemScalarWhereInput | Maintenance_ItemScalarWhereInput[]
-  }
-
-  export type Maintenance_EntryUpdateManyWithoutVehicleNestedInput = {
-    create?: XOR<Maintenance_EntryCreateWithoutVehicleInput, Maintenance_EntryUncheckedCreateWithoutVehicleInput> | Maintenance_EntryCreateWithoutVehicleInput[] | Maintenance_EntryUncheckedCreateWithoutVehicleInput[]
-    connectOrCreate?: Maintenance_EntryCreateOrConnectWithoutVehicleInput | Maintenance_EntryCreateOrConnectWithoutVehicleInput[]
-    upsert?: Maintenance_EntryUpsertWithWhereUniqueWithoutVehicleInput | Maintenance_EntryUpsertWithWhereUniqueWithoutVehicleInput[]
-    createMany?: Maintenance_EntryCreateManyVehicleInputEnvelope
-    set?: Maintenance_EntryWhereUniqueInput | Maintenance_EntryWhereUniqueInput[]
-    disconnect?: Maintenance_EntryWhereUniqueInput | Maintenance_EntryWhereUniqueInput[]
-    delete?: Maintenance_EntryWhereUniqueInput | Maintenance_EntryWhereUniqueInput[]
-    connect?: Maintenance_EntryWhereUniqueInput | Maintenance_EntryWhereUniqueInput[]
-    update?: Maintenance_EntryUpdateWithWhereUniqueWithoutVehicleInput | Maintenance_EntryUpdateWithWhereUniqueWithoutVehicleInput[]
-    updateMany?: Maintenance_EntryUpdateManyWithWhereWithoutVehicleInput | Maintenance_EntryUpdateManyWithWhereWithoutVehicleInput[]
-    deleteMany?: Maintenance_EntryScalarWhereInput | Maintenance_EntryScalarWhereInput[]
-  }
-
-  export type Maintenance_ItemUncheckedUpdateManyWithoutVehicleNestedInput = {
-    create?: XOR<Maintenance_ItemCreateWithoutVehicleInput, Maintenance_ItemUncheckedCreateWithoutVehicleInput> | Maintenance_ItemCreateWithoutVehicleInput[] | Maintenance_ItemUncheckedCreateWithoutVehicleInput[]
-    connectOrCreate?: Maintenance_ItemCreateOrConnectWithoutVehicleInput | Maintenance_ItemCreateOrConnectWithoutVehicleInput[]
-    upsert?: Maintenance_ItemUpsertWithWhereUniqueWithoutVehicleInput | Maintenance_ItemUpsertWithWhereUniqueWithoutVehicleInput[]
-    createMany?: Maintenance_ItemCreateManyVehicleInputEnvelope
-    set?: Maintenance_ItemWhereUniqueInput | Maintenance_ItemWhereUniqueInput[]
-    disconnect?: Maintenance_ItemWhereUniqueInput | Maintenance_ItemWhereUniqueInput[]
-    delete?: Maintenance_ItemWhereUniqueInput | Maintenance_ItemWhereUniqueInput[]
-    connect?: Maintenance_ItemWhereUniqueInput | Maintenance_ItemWhereUniqueInput[]
-    update?: Maintenance_ItemUpdateWithWhereUniqueWithoutVehicleInput | Maintenance_ItemUpdateWithWhereUniqueWithoutVehicleInput[]
-    updateMany?: Maintenance_ItemUpdateManyWithWhereWithoutVehicleInput | Maintenance_ItemUpdateManyWithWhereWithoutVehicleInput[]
-    deleteMany?: Maintenance_ItemScalarWhereInput | Maintenance_ItemScalarWhereInput[]
-  }
-
-  export type Maintenance_EntryUncheckedUpdateManyWithoutVehicleNestedInput = {
-    create?: XOR<Maintenance_EntryCreateWithoutVehicleInput, Maintenance_EntryUncheckedCreateWithoutVehicleInput> | Maintenance_EntryCreateWithoutVehicleInput[] | Maintenance_EntryUncheckedCreateWithoutVehicleInput[]
-    connectOrCreate?: Maintenance_EntryCreateOrConnectWithoutVehicleInput | Maintenance_EntryCreateOrConnectWithoutVehicleInput[]
-    upsert?: Maintenance_EntryUpsertWithWhereUniqueWithoutVehicleInput | Maintenance_EntryUpsertWithWhereUniqueWithoutVehicleInput[]
-    createMany?: Maintenance_EntryCreateManyVehicleInputEnvelope
-    set?: Maintenance_EntryWhereUniqueInput | Maintenance_EntryWhereUniqueInput[]
-    disconnect?: Maintenance_EntryWhereUniqueInput | Maintenance_EntryWhereUniqueInput[]
-    delete?: Maintenance_EntryWhereUniqueInput | Maintenance_EntryWhereUniqueInput[]
-    connect?: Maintenance_EntryWhereUniqueInput | Maintenance_EntryWhereUniqueInput[]
-    update?: Maintenance_EntryUpdateWithWhereUniqueWithoutVehicleInput | Maintenance_EntryUpdateWithWhereUniqueWithoutVehicleInput[]
-    updateMany?: Maintenance_EntryUpdateManyWithWhereWithoutVehicleInput | Maintenance_EntryUpdateManyWithWhereWithoutVehicleInput[]
-    deleteMany?: Maintenance_EntryScalarWhereInput | Maintenance_EntryScalarWhereInput[]
-  }
-
-  export type VehicleCreateNestedOneWithoutMaintenance_ItemInput = {
-    create?: XOR<VehicleCreateWithoutMaintenance_ItemInput, VehicleUncheckedCreateWithoutMaintenance_ItemInput>
-    connectOrCreate?: VehicleCreateOrConnectWithoutMaintenance_ItemInput
-    connect?: VehicleWhereUniqueInput
-  }
-
-  export type Maintenance_EntryCreateNestedManyWithoutMaintenance_itemInput = {
-    create?: XOR<Maintenance_EntryCreateWithoutMaintenance_itemInput, Maintenance_EntryUncheckedCreateWithoutMaintenance_itemInput> | Maintenance_EntryCreateWithoutMaintenance_itemInput[] | Maintenance_EntryUncheckedCreateWithoutMaintenance_itemInput[]
-    connectOrCreate?: Maintenance_EntryCreateOrConnectWithoutMaintenance_itemInput | Maintenance_EntryCreateOrConnectWithoutMaintenance_itemInput[]
-    createMany?: Maintenance_EntryCreateManyMaintenance_itemInputEnvelope
-    connect?: Maintenance_EntryWhereUniqueInput | Maintenance_EntryWhereUniqueInput[]
-  }
-
-  export type Maintenance_EntryUncheckedCreateNestedManyWithoutMaintenance_itemInput = {
-    create?: XOR<Maintenance_EntryCreateWithoutMaintenance_itemInput, Maintenance_EntryUncheckedCreateWithoutMaintenance_itemInput> | Maintenance_EntryCreateWithoutMaintenance_itemInput[] | Maintenance_EntryUncheckedCreateWithoutMaintenance_itemInput[]
-    connectOrCreate?: Maintenance_EntryCreateOrConnectWithoutMaintenance_itemInput | Maintenance_EntryCreateOrConnectWithoutMaintenance_itemInput[]
-    createMany?: Maintenance_EntryCreateManyMaintenance_itemInputEnvelope
-    connect?: Maintenance_EntryWhereUniqueInput | Maintenance_EntryWhereUniqueInput[]
-  }
-
-  export type NullableFloatFieldUpdateOperationsInput = {
     set?: number | null
     increment?: number
     decrement?: number
@@ -7008,26 +6945,118 @@ export namespace Prisma {
     set?: boolean
   }
 
-  export type VehicleUpdateOneRequiredWithoutMaintenance_ItemNestedInput = {
-    create?: XOR<VehicleCreateWithoutMaintenance_ItemInput, VehicleUncheckedCreateWithoutMaintenance_ItemInput>
-    connectOrCreate?: VehicleCreateOrConnectWithoutMaintenance_ItemInput
-    upsert?: VehicleUpsertWithoutMaintenance_ItemInput
-    connect?: VehicleWhereUniqueInput
-    update?: XOR<XOR<VehicleUpdateToOneWithWhereWithoutMaintenance_ItemInput, VehicleUpdateWithoutMaintenance_ItemInput>, VehicleUncheckedUpdateWithoutMaintenance_ItemInput>
+  export type UserUpdateOneRequiredWithoutVehicleNestedInput = {
+    create?: XOR<UserCreateWithoutVehicleInput, UserUncheckedCreateWithoutVehicleInput>
+    connectOrCreate?: UserCreateOrConnectWithoutVehicleInput
+    upsert?: UserUpsertWithoutVehicleInput
+    connect?: UserWhereUniqueInput
+    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutVehicleInput, UserUpdateWithoutVehicleInput>, UserUncheckedUpdateWithoutVehicleInput>
   }
 
-  export type Maintenance_EntryUpdateManyWithoutMaintenance_itemNestedInput = {
-    create?: XOR<Maintenance_EntryCreateWithoutMaintenance_itemInput, Maintenance_EntryUncheckedCreateWithoutMaintenance_itemInput> | Maintenance_EntryCreateWithoutMaintenance_itemInput[] | Maintenance_EntryUncheckedCreateWithoutMaintenance_itemInput[]
-    connectOrCreate?: Maintenance_EntryCreateOrConnectWithoutMaintenance_itemInput | Maintenance_EntryCreateOrConnectWithoutMaintenance_itemInput[]
-    upsert?: Maintenance_EntryUpsertWithWhereUniqueWithoutMaintenance_itemInput | Maintenance_EntryUpsertWithWhereUniqueWithoutMaintenance_itemInput[]
-    createMany?: Maintenance_EntryCreateManyMaintenance_itemInputEnvelope
-    set?: Maintenance_EntryWhereUniqueInput | Maintenance_EntryWhereUniqueInput[]
-    disconnect?: Maintenance_EntryWhereUniqueInput | Maintenance_EntryWhereUniqueInput[]
-    delete?: Maintenance_EntryWhereUniqueInput | Maintenance_EntryWhereUniqueInput[]
-    connect?: Maintenance_EntryWhereUniqueInput | Maintenance_EntryWhereUniqueInput[]
-    update?: Maintenance_EntryUpdateWithWhereUniqueWithoutMaintenance_itemInput | Maintenance_EntryUpdateWithWhereUniqueWithoutMaintenance_itemInput[]
-    updateMany?: Maintenance_EntryUpdateManyWithWhereWithoutMaintenance_itemInput | Maintenance_EntryUpdateManyWithWhereWithoutMaintenance_itemInput[]
-    deleteMany?: Maintenance_EntryScalarWhereInput | Maintenance_EntryScalarWhereInput[]
+  export type MaintenanceItemUpdateManyWithoutVehicleNestedInput = {
+    create?: XOR<MaintenanceItemCreateWithoutVehicleInput, MaintenanceItemUncheckedCreateWithoutVehicleInput> | MaintenanceItemCreateWithoutVehicleInput[] | MaintenanceItemUncheckedCreateWithoutVehicleInput[]
+    connectOrCreate?: MaintenanceItemCreateOrConnectWithoutVehicleInput | MaintenanceItemCreateOrConnectWithoutVehicleInput[]
+    upsert?: MaintenanceItemUpsertWithWhereUniqueWithoutVehicleInput | MaintenanceItemUpsertWithWhereUniqueWithoutVehicleInput[]
+    createMany?: MaintenanceItemCreateManyVehicleInputEnvelope
+    set?: MaintenanceItemWhereUniqueInput | MaintenanceItemWhereUniqueInput[]
+    disconnect?: MaintenanceItemWhereUniqueInput | MaintenanceItemWhereUniqueInput[]
+    delete?: MaintenanceItemWhereUniqueInput | MaintenanceItemWhereUniqueInput[]
+    connect?: MaintenanceItemWhereUniqueInput | MaintenanceItemWhereUniqueInput[]
+    update?: MaintenanceItemUpdateWithWhereUniqueWithoutVehicleInput | MaintenanceItemUpdateWithWhereUniqueWithoutVehicleInput[]
+    updateMany?: MaintenanceItemUpdateManyWithWhereWithoutVehicleInput | MaintenanceItemUpdateManyWithWhereWithoutVehicleInput[]
+    deleteMany?: MaintenanceItemScalarWhereInput | MaintenanceItemScalarWhereInput[]
+  }
+
+  export type MaintenanceEntryUpdateManyWithoutVehicleNestedInput = {
+    create?: XOR<MaintenanceEntryCreateWithoutVehicleInput, MaintenanceEntryUncheckedCreateWithoutVehicleInput> | MaintenanceEntryCreateWithoutVehicleInput[] | MaintenanceEntryUncheckedCreateWithoutVehicleInput[]
+    connectOrCreate?: MaintenanceEntryCreateOrConnectWithoutVehicleInput | MaintenanceEntryCreateOrConnectWithoutVehicleInput[]
+    upsert?: MaintenanceEntryUpsertWithWhereUniqueWithoutVehicleInput | MaintenanceEntryUpsertWithWhereUniqueWithoutVehicleInput[]
+    createMany?: MaintenanceEntryCreateManyVehicleInputEnvelope
+    set?: MaintenanceEntryWhereUniqueInput | MaintenanceEntryWhereUniqueInput[]
+    disconnect?: MaintenanceEntryWhereUniqueInput | MaintenanceEntryWhereUniqueInput[]
+    delete?: MaintenanceEntryWhereUniqueInput | MaintenanceEntryWhereUniqueInput[]
+    connect?: MaintenanceEntryWhereUniqueInput | MaintenanceEntryWhereUniqueInput[]
+    update?: MaintenanceEntryUpdateWithWhereUniqueWithoutVehicleInput | MaintenanceEntryUpdateWithWhereUniqueWithoutVehicleInput[]
+    updateMany?: MaintenanceEntryUpdateManyWithWhereWithoutVehicleInput | MaintenanceEntryUpdateManyWithWhereWithoutVehicleInput[]
+    deleteMany?: MaintenanceEntryScalarWhereInput | MaintenanceEntryScalarWhereInput[]
+  }
+
+  export type MaintenanceItemUncheckedUpdateManyWithoutVehicleNestedInput = {
+    create?: XOR<MaintenanceItemCreateWithoutVehicleInput, MaintenanceItemUncheckedCreateWithoutVehicleInput> | MaintenanceItemCreateWithoutVehicleInput[] | MaintenanceItemUncheckedCreateWithoutVehicleInput[]
+    connectOrCreate?: MaintenanceItemCreateOrConnectWithoutVehicleInput | MaintenanceItemCreateOrConnectWithoutVehicleInput[]
+    upsert?: MaintenanceItemUpsertWithWhereUniqueWithoutVehicleInput | MaintenanceItemUpsertWithWhereUniqueWithoutVehicleInput[]
+    createMany?: MaintenanceItemCreateManyVehicleInputEnvelope
+    set?: MaintenanceItemWhereUniqueInput | MaintenanceItemWhereUniqueInput[]
+    disconnect?: MaintenanceItemWhereUniqueInput | MaintenanceItemWhereUniqueInput[]
+    delete?: MaintenanceItemWhereUniqueInput | MaintenanceItemWhereUniqueInput[]
+    connect?: MaintenanceItemWhereUniqueInput | MaintenanceItemWhereUniqueInput[]
+    update?: MaintenanceItemUpdateWithWhereUniqueWithoutVehicleInput | MaintenanceItemUpdateWithWhereUniqueWithoutVehicleInput[]
+    updateMany?: MaintenanceItemUpdateManyWithWhereWithoutVehicleInput | MaintenanceItemUpdateManyWithWhereWithoutVehicleInput[]
+    deleteMany?: MaintenanceItemScalarWhereInput | MaintenanceItemScalarWhereInput[]
+  }
+
+  export type MaintenanceEntryUncheckedUpdateManyWithoutVehicleNestedInput = {
+    create?: XOR<MaintenanceEntryCreateWithoutVehicleInput, MaintenanceEntryUncheckedCreateWithoutVehicleInput> | MaintenanceEntryCreateWithoutVehicleInput[] | MaintenanceEntryUncheckedCreateWithoutVehicleInput[]
+    connectOrCreate?: MaintenanceEntryCreateOrConnectWithoutVehicleInput | MaintenanceEntryCreateOrConnectWithoutVehicleInput[]
+    upsert?: MaintenanceEntryUpsertWithWhereUniqueWithoutVehicleInput | MaintenanceEntryUpsertWithWhereUniqueWithoutVehicleInput[]
+    createMany?: MaintenanceEntryCreateManyVehicleInputEnvelope
+    set?: MaintenanceEntryWhereUniqueInput | MaintenanceEntryWhereUniqueInput[]
+    disconnect?: MaintenanceEntryWhereUniqueInput | MaintenanceEntryWhereUniqueInput[]
+    delete?: MaintenanceEntryWhereUniqueInput | MaintenanceEntryWhereUniqueInput[]
+    connect?: MaintenanceEntryWhereUniqueInput | MaintenanceEntryWhereUniqueInput[]
+    update?: MaintenanceEntryUpdateWithWhereUniqueWithoutVehicleInput | MaintenanceEntryUpdateWithWhereUniqueWithoutVehicleInput[]
+    updateMany?: MaintenanceEntryUpdateManyWithWhereWithoutVehicleInput | MaintenanceEntryUpdateManyWithWhereWithoutVehicleInput[]
+    deleteMany?: MaintenanceEntryScalarWhereInput | MaintenanceEntryScalarWhereInput[]
+  }
+
+  export type VehicleCreateNestedOneWithoutMaintenanceItemInput = {
+    create?: XOR<VehicleCreateWithoutMaintenanceItemInput, VehicleUncheckedCreateWithoutMaintenanceItemInput>
+    connectOrCreate?: VehicleCreateOrConnectWithoutMaintenanceItemInput
+    connect?: VehicleWhereUniqueInput
+  }
+
+  export type MaintenanceEntryCreateNestedManyWithoutMaintenanceItemInput = {
+    create?: XOR<MaintenanceEntryCreateWithoutMaintenanceItemInput, MaintenanceEntryUncheckedCreateWithoutMaintenanceItemInput> | MaintenanceEntryCreateWithoutMaintenanceItemInput[] | MaintenanceEntryUncheckedCreateWithoutMaintenanceItemInput[]
+    connectOrCreate?: MaintenanceEntryCreateOrConnectWithoutMaintenanceItemInput | MaintenanceEntryCreateOrConnectWithoutMaintenanceItemInput[]
+    createMany?: MaintenanceEntryCreateManyMaintenanceItemInputEnvelope
+    connect?: MaintenanceEntryWhereUniqueInput | MaintenanceEntryWhereUniqueInput[]
+  }
+
+  export type MaintenanceEntryUncheckedCreateNestedManyWithoutMaintenanceItemInput = {
+    create?: XOR<MaintenanceEntryCreateWithoutMaintenanceItemInput, MaintenanceEntryUncheckedCreateWithoutMaintenanceItemInput> | MaintenanceEntryCreateWithoutMaintenanceItemInput[] | MaintenanceEntryUncheckedCreateWithoutMaintenanceItemInput[]
+    connectOrCreate?: MaintenanceEntryCreateOrConnectWithoutMaintenanceItemInput | MaintenanceEntryCreateOrConnectWithoutMaintenanceItemInput[]
+    createMany?: MaintenanceEntryCreateManyMaintenanceItemInputEnvelope
+    connect?: MaintenanceEntryWhereUniqueInput | MaintenanceEntryWhereUniqueInput[]
+  }
+
+  export type NullableFloatFieldUpdateOperationsInput = {
+    set?: number | null
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
+  }
+
+  export type VehicleUpdateOneRequiredWithoutMaintenanceItemNestedInput = {
+    create?: XOR<VehicleCreateWithoutMaintenanceItemInput, VehicleUncheckedCreateWithoutMaintenanceItemInput>
+    connectOrCreate?: VehicleCreateOrConnectWithoutMaintenanceItemInput
+    upsert?: VehicleUpsertWithoutMaintenanceItemInput
+    connect?: VehicleWhereUniqueInput
+    update?: XOR<XOR<VehicleUpdateToOneWithWhereWithoutMaintenanceItemInput, VehicleUpdateWithoutMaintenanceItemInput>, VehicleUncheckedUpdateWithoutMaintenanceItemInput>
+  }
+
+  export type MaintenanceEntryUpdateManyWithoutMaintenanceItemNestedInput = {
+    create?: XOR<MaintenanceEntryCreateWithoutMaintenanceItemInput, MaintenanceEntryUncheckedCreateWithoutMaintenanceItemInput> | MaintenanceEntryCreateWithoutMaintenanceItemInput[] | MaintenanceEntryUncheckedCreateWithoutMaintenanceItemInput[]
+    connectOrCreate?: MaintenanceEntryCreateOrConnectWithoutMaintenanceItemInput | MaintenanceEntryCreateOrConnectWithoutMaintenanceItemInput[]
+    upsert?: MaintenanceEntryUpsertWithWhereUniqueWithoutMaintenanceItemInput | MaintenanceEntryUpsertWithWhereUniqueWithoutMaintenanceItemInput[]
+    createMany?: MaintenanceEntryCreateManyMaintenanceItemInputEnvelope
+    set?: MaintenanceEntryWhereUniqueInput | MaintenanceEntryWhereUniqueInput[]
+    disconnect?: MaintenanceEntryWhereUniqueInput | MaintenanceEntryWhereUniqueInput[]
+    delete?: MaintenanceEntryWhereUniqueInput | MaintenanceEntryWhereUniqueInput[]
+    connect?: MaintenanceEntryWhereUniqueInput | MaintenanceEntryWhereUniqueInput[]
+    update?: MaintenanceEntryUpdateWithWhereUniqueWithoutMaintenanceItemInput | MaintenanceEntryUpdateWithWhereUniqueWithoutMaintenanceItemInput[]
+    updateMany?: MaintenanceEntryUpdateManyWithWhereWithoutMaintenanceItemInput | MaintenanceEntryUpdateManyWithWhereWithoutMaintenanceItemInput[]
+    deleteMany?: MaintenanceEntryScalarWhereInput | MaintenanceEntryScalarWhereInput[]
   }
 
   export type IntFieldUpdateOperationsInput = {
@@ -7038,52 +7067,52 @@ export namespace Prisma {
     divide?: number
   }
 
-  export type Maintenance_EntryUncheckedUpdateManyWithoutMaintenance_itemNestedInput = {
-    create?: XOR<Maintenance_EntryCreateWithoutMaintenance_itemInput, Maintenance_EntryUncheckedCreateWithoutMaintenance_itemInput> | Maintenance_EntryCreateWithoutMaintenance_itemInput[] | Maintenance_EntryUncheckedCreateWithoutMaintenance_itemInput[]
-    connectOrCreate?: Maintenance_EntryCreateOrConnectWithoutMaintenance_itemInput | Maintenance_EntryCreateOrConnectWithoutMaintenance_itemInput[]
-    upsert?: Maintenance_EntryUpsertWithWhereUniqueWithoutMaintenance_itemInput | Maintenance_EntryUpsertWithWhereUniqueWithoutMaintenance_itemInput[]
-    createMany?: Maintenance_EntryCreateManyMaintenance_itemInputEnvelope
-    set?: Maintenance_EntryWhereUniqueInput | Maintenance_EntryWhereUniqueInput[]
-    disconnect?: Maintenance_EntryWhereUniqueInput | Maintenance_EntryWhereUniqueInput[]
-    delete?: Maintenance_EntryWhereUniqueInput | Maintenance_EntryWhereUniqueInput[]
-    connect?: Maintenance_EntryWhereUniqueInput | Maintenance_EntryWhereUniqueInput[]
-    update?: Maintenance_EntryUpdateWithWhereUniqueWithoutMaintenance_itemInput | Maintenance_EntryUpdateWithWhereUniqueWithoutMaintenance_itemInput[]
-    updateMany?: Maintenance_EntryUpdateManyWithWhereWithoutMaintenance_itemInput | Maintenance_EntryUpdateManyWithWhereWithoutMaintenance_itemInput[]
-    deleteMany?: Maintenance_EntryScalarWhereInput | Maintenance_EntryScalarWhereInput[]
+  export type MaintenanceEntryUncheckedUpdateManyWithoutMaintenanceItemNestedInput = {
+    create?: XOR<MaintenanceEntryCreateWithoutMaintenanceItemInput, MaintenanceEntryUncheckedCreateWithoutMaintenanceItemInput> | MaintenanceEntryCreateWithoutMaintenanceItemInput[] | MaintenanceEntryUncheckedCreateWithoutMaintenanceItemInput[]
+    connectOrCreate?: MaintenanceEntryCreateOrConnectWithoutMaintenanceItemInput | MaintenanceEntryCreateOrConnectWithoutMaintenanceItemInput[]
+    upsert?: MaintenanceEntryUpsertWithWhereUniqueWithoutMaintenanceItemInput | MaintenanceEntryUpsertWithWhereUniqueWithoutMaintenanceItemInput[]
+    createMany?: MaintenanceEntryCreateManyMaintenanceItemInputEnvelope
+    set?: MaintenanceEntryWhereUniqueInput | MaintenanceEntryWhereUniqueInput[]
+    disconnect?: MaintenanceEntryWhereUniqueInput | MaintenanceEntryWhereUniqueInput[]
+    delete?: MaintenanceEntryWhereUniqueInput | MaintenanceEntryWhereUniqueInput[]
+    connect?: MaintenanceEntryWhereUniqueInput | MaintenanceEntryWhereUniqueInput[]
+    update?: MaintenanceEntryUpdateWithWhereUniqueWithoutMaintenanceItemInput | MaintenanceEntryUpdateWithWhereUniqueWithoutMaintenanceItemInput[]
+    updateMany?: MaintenanceEntryUpdateManyWithWhereWithoutMaintenanceItemInput | MaintenanceEntryUpdateManyWithWhereWithoutMaintenanceItemInput[]
+    deleteMany?: MaintenanceEntryScalarWhereInput | MaintenanceEntryScalarWhereInput[]
   }
 
-  export type VehicleCreateNestedOneWithoutMaintenance_EntryInput = {
-    create?: XOR<VehicleCreateWithoutMaintenance_EntryInput, VehicleUncheckedCreateWithoutMaintenance_EntryInput>
-    connectOrCreate?: VehicleCreateOrConnectWithoutMaintenance_EntryInput
+  export type VehicleCreateNestedOneWithoutMaintenanceEntryInput = {
+    create?: XOR<VehicleCreateWithoutMaintenanceEntryInput, VehicleUncheckedCreateWithoutMaintenanceEntryInput>
+    connectOrCreate?: VehicleCreateOrConnectWithoutMaintenanceEntryInput
     connect?: VehicleWhereUniqueInput
   }
 
-  export type Maintenance_ItemCreateNestedOneWithoutMaintenance_EntryInput = {
-    create?: XOR<Maintenance_ItemCreateWithoutMaintenance_EntryInput, Maintenance_ItemUncheckedCreateWithoutMaintenance_EntryInput>
-    connectOrCreate?: Maintenance_ItemCreateOrConnectWithoutMaintenance_EntryInput
-    connect?: Maintenance_ItemWhereUniqueInput
+  export type MaintenanceItemCreateNestedOneWithoutMaintenanceEntryInput = {
+    create?: XOR<MaintenanceItemCreateWithoutMaintenanceEntryInput, MaintenanceItemUncheckedCreateWithoutMaintenanceEntryInput>
+    connectOrCreate?: MaintenanceItemCreateOrConnectWithoutMaintenanceEntryInput
+    connect?: MaintenanceItemWhereUniqueInput
   }
 
   export type DateTimeFieldUpdateOperationsInput = {
     set?: Date | string
   }
 
-  export type VehicleUpdateOneRequiredWithoutMaintenance_EntryNestedInput = {
-    create?: XOR<VehicleCreateWithoutMaintenance_EntryInput, VehicleUncheckedCreateWithoutMaintenance_EntryInput>
-    connectOrCreate?: VehicleCreateOrConnectWithoutMaintenance_EntryInput
-    upsert?: VehicleUpsertWithoutMaintenance_EntryInput
+  export type VehicleUpdateOneRequiredWithoutMaintenanceEntryNestedInput = {
+    create?: XOR<VehicleCreateWithoutMaintenanceEntryInput, VehicleUncheckedCreateWithoutMaintenanceEntryInput>
+    connectOrCreate?: VehicleCreateOrConnectWithoutMaintenanceEntryInput
+    upsert?: VehicleUpsertWithoutMaintenanceEntryInput
     connect?: VehicleWhereUniqueInput
-    update?: XOR<XOR<VehicleUpdateToOneWithWhereWithoutMaintenance_EntryInput, VehicleUpdateWithoutMaintenance_EntryInput>, VehicleUncheckedUpdateWithoutMaintenance_EntryInput>
+    update?: XOR<XOR<VehicleUpdateToOneWithWhereWithoutMaintenanceEntryInput, VehicleUpdateWithoutMaintenanceEntryInput>, VehicleUncheckedUpdateWithoutMaintenanceEntryInput>
   }
 
-  export type Maintenance_ItemUpdateOneWithoutMaintenance_EntryNestedInput = {
-    create?: XOR<Maintenance_ItemCreateWithoutMaintenance_EntryInput, Maintenance_ItemUncheckedCreateWithoutMaintenance_EntryInput>
-    connectOrCreate?: Maintenance_ItemCreateOrConnectWithoutMaintenance_EntryInput
-    upsert?: Maintenance_ItemUpsertWithoutMaintenance_EntryInput
-    disconnect?: Maintenance_ItemWhereInput | boolean
-    delete?: Maintenance_ItemWhereInput | boolean
-    connect?: Maintenance_ItemWhereUniqueInput
-    update?: XOR<XOR<Maintenance_ItemUpdateToOneWithWhereWithoutMaintenance_EntryInput, Maintenance_ItemUpdateWithoutMaintenance_EntryInput>, Maintenance_ItemUncheckedUpdateWithoutMaintenance_EntryInput>
+  export type MaintenanceItemUpdateOneWithoutMaintenanceEntryNestedInput = {
+    create?: XOR<MaintenanceItemCreateWithoutMaintenanceEntryInput, MaintenanceItemUncheckedCreateWithoutMaintenanceEntryInput>
+    connectOrCreate?: MaintenanceItemCreateOrConnectWithoutMaintenanceEntryInput
+    upsert?: MaintenanceItemUpsertWithoutMaintenanceEntryInput
+    disconnect?: MaintenanceItemWhereInput | boolean
+    delete?: MaintenanceItemWhereInput | boolean
+    connect?: MaintenanceItemWhereUniqueInput
+    update?: XOR<XOR<MaintenanceItemUpdateToOneWithWhereWithoutMaintenanceEntryInput, MaintenanceItemUpdateWithoutMaintenanceEntryInput>, MaintenanceItemUncheckedUpdateWithoutMaintenanceEntryInput>
   }
 
   export type NestedStringFilter<$PrismaModel = never> = {
@@ -7170,6 +7199,11 @@ export namespace Prisma {
     not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
+  export type NestedBoolFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolFilter<$PrismaModel> | boolean
+  }
+
   export type NestedIntNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel> | null
     in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
@@ -7197,9 +7231,12 @@ export namespace Prisma {
     not?: NestedFloatNullableFilter<$PrismaModel> | number | null
   }
 
-  export type NestedBoolFilter<$PrismaModel = never> = {
+  export type NestedBoolWithAggregatesFilter<$PrismaModel = never> = {
     equals?: boolean | BooleanFieldRefInput<$PrismaModel>
-    not?: NestedBoolFilter<$PrismaModel> | boolean
+    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedBoolFilter<$PrismaModel>
+    _max?: NestedBoolFilter<$PrismaModel>
   }
 
   export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
@@ -7245,14 +7282,6 @@ export namespace Prisma {
     _max?: NestedFloatNullableFilter<$PrismaModel>
   }
 
-  export type NestedBoolWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
-    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedBoolFilter<$PrismaModel>
-    _max?: NestedBoolFilter<$PrismaModel>
-  }
-
   export type NestedDateTimeFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
@@ -7284,9 +7313,10 @@ export namespace Prisma {
     model?: string | null
     make?: string | null
     year?: number | null
-    odometer_miles?: number | null
-    Maintenance_Item?: Maintenance_ItemCreateNestedManyWithoutVehicleInput
-    Maintenance_Entry?: Maintenance_EntryCreateNestedManyWithoutVehicleInput
+    odometer?: number | null
+    useKm: boolean
+    MaintenanceItem?: MaintenanceItemCreateNestedManyWithoutVehicleInput
+    MaintenanceEntry?: MaintenanceEntryCreateNestedManyWithoutVehicleInput
   }
 
   export type VehicleUncheckedCreateWithoutOwnerInput = {
@@ -7295,9 +7325,10 @@ export namespace Prisma {
     model?: string | null
     make?: string | null
     year?: number | null
-    odometer_miles?: number | null
-    Maintenance_Item?: Maintenance_ItemUncheckedCreateNestedManyWithoutVehicleInput
-    Maintenance_Entry?: Maintenance_EntryUncheckedCreateNestedManyWithoutVehicleInput
+    odometer?: number | null
+    useKm: boolean
+    MaintenanceItem?: MaintenanceItemUncheckedCreateNestedManyWithoutVehicleInput
+    MaintenanceEntry?: MaintenanceEntryUncheckedCreateNestedManyWithoutVehicleInput
   }
 
   export type VehicleCreateOrConnectWithoutOwnerInput = {
@@ -7335,7 +7366,8 @@ export namespace Prisma {
     model?: StringNullableFilter<"Vehicle"> | string | null
     make?: StringNullableFilter<"Vehicle"> | string | null
     year?: IntNullableFilter<"Vehicle"> | number | null
-    odometer_miles?: IntNullableFilter<"Vehicle"> | number | null
+    odometer?: IntNullableFilter<"Vehicle"> | number | null
+    useKm?: BoolFilter<"Vehicle"> | boolean
     userId?: StringFilter<"Vehicle"> | string
   }
 
@@ -7358,57 +7390,57 @@ export namespace Prisma {
     create: XOR<UserCreateWithoutVehicleInput, UserUncheckedCreateWithoutVehicleInput>
   }
 
-  export type Maintenance_ItemCreateWithoutVehicleInput = {
+  export type MaintenanceItemCreateWithoutVehicleInput = {
     name: string
     comments?: string | null
-    time_interval_days?: number | null
-    usage_interval_miles?: number | null
+    timeIntervalDays?: number | null
+    usageIntervalMiles?: number | null
     recurring: boolean
-    Maintenance_Entry?: Maintenance_EntryCreateNestedManyWithoutMaintenance_itemInput
+    MaintenanceEntry?: MaintenanceEntryCreateNestedManyWithoutMaintenanceItemInput
   }
 
-  export type Maintenance_ItemUncheckedCreateWithoutVehicleInput = {
+  export type MaintenanceItemUncheckedCreateWithoutVehicleInput = {
     id?: number
     name: string
     comments?: string | null
-    time_interval_days?: number | null
-    usage_interval_miles?: number | null
+    timeIntervalDays?: number | null
+    usageIntervalMiles?: number | null
     recurring: boolean
-    Maintenance_Entry?: Maintenance_EntryUncheckedCreateNestedManyWithoutMaintenance_itemInput
+    MaintenanceEntry?: MaintenanceEntryUncheckedCreateNestedManyWithoutMaintenanceItemInput
   }
 
-  export type Maintenance_ItemCreateOrConnectWithoutVehicleInput = {
-    where: Maintenance_ItemWhereUniqueInput
-    create: XOR<Maintenance_ItemCreateWithoutVehicleInput, Maintenance_ItemUncheckedCreateWithoutVehicleInput>
+  export type MaintenanceItemCreateOrConnectWithoutVehicleInput = {
+    where: MaintenanceItemWhereUniqueInput
+    create: XOR<MaintenanceItemCreateWithoutVehicleInput, MaintenanceItemUncheckedCreateWithoutVehicleInput>
   }
 
-  export type Maintenance_ItemCreateManyVehicleInputEnvelope = {
-    data: Maintenance_ItemCreateManyVehicleInput | Maintenance_ItemCreateManyVehicleInput[]
+  export type MaintenanceItemCreateManyVehicleInputEnvelope = {
+    data: MaintenanceItemCreateManyVehicleInput | MaintenanceItemCreateManyVehicleInput[]
     skipDuplicates?: boolean
   }
 
-  export type Maintenance_EntryCreateWithoutVehicleInput = {
+  export type MaintenanceEntryCreateWithoutVehicleInput = {
     title: string
     details: string
     date: Date | string
-    maintenance_item?: Maintenance_ItemCreateNestedOneWithoutMaintenance_EntryInput
+    MaintenanceItem?: MaintenanceItemCreateNestedOneWithoutMaintenanceEntryInput
   }
 
-  export type Maintenance_EntryUncheckedCreateWithoutVehicleInput = {
+  export type MaintenanceEntryUncheckedCreateWithoutVehicleInput = {
     id?: number
     title: string
     details: string
     date: Date | string
-    maintenance_ItemId?: number | null
+    maintenanceItemId?: number | null
   }
 
-  export type Maintenance_EntryCreateOrConnectWithoutVehicleInput = {
-    where: Maintenance_EntryWhereUniqueInput
-    create: XOR<Maintenance_EntryCreateWithoutVehicleInput, Maintenance_EntryUncheckedCreateWithoutVehicleInput>
+  export type MaintenanceEntryCreateOrConnectWithoutVehicleInput = {
+    where: MaintenanceEntryWhereUniqueInput
+    create: XOR<MaintenanceEntryCreateWithoutVehicleInput, MaintenanceEntryUncheckedCreateWithoutVehicleInput>
   }
 
-  export type Maintenance_EntryCreateManyVehicleInputEnvelope = {
-    data: Maintenance_EntryCreateManyVehicleInput | Maintenance_EntryCreateManyVehicleInput[]
+  export type MaintenanceEntryCreateManyVehicleInputEnvelope = {
+    data: MaintenanceEntryCreateManyVehicleInput | MaintenanceEntryCreateManyVehicleInput[]
     skipDuplicates?: boolean
   }
 
@@ -7437,98 +7469,100 @@ export namespace Prisma {
     password?: StringFieldUpdateOperationsInput | string
   }
 
-  export type Maintenance_ItemUpsertWithWhereUniqueWithoutVehicleInput = {
-    where: Maintenance_ItemWhereUniqueInput
-    update: XOR<Maintenance_ItemUpdateWithoutVehicleInput, Maintenance_ItemUncheckedUpdateWithoutVehicleInput>
-    create: XOR<Maintenance_ItemCreateWithoutVehicleInput, Maintenance_ItemUncheckedCreateWithoutVehicleInput>
+  export type MaintenanceItemUpsertWithWhereUniqueWithoutVehicleInput = {
+    where: MaintenanceItemWhereUniqueInput
+    update: XOR<MaintenanceItemUpdateWithoutVehicleInput, MaintenanceItemUncheckedUpdateWithoutVehicleInput>
+    create: XOR<MaintenanceItemCreateWithoutVehicleInput, MaintenanceItemUncheckedCreateWithoutVehicleInput>
   }
 
-  export type Maintenance_ItemUpdateWithWhereUniqueWithoutVehicleInput = {
-    where: Maintenance_ItemWhereUniqueInput
-    data: XOR<Maintenance_ItemUpdateWithoutVehicleInput, Maintenance_ItemUncheckedUpdateWithoutVehicleInput>
+  export type MaintenanceItemUpdateWithWhereUniqueWithoutVehicleInput = {
+    where: MaintenanceItemWhereUniqueInput
+    data: XOR<MaintenanceItemUpdateWithoutVehicleInput, MaintenanceItemUncheckedUpdateWithoutVehicleInput>
   }
 
-  export type Maintenance_ItemUpdateManyWithWhereWithoutVehicleInput = {
-    where: Maintenance_ItemScalarWhereInput
-    data: XOR<Maintenance_ItemUpdateManyMutationInput, Maintenance_ItemUncheckedUpdateManyWithoutVehicleInput>
+  export type MaintenanceItemUpdateManyWithWhereWithoutVehicleInput = {
+    where: MaintenanceItemScalarWhereInput
+    data: XOR<MaintenanceItemUpdateManyMutationInput, MaintenanceItemUncheckedUpdateManyWithoutVehicleInput>
   }
 
-  export type Maintenance_ItemScalarWhereInput = {
-    AND?: Maintenance_ItemScalarWhereInput | Maintenance_ItemScalarWhereInput[]
-    OR?: Maintenance_ItemScalarWhereInput[]
-    NOT?: Maintenance_ItemScalarWhereInput | Maintenance_ItemScalarWhereInput[]
-    id?: IntFilter<"Maintenance_Item"> | number
-    name?: StringFilter<"Maintenance_Item"> | string
-    comments?: StringNullableFilter<"Maintenance_Item"> | string | null
-    time_interval_days?: IntNullableFilter<"Maintenance_Item"> | number | null
-    usage_interval_miles?: FloatNullableFilter<"Maintenance_Item"> | number | null
-    recurring?: BoolFilter<"Maintenance_Item"> | boolean
-    vehicleId?: StringFilter<"Maintenance_Item"> | string
+  export type MaintenanceItemScalarWhereInput = {
+    AND?: MaintenanceItemScalarWhereInput | MaintenanceItemScalarWhereInput[]
+    OR?: MaintenanceItemScalarWhereInput[]
+    NOT?: MaintenanceItemScalarWhereInput | MaintenanceItemScalarWhereInput[]
+    id?: IntFilter<"MaintenanceItem"> | number
+    name?: StringFilter<"MaintenanceItem"> | string
+    comments?: StringNullableFilter<"MaintenanceItem"> | string | null
+    timeIntervalDays?: IntNullableFilter<"MaintenanceItem"> | number | null
+    usageIntervalMiles?: FloatNullableFilter<"MaintenanceItem"> | number | null
+    recurring?: BoolFilter<"MaintenanceItem"> | boolean
+    vehicleId?: StringFilter<"MaintenanceItem"> | string
   }
 
-  export type Maintenance_EntryUpsertWithWhereUniqueWithoutVehicleInput = {
-    where: Maintenance_EntryWhereUniqueInput
-    update: XOR<Maintenance_EntryUpdateWithoutVehicleInput, Maintenance_EntryUncheckedUpdateWithoutVehicleInput>
-    create: XOR<Maintenance_EntryCreateWithoutVehicleInput, Maintenance_EntryUncheckedCreateWithoutVehicleInput>
+  export type MaintenanceEntryUpsertWithWhereUniqueWithoutVehicleInput = {
+    where: MaintenanceEntryWhereUniqueInput
+    update: XOR<MaintenanceEntryUpdateWithoutVehicleInput, MaintenanceEntryUncheckedUpdateWithoutVehicleInput>
+    create: XOR<MaintenanceEntryCreateWithoutVehicleInput, MaintenanceEntryUncheckedCreateWithoutVehicleInput>
   }
 
-  export type Maintenance_EntryUpdateWithWhereUniqueWithoutVehicleInput = {
-    where: Maintenance_EntryWhereUniqueInput
-    data: XOR<Maintenance_EntryUpdateWithoutVehicleInput, Maintenance_EntryUncheckedUpdateWithoutVehicleInput>
+  export type MaintenanceEntryUpdateWithWhereUniqueWithoutVehicleInput = {
+    where: MaintenanceEntryWhereUniqueInput
+    data: XOR<MaintenanceEntryUpdateWithoutVehicleInput, MaintenanceEntryUncheckedUpdateWithoutVehicleInput>
   }
 
-  export type Maintenance_EntryUpdateManyWithWhereWithoutVehicleInput = {
-    where: Maintenance_EntryScalarWhereInput
-    data: XOR<Maintenance_EntryUpdateManyMutationInput, Maintenance_EntryUncheckedUpdateManyWithoutVehicleInput>
+  export type MaintenanceEntryUpdateManyWithWhereWithoutVehicleInput = {
+    where: MaintenanceEntryScalarWhereInput
+    data: XOR<MaintenanceEntryUpdateManyMutationInput, MaintenanceEntryUncheckedUpdateManyWithoutVehicleInput>
   }
 
-  export type Maintenance_EntryScalarWhereInput = {
-    AND?: Maintenance_EntryScalarWhereInput | Maintenance_EntryScalarWhereInput[]
-    OR?: Maintenance_EntryScalarWhereInput[]
-    NOT?: Maintenance_EntryScalarWhereInput | Maintenance_EntryScalarWhereInput[]
-    id?: IntFilter<"Maintenance_Entry"> | number
-    title?: StringFilter<"Maintenance_Entry"> | string
-    details?: StringFilter<"Maintenance_Entry"> | string
-    date?: DateTimeFilter<"Maintenance_Entry"> | Date | string
-    vehicleId?: StringFilter<"Maintenance_Entry"> | string
-    maintenance_ItemId?: IntNullableFilter<"Maintenance_Entry"> | number | null
+  export type MaintenanceEntryScalarWhereInput = {
+    AND?: MaintenanceEntryScalarWhereInput | MaintenanceEntryScalarWhereInput[]
+    OR?: MaintenanceEntryScalarWhereInput[]
+    NOT?: MaintenanceEntryScalarWhereInput | MaintenanceEntryScalarWhereInput[]
+    id?: IntFilter<"MaintenanceEntry"> | number
+    title?: StringFilter<"MaintenanceEntry"> | string
+    details?: StringFilter<"MaintenanceEntry"> | string
+    date?: DateTimeFilter<"MaintenanceEntry"> | Date | string
+    vehicleId?: StringFilter<"MaintenanceEntry"> | string
+    maintenanceItemId?: IntNullableFilter<"MaintenanceEntry"> | number | null
   }
 
-  export type VehicleCreateWithoutMaintenance_ItemInput = {
+  export type VehicleCreateWithoutMaintenanceItemInput = {
     id?: string
     name: string
     model?: string | null
     make?: string | null
     year?: number | null
-    odometer_miles?: number | null
+    odometer?: number | null
+    useKm: boolean
     owner: UserCreateNestedOneWithoutVehicleInput
-    Maintenance_Entry?: Maintenance_EntryCreateNestedManyWithoutVehicleInput
+    MaintenanceEntry?: MaintenanceEntryCreateNestedManyWithoutVehicleInput
   }
 
-  export type VehicleUncheckedCreateWithoutMaintenance_ItemInput = {
+  export type VehicleUncheckedCreateWithoutMaintenanceItemInput = {
     id?: string
     name: string
     model?: string | null
     make?: string | null
     year?: number | null
-    odometer_miles?: number | null
+    odometer?: number | null
+    useKm: boolean
     userId: string
-    Maintenance_Entry?: Maintenance_EntryUncheckedCreateNestedManyWithoutVehicleInput
+    MaintenanceEntry?: MaintenanceEntryUncheckedCreateNestedManyWithoutVehicleInput
   }
 
-  export type VehicleCreateOrConnectWithoutMaintenance_ItemInput = {
+  export type VehicleCreateOrConnectWithoutMaintenanceItemInput = {
     where: VehicleWhereUniqueInput
-    create: XOR<VehicleCreateWithoutMaintenance_ItemInput, VehicleUncheckedCreateWithoutMaintenance_ItemInput>
+    create: XOR<VehicleCreateWithoutMaintenanceItemInput, VehicleUncheckedCreateWithoutMaintenanceItemInput>
   }
 
-  export type Maintenance_EntryCreateWithoutMaintenance_itemInput = {
+  export type MaintenanceEntryCreateWithoutMaintenanceItemInput = {
     title: string
     details: string
     date: Date | string
-    vehicle: VehicleCreateNestedOneWithoutMaintenance_EntryInput
+    vehicle: VehicleCreateNestedOneWithoutMaintenanceEntryInput
   }
 
-  export type Maintenance_EntryUncheckedCreateWithoutMaintenance_itemInput = {
+  export type MaintenanceEntryUncheckedCreateWithoutMaintenanceItemInput = {
     id?: number
     title: string
     details: string
@@ -7536,175 +7570,181 @@ export namespace Prisma {
     vehicleId: string
   }
 
-  export type Maintenance_EntryCreateOrConnectWithoutMaintenance_itemInput = {
-    where: Maintenance_EntryWhereUniqueInput
-    create: XOR<Maintenance_EntryCreateWithoutMaintenance_itemInput, Maintenance_EntryUncheckedCreateWithoutMaintenance_itemInput>
+  export type MaintenanceEntryCreateOrConnectWithoutMaintenanceItemInput = {
+    where: MaintenanceEntryWhereUniqueInput
+    create: XOR<MaintenanceEntryCreateWithoutMaintenanceItemInput, MaintenanceEntryUncheckedCreateWithoutMaintenanceItemInput>
   }
 
-  export type Maintenance_EntryCreateManyMaintenance_itemInputEnvelope = {
-    data: Maintenance_EntryCreateManyMaintenance_itemInput | Maintenance_EntryCreateManyMaintenance_itemInput[]
+  export type MaintenanceEntryCreateManyMaintenanceItemInputEnvelope = {
+    data: MaintenanceEntryCreateManyMaintenanceItemInput | MaintenanceEntryCreateManyMaintenanceItemInput[]
     skipDuplicates?: boolean
   }
 
-  export type VehicleUpsertWithoutMaintenance_ItemInput = {
-    update: XOR<VehicleUpdateWithoutMaintenance_ItemInput, VehicleUncheckedUpdateWithoutMaintenance_ItemInput>
-    create: XOR<VehicleCreateWithoutMaintenance_ItemInput, VehicleUncheckedCreateWithoutMaintenance_ItemInput>
+  export type VehicleUpsertWithoutMaintenanceItemInput = {
+    update: XOR<VehicleUpdateWithoutMaintenanceItemInput, VehicleUncheckedUpdateWithoutMaintenanceItemInput>
+    create: XOR<VehicleCreateWithoutMaintenanceItemInput, VehicleUncheckedCreateWithoutMaintenanceItemInput>
     where?: VehicleWhereInput
   }
 
-  export type VehicleUpdateToOneWithWhereWithoutMaintenance_ItemInput = {
+  export type VehicleUpdateToOneWithWhereWithoutMaintenanceItemInput = {
     where?: VehicleWhereInput
-    data: XOR<VehicleUpdateWithoutMaintenance_ItemInput, VehicleUncheckedUpdateWithoutMaintenance_ItemInput>
+    data: XOR<VehicleUpdateWithoutMaintenanceItemInput, VehicleUncheckedUpdateWithoutMaintenanceItemInput>
   }
 
-  export type VehicleUpdateWithoutMaintenance_ItemInput = {
+  export type VehicleUpdateWithoutMaintenanceItemInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     model?: NullableStringFieldUpdateOperationsInput | string | null
     make?: NullableStringFieldUpdateOperationsInput | string | null
     year?: NullableIntFieldUpdateOperationsInput | number | null
-    odometer_miles?: NullableIntFieldUpdateOperationsInput | number | null
+    odometer?: NullableIntFieldUpdateOperationsInput | number | null
+    useKm?: BoolFieldUpdateOperationsInput | boolean
     owner?: UserUpdateOneRequiredWithoutVehicleNestedInput
-    Maintenance_Entry?: Maintenance_EntryUpdateManyWithoutVehicleNestedInput
+    MaintenanceEntry?: MaintenanceEntryUpdateManyWithoutVehicleNestedInput
   }
 
-  export type VehicleUncheckedUpdateWithoutMaintenance_ItemInput = {
+  export type VehicleUncheckedUpdateWithoutMaintenanceItemInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     model?: NullableStringFieldUpdateOperationsInput | string | null
     make?: NullableStringFieldUpdateOperationsInput | string | null
     year?: NullableIntFieldUpdateOperationsInput | number | null
-    odometer_miles?: NullableIntFieldUpdateOperationsInput | number | null
+    odometer?: NullableIntFieldUpdateOperationsInput | number | null
+    useKm?: BoolFieldUpdateOperationsInput | boolean
     userId?: StringFieldUpdateOperationsInput | string
-    Maintenance_Entry?: Maintenance_EntryUncheckedUpdateManyWithoutVehicleNestedInput
+    MaintenanceEntry?: MaintenanceEntryUncheckedUpdateManyWithoutVehicleNestedInput
   }
 
-  export type Maintenance_EntryUpsertWithWhereUniqueWithoutMaintenance_itemInput = {
-    where: Maintenance_EntryWhereUniqueInput
-    update: XOR<Maintenance_EntryUpdateWithoutMaintenance_itemInput, Maintenance_EntryUncheckedUpdateWithoutMaintenance_itemInput>
-    create: XOR<Maintenance_EntryCreateWithoutMaintenance_itemInput, Maintenance_EntryUncheckedCreateWithoutMaintenance_itemInput>
+  export type MaintenanceEntryUpsertWithWhereUniqueWithoutMaintenanceItemInput = {
+    where: MaintenanceEntryWhereUniqueInput
+    update: XOR<MaintenanceEntryUpdateWithoutMaintenanceItemInput, MaintenanceEntryUncheckedUpdateWithoutMaintenanceItemInput>
+    create: XOR<MaintenanceEntryCreateWithoutMaintenanceItemInput, MaintenanceEntryUncheckedCreateWithoutMaintenanceItemInput>
   }
 
-  export type Maintenance_EntryUpdateWithWhereUniqueWithoutMaintenance_itemInput = {
-    where: Maintenance_EntryWhereUniqueInput
-    data: XOR<Maintenance_EntryUpdateWithoutMaintenance_itemInput, Maintenance_EntryUncheckedUpdateWithoutMaintenance_itemInput>
+  export type MaintenanceEntryUpdateWithWhereUniqueWithoutMaintenanceItemInput = {
+    where: MaintenanceEntryWhereUniqueInput
+    data: XOR<MaintenanceEntryUpdateWithoutMaintenanceItemInput, MaintenanceEntryUncheckedUpdateWithoutMaintenanceItemInput>
   }
 
-  export type Maintenance_EntryUpdateManyWithWhereWithoutMaintenance_itemInput = {
-    where: Maintenance_EntryScalarWhereInput
-    data: XOR<Maintenance_EntryUpdateManyMutationInput, Maintenance_EntryUncheckedUpdateManyWithoutMaintenance_itemInput>
+  export type MaintenanceEntryUpdateManyWithWhereWithoutMaintenanceItemInput = {
+    where: MaintenanceEntryScalarWhereInput
+    data: XOR<MaintenanceEntryUpdateManyMutationInput, MaintenanceEntryUncheckedUpdateManyWithoutMaintenanceItemInput>
   }
 
-  export type VehicleCreateWithoutMaintenance_EntryInput = {
+  export type VehicleCreateWithoutMaintenanceEntryInput = {
     id?: string
     name: string
     model?: string | null
     make?: string | null
     year?: number | null
-    odometer_miles?: number | null
+    odometer?: number | null
+    useKm: boolean
     owner: UserCreateNestedOneWithoutVehicleInput
-    Maintenance_Item?: Maintenance_ItemCreateNestedManyWithoutVehicleInput
+    MaintenanceItem?: MaintenanceItemCreateNestedManyWithoutVehicleInput
   }
 
-  export type VehicleUncheckedCreateWithoutMaintenance_EntryInput = {
+  export type VehicleUncheckedCreateWithoutMaintenanceEntryInput = {
     id?: string
     name: string
     model?: string | null
     make?: string | null
     year?: number | null
-    odometer_miles?: number | null
+    odometer?: number | null
+    useKm: boolean
     userId: string
-    Maintenance_Item?: Maintenance_ItemUncheckedCreateNestedManyWithoutVehicleInput
+    MaintenanceItem?: MaintenanceItemUncheckedCreateNestedManyWithoutVehicleInput
   }
 
-  export type VehicleCreateOrConnectWithoutMaintenance_EntryInput = {
+  export type VehicleCreateOrConnectWithoutMaintenanceEntryInput = {
     where: VehicleWhereUniqueInput
-    create: XOR<VehicleCreateWithoutMaintenance_EntryInput, VehicleUncheckedCreateWithoutMaintenance_EntryInput>
+    create: XOR<VehicleCreateWithoutMaintenanceEntryInput, VehicleUncheckedCreateWithoutMaintenanceEntryInput>
   }
 
-  export type Maintenance_ItemCreateWithoutMaintenance_EntryInput = {
+  export type MaintenanceItemCreateWithoutMaintenanceEntryInput = {
     name: string
     comments?: string | null
-    time_interval_days?: number | null
-    usage_interval_miles?: number | null
+    timeIntervalDays?: number | null
+    usageIntervalMiles?: number | null
     recurring: boolean
-    vehicle: VehicleCreateNestedOneWithoutMaintenance_ItemInput
+    vehicle: VehicleCreateNestedOneWithoutMaintenanceItemInput
   }
 
-  export type Maintenance_ItemUncheckedCreateWithoutMaintenance_EntryInput = {
+  export type MaintenanceItemUncheckedCreateWithoutMaintenanceEntryInput = {
     id?: number
     name: string
     comments?: string | null
-    time_interval_days?: number | null
-    usage_interval_miles?: number | null
+    timeIntervalDays?: number | null
+    usageIntervalMiles?: number | null
     recurring: boolean
     vehicleId: string
   }
 
-  export type Maintenance_ItemCreateOrConnectWithoutMaintenance_EntryInput = {
-    where: Maintenance_ItemWhereUniqueInput
-    create: XOR<Maintenance_ItemCreateWithoutMaintenance_EntryInput, Maintenance_ItemUncheckedCreateWithoutMaintenance_EntryInput>
+  export type MaintenanceItemCreateOrConnectWithoutMaintenanceEntryInput = {
+    where: MaintenanceItemWhereUniqueInput
+    create: XOR<MaintenanceItemCreateWithoutMaintenanceEntryInput, MaintenanceItemUncheckedCreateWithoutMaintenanceEntryInput>
   }
 
-  export type VehicleUpsertWithoutMaintenance_EntryInput = {
-    update: XOR<VehicleUpdateWithoutMaintenance_EntryInput, VehicleUncheckedUpdateWithoutMaintenance_EntryInput>
-    create: XOR<VehicleCreateWithoutMaintenance_EntryInput, VehicleUncheckedCreateWithoutMaintenance_EntryInput>
+  export type VehicleUpsertWithoutMaintenanceEntryInput = {
+    update: XOR<VehicleUpdateWithoutMaintenanceEntryInput, VehicleUncheckedUpdateWithoutMaintenanceEntryInput>
+    create: XOR<VehicleCreateWithoutMaintenanceEntryInput, VehicleUncheckedCreateWithoutMaintenanceEntryInput>
     where?: VehicleWhereInput
   }
 
-  export type VehicleUpdateToOneWithWhereWithoutMaintenance_EntryInput = {
+  export type VehicleUpdateToOneWithWhereWithoutMaintenanceEntryInput = {
     where?: VehicleWhereInput
-    data: XOR<VehicleUpdateWithoutMaintenance_EntryInput, VehicleUncheckedUpdateWithoutMaintenance_EntryInput>
+    data: XOR<VehicleUpdateWithoutMaintenanceEntryInput, VehicleUncheckedUpdateWithoutMaintenanceEntryInput>
   }
 
-  export type VehicleUpdateWithoutMaintenance_EntryInput = {
+  export type VehicleUpdateWithoutMaintenanceEntryInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     model?: NullableStringFieldUpdateOperationsInput | string | null
     make?: NullableStringFieldUpdateOperationsInput | string | null
     year?: NullableIntFieldUpdateOperationsInput | number | null
-    odometer_miles?: NullableIntFieldUpdateOperationsInput | number | null
+    odometer?: NullableIntFieldUpdateOperationsInput | number | null
+    useKm?: BoolFieldUpdateOperationsInput | boolean
     owner?: UserUpdateOneRequiredWithoutVehicleNestedInput
-    Maintenance_Item?: Maintenance_ItemUpdateManyWithoutVehicleNestedInput
+    MaintenanceItem?: MaintenanceItemUpdateManyWithoutVehicleNestedInput
   }
 
-  export type VehicleUncheckedUpdateWithoutMaintenance_EntryInput = {
+  export type VehicleUncheckedUpdateWithoutMaintenanceEntryInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     model?: NullableStringFieldUpdateOperationsInput | string | null
     make?: NullableStringFieldUpdateOperationsInput | string | null
     year?: NullableIntFieldUpdateOperationsInput | number | null
-    odometer_miles?: NullableIntFieldUpdateOperationsInput | number | null
+    odometer?: NullableIntFieldUpdateOperationsInput | number | null
+    useKm?: BoolFieldUpdateOperationsInput | boolean
     userId?: StringFieldUpdateOperationsInput | string
-    Maintenance_Item?: Maintenance_ItemUncheckedUpdateManyWithoutVehicleNestedInput
+    MaintenanceItem?: MaintenanceItemUncheckedUpdateManyWithoutVehicleNestedInput
   }
 
-  export type Maintenance_ItemUpsertWithoutMaintenance_EntryInput = {
-    update: XOR<Maintenance_ItemUpdateWithoutMaintenance_EntryInput, Maintenance_ItemUncheckedUpdateWithoutMaintenance_EntryInput>
-    create: XOR<Maintenance_ItemCreateWithoutMaintenance_EntryInput, Maintenance_ItemUncheckedCreateWithoutMaintenance_EntryInput>
-    where?: Maintenance_ItemWhereInput
+  export type MaintenanceItemUpsertWithoutMaintenanceEntryInput = {
+    update: XOR<MaintenanceItemUpdateWithoutMaintenanceEntryInput, MaintenanceItemUncheckedUpdateWithoutMaintenanceEntryInput>
+    create: XOR<MaintenanceItemCreateWithoutMaintenanceEntryInput, MaintenanceItemUncheckedCreateWithoutMaintenanceEntryInput>
+    where?: MaintenanceItemWhereInput
   }
 
-  export type Maintenance_ItemUpdateToOneWithWhereWithoutMaintenance_EntryInput = {
-    where?: Maintenance_ItemWhereInput
-    data: XOR<Maintenance_ItemUpdateWithoutMaintenance_EntryInput, Maintenance_ItemUncheckedUpdateWithoutMaintenance_EntryInput>
+  export type MaintenanceItemUpdateToOneWithWhereWithoutMaintenanceEntryInput = {
+    where?: MaintenanceItemWhereInput
+    data: XOR<MaintenanceItemUpdateWithoutMaintenanceEntryInput, MaintenanceItemUncheckedUpdateWithoutMaintenanceEntryInput>
   }
 
-  export type Maintenance_ItemUpdateWithoutMaintenance_EntryInput = {
+  export type MaintenanceItemUpdateWithoutMaintenanceEntryInput = {
     name?: StringFieldUpdateOperationsInput | string
     comments?: NullableStringFieldUpdateOperationsInput | string | null
-    time_interval_days?: NullableIntFieldUpdateOperationsInput | number | null
-    usage_interval_miles?: NullableFloatFieldUpdateOperationsInput | number | null
+    timeIntervalDays?: NullableIntFieldUpdateOperationsInput | number | null
+    usageIntervalMiles?: NullableFloatFieldUpdateOperationsInput | number | null
     recurring?: BoolFieldUpdateOperationsInput | boolean
-    vehicle?: VehicleUpdateOneRequiredWithoutMaintenance_ItemNestedInput
+    vehicle?: VehicleUpdateOneRequiredWithoutMaintenanceItemNestedInput
   }
 
-  export type Maintenance_ItemUncheckedUpdateWithoutMaintenance_EntryInput = {
+  export type MaintenanceItemUncheckedUpdateWithoutMaintenanceEntryInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     comments?: NullableStringFieldUpdateOperationsInput | string | null
-    time_interval_days?: NullableIntFieldUpdateOperationsInput | number | null
-    usage_interval_miles?: NullableFloatFieldUpdateOperationsInput | number | null
+    timeIntervalDays?: NullableIntFieldUpdateOperationsInput | number | null
+    usageIntervalMiles?: NullableFloatFieldUpdateOperationsInput | number | null
     recurring?: BoolFieldUpdateOperationsInput | boolean
     vehicleId?: StringFieldUpdateOperationsInput | string
   }
@@ -7715,7 +7755,8 @@ export namespace Prisma {
     model?: string | null
     make?: string | null
     year?: number | null
-    odometer_miles?: number | null
+    odometer?: number | null
+    useKm: boolean
   }
 
   export type VehicleUpdateWithoutOwnerInput = {
@@ -7724,9 +7765,10 @@ export namespace Prisma {
     model?: NullableStringFieldUpdateOperationsInput | string | null
     make?: NullableStringFieldUpdateOperationsInput | string | null
     year?: NullableIntFieldUpdateOperationsInput | number | null
-    odometer_miles?: NullableIntFieldUpdateOperationsInput | number | null
-    Maintenance_Item?: Maintenance_ItemUpdateManyWithoutVehicleNestedInput
-    Maintenance_Entry?: Maintenance_EntryUpdateManyWithoutVehicleNestedInput
+    odometer?: NullableIntFieldUpdateOperationsInput | number | null
+    useKm?: BoolFieldUpdateOperationsInput | boolean
+    MaintenanceItem?: MaintenanceItemUpdateManyWithoutVehicleNestedInput
+    MaintenanceEntry?: MaintenanceEntryUpdateManyWithoutVehicleNestedInput
   }
 
   export type VehicleUncheckedUpdateWithoutOwnerInput = {
@@ -7735,9 +7777,10 @@ export namespace Prisma {
     model?: NullableStringFieldUpdateOperationsInput | string | null
     make?: NullableStringFieldUpdateOperationsInput | string | null
     year?: NullableIntFieldUpdateOperationsInput | number | null
-    odometer_miles?: NullableIntFieldUpdateOperationsInput | number | null
-    Maintenance_Item?: Maintenance_ItemUncheckedUpdateManyWithoutVehicleNestedInput
-    Maintenance_Entry?: Maintenance_EntryUncheckedUpdateManyWithoutVehicleNestedInput
+    odometer?: NullableIntFieldUpdateOperationsInput | number | null
+    useKm?: BoolFieldUpdateOperationsInput | boolean
+    MaintenanceItem?: MaintenanceItemUncheckedUpdateManyWithoutVehicleNestedInput
+    MaintenanceEntry?: MaintenanceEntryUncheckedUpdateManyWithoutVehicleNestedInput
   }
 
   export type VehicleUncheckedUpdateManyWithoutOwnerInput = {
@@ -7746,78 +7789,79 @@ export namespace Prisma {
     model?: NullableStringFieldUpdateOperationsInput | string | null
     make?: NullableStringFieldUpdateOperationsInput | string | null
     year?: NullableIntFieldUpdateOperationsInput | number | null
-    odometer_miles?: NullableIntFieldUpdateOperationsInput | number | null
+    odometer?: NullableIntFieldUpdateOperationsInput | number | null
+    useKm?: BoolFieldUpdateOperationsInput | boolean
   }
 
-  export type Maintenance_ItemCreateManyVehicleInput = {
+  export type MaintenanceItemCreateManyVehicleInput = {
     id?: number
     name: string
     comments?: string | null
-    time_interval_days?: number | null
-    usage_interval_miles?: number | null
+    timeIntervalDays?: number | null
+    usageIntervalMiles?: number | null
     recurring: boolean
   }
 
-  export type Maintenance_EntryCreateManyVehicleInput = {
+  export type MaintenanceEntryCreateManyVehicleInput = {
     id?: number
     title: string
     details: string
     date: Date | string
-    maintenance_ItemId?: number | null
+    maintenanceItemId?: number | null
   }
 
-  export type Maintenance_ItemUpdateWithoutVehicleInput = {
+  export type MaintenanceItemUpdateWithoutVehicleInput = {
     name?: StringFieldUpdateOperationsInput | string
     comments?: NullableStringFieldUpdateOperationsInput | string | null
-    time_interval_days?: NullableIntFieldUpdateOperationsInput | number | null
-    usage_interval_miles?: NullableFloatFieldUpdateOperationsInput | number | null
+    timeIntervalDays?: NullableIntFieldUpdateOperationsInput | number | null
+    usageIntervalMiles?: NullableFloatFieldUpdateOperationsInput | number | null
     recurring?: BoolFieldUpdateOperationsInput | boolean
-    Maintenance_Entry?: Maintenance_EntryUpdateManyWithoutMaintenance_itemNestedInput
+    MaintenanceEntry?: MaintenanceEntryUpdateManyWithoutMaintenanceItemNestedInput
   }
 
-  export type Maintenance_ItemUncheckedUpdateWithoutVehicleInput = {
+  export type MaintenanceItemUncheckedUpdateWithoutVehicleInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     comments?: NullableStringFieldUpdateOperationsInput | string | null
-    time_interval_days?: NullableIntFieldUpdateOperationsInput | number | null
-    usage_interval_miles?: NullableFloatFieldUpdateOperationsInput | number | null
+    timeIntervalDays?: NullableIntFieldUpdateOperationsInput | number | null
+    usageIntervalMiles?: NullableFloatFieldUpdateOperationsInput | number | null
     recurring?: BoolFieldUpdateOperationsInput | boolean
-    Maintenance_Entry?: Maintenance_EntryUncheckedUpdateManyWithoutMaintenance_itemNestedInput
+    MaintenanceEntry?: MaintenanceEntryUncheckedUpdateManyWithoutMaintenanceItemNestedInput
   }
 
-  export type Maintenance_ItemUncheckedUpdateManyWithoutVehicleInput = {
+  export type MaintenanceItemUncheckedUpdateManyWithoutVehicleInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     comments?: NullableStringFieldUpdateOperationsInput | string | null
-    time_interval_days?: NullableIntFieldUpdateOperationsInput | number | null
-    usage_interval_miles?: NullableFloatFieldUpdateOperationsInput | number | null
+    timeIntervalDays?: NullableIntFieldUpdateOperationsInput | number | null
+    usageIntervalMiles?: NullableFloatFieldUpdateOperationsInput | number | null
     recurring?: BoolFieldUpdateOperationsInput | boolean
   }
 
-  export type Maintenance_EntryUpdateWithoutVehicleInput = {
+  export type MaintenanceEntryUpdateWithoutVehicleInput = {
     title?: StringFieldUpdateOperationsInput | string
     details?: StringFieldUpdateOperationsInput | string
     date?: DateTimeFieldUpdateOperationsInput | Date | string
-    maintenance_item?: Maintenance_ItemUpdateOneWithoutMaintenance_EntryNestedInput
+    MaintenanceItem?: MaintenanceItemUpdateOneWithoutMaintenanceEntryNestedInput
   }
 
-  export type Maintenance_EntryUncheckedUpdateWithoutVehicleInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    title?: StringFieldUpdateOperationsInput | string
-    details?: StringFieldUpdateOperationsInput | string
-    date?: DateTimeFieldUpdateOperationsInput | Date | string
-    maintenance_ItemId?: NullableIntFieldUpdateOperationsInput | number | null
-  }
-
-  export type Maintenance_EntryUncheckedUpdateManyWithoutVehicleInput = {
+  export type MaintenanceEntryUncheckedUpdateWithoutVehicleInput = {
     id?: IntFieldUpdateOperationsInput | number
     title?: StringFieldUpdateOperationsInput | string
     details?: StringFieldUpdateOperationsInput | string
     date?: DateTimeFieldUpdateOperationsInput | Date | string
-    maintenance_ItemId?: NullableIntFieldUpdateOperationsInput | number | null
+    maintenanceItemId?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
-  export type Maintenance_EntryCreateManyMaintenance_itemInput = {
+  export type MaintenanceEntryUncheckedUpdateManyWithoutVehicleInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    title?: StringFieldUpdateOperationsInput | string
+    details?: StringFieldUpdateOperationsInput | string
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
+    maintenanceItemId?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type MaintenanceEntryCreateManyMaintenanceItemInput = {
     id?: number
     title: string
     details: string
@@ -7825,14 +7869,14 @@ export namespace Prisma {
     vehicleId: string
   }
 
-  export type Maintenance_EntryUpdateWithoutMaintenance_itemInput = {
+  export type MaintenanceEntryUpdateWithoutMaintenanceItemInput = {
     title?: StringFieldUpdateOperationsInput | string
     details?: StringFieldUpdateOperationsInput | string
     date?: DateTimeFieldUpdateOperationsInput | Date | string
-    vehicle?: VehicleUpdateOneRequiredWithoutMaintenance_EntryNestedInput
+    vehicle?: VehicleUpdateOneRequiredWithoutMaintenanceEntryNestedInput
   }
 
-  export type Maintenance_EntryUncheckedUpdateWithoutMaintenance_itemInput = {
+  export type MaintenanceEntryUncheckedUpdateWithoutMaintenanceItemInput = {
     id?: IntFieldUpdateOperationsInput | number
     title?: StringFieldUpdateOperationsInput | string
     details?: StringFieldUpdateOperationsInput | string
@@ -7840,7 +7884,7 @@ export namespace Prisma {
     vehicleId?: StringFieldUpdateOperationsInput | string
   }
 
-  export type Maintenance_EntryUncheckedUpdateManyWithoutMaintenance_itemInput = {
+  export type MaintenanceEntryUncheckedUpdateManyWithoutMaintenanceItemInput = {
     id?: IntFieldUpdateOperationsInput | number
     title?: StringFieldUpdateOperationsInput | string
     details?: StringFieldUpdateOperationsInput | string

@@ -133,27 +133,28 @@ exports.Prisma.VehicleScalarFieldEnum = {
   model: 'model',
   make: 'make',
   year: 'year',
-  odometer_miles: 'odometer_miles',
+  odometer: 'odometer',
+  useKm: 'useKm',
   userId: 'userId'
 };
 
-exports.Prisma.Maintenance_ItemScalarFieldEnum = {
+exports.Prisma.MaintenanceItemScalarFieldEnum = {
   id: 'id',
   name: 'name',
   comments: 'comments',
-  time_interval_days: 'time_interval_days',
-  usage_interval_miles: 'usage_interval_miles',
+  timeIntervalDays: 'timeIntervalDays',
+  usageIntervalMiles: 'usageIntervalMiles',
   recurring: 'recurring',
   vehicleId: 'vehicleId'
 };
 
-exports.Prisma.Maintenance_EntryScalarFieldEnum = {
+exports.Prisma.MaintenanceEntryScalarFieldEnum = {
   id: 'id',
   title: 'title',
   details: 'details',
   date: 'date',
   vehicleId: 'vehicleId',
-  maintenance_ItemId: 'maintenance_ItemId'
+  maintenanceItemId: 'maintenanceItemId'
 };
 
 exports.Prisma.SortOrder = {
@@ -175,8 +176,8 @@ exports.Prisma.NullsOrder = {
 exports.Prisma.ModelName = {
   User: 'User',
   Vehicle: 'Vehicle',
-  Maintenance_Item: 'Maintenance_Item',
-  Maintenance_Entry: 'Maintenance_Entry'
+  MaintenanceItem: 'MaintenanceItem',
+  MaintenanceEntry: 'MaintenanceEntry'
 };
 
 /**

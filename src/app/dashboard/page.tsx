@@ -1,6 +1,8 @@
 import { Suspense } from 'react';
 import Loading from './loading';
 import AddVehicle from '@/components/modals/add-vehicle';
+import { getServerSession } from 'next-auth';
+import { nextAuthOptions } from '@/config';
 
 const Posts = async () => {
   const res = await fetch('https://jsonplaceholder.typicode.com/posts');
@@ -15,7 +17,6 @@ const Posts = async () => {
 };
 
 export default async function Dashboard() {
-
   return (
     <>
       <div>Hello World</div>

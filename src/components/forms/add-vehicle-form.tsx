@@ -16,7 +16,6 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 
-
 export const AddVehicleForm = () => {
   const addVehicleForm = useForm<VehicleSchema>({
     resolver: zodResolver(vehicleSchema),
@@ -30,9 +29,10 @@ export const AddVehicleForm = () => {
     },
   });
 
-  const onSubmit = (formData: VehicleSchema) => {
-    console.log(formData);
-  }
+  const onSubmit = async (formData: VehicleSchema) => {
+    const res = await fetch('/api/vehicle', { method: 'POST', body: JSON.stringify(formData) });
+    console.log('response', await res.json());
+  };
 
   return (
     <Form {...addVehicleForm}>
@@ -42,7 +42,9 @@ export const AddVehicleForm = () => {
           name='name'
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Name <span className='text-red-500'>*</span></FormLabel>
+              <FormLabel>
+                Name <span className='text-red-500'>*</span>
+              </FormLabel>
               <FormControl>
                 <Input type='text' {...field} />
               </FormControl>

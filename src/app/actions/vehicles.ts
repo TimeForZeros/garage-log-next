@@ -2,10 +2,15 @@ import { vehicleSchema, VehicleSchema } from '@/lib/definitions';
 import config from '@/config/index';
 import prisma from '@/lib/prisma';
 import { PrismaClientKnownRequestError } from '@/prisma/runtime/library';
+import { getServerSession } from 'next-auth';
 
-const createVehicle = (formData: VehicleSchema) => {
-  const vehicleData = {};
-  Object.entries(formData).forEach(([key, value]) => {
-    if (key ===)
-  });
+export const createVehicle = async (formData: VehicleSchema) => {
+  const vehicleData = {
+    ...formData,
+    make: formData.make || null,
+    model: formData.model || null,
+    year: !!formData.year ? Number(formData.year) : null,
+    odometerMiles: !!formData.odometerMiles ? Number(formData.odometerMiles) : null,
+  };
+  // await prisma.vehicle.create({ data: vehicleData });
 };
