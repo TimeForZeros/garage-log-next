@@ -6,6 +6,21 @@ import { getServerSession } from 'next-auth';
 import { getToken } from 'next-auth/jwt';
 import { NextRequest, NextResponse } from 'next/server';
 
+// Get All
+export const GET = async (req: NextRequest) => {
+  const token = await getToken({ req });
+  console.log(token);
+  if (!token) {
+    return NextResponse.json({ message: 'invalid or missing token' }, { status: 400 });
+  }
+  console.log(token);
+  console.log(token.sub);
+  const query = await prisma.vehicle.findMany({ where: { userId: token.sub } });
+  console.log(query);
+  return NextResponse.json(query);
+};
+
+// Create Vehicle
 export const POST = async (req: NextRequest) => {
   const token = await getToken({ req });
   if (!token) {
