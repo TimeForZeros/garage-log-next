@@ -18,7 +18,8 @@ export const POST = async (req: NextRequest) => {
     make: data.make || null,
     model: data.model || null,
     year: !!data.year ? Number(data.year) : null,
-    odometerMiles: !!data.odometerMiles ? Number(data.odometerMiles) : null,
+    odometer: !!data.odometer ? Number(data.odometer) : null,
+    useKm: data.useKm,
   };
   try {
     await prisma.vehicle.create({ data: vehicleData });

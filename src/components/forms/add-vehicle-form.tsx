@@ -24,7 +24,7 @@ export const AddVehicleForm = () => {
       make: '',
       model: '',
       year: '',
-      odometerMiles: '',
+      odometer: '',
       useKm: false,
     },
   });
@@ -94,7 +94,7 @@ export const AddVehicleForm = () => {
 
         <FormField
           control={addVehicleForm.control}
-          name='odometerMiles'
+          name='odometer'
           render={({ field }) => (
             <FormItem>
               <FormLabel>Odometer</FormLabel>

@@ -18,7 +18,7 @@ export const vehicleSchema = z.object({
   model: z.string().trim().max(128),
   make: z.string().trim().max(128),
   year: z.string().max(4).refine(parseIntFromInput),
-  odometerMiles: z.string().max(8).refine(parseIntFromInput),
+  odometer: z.string().max(8).refine(parseIntFromInput),
   useKm: z.boolean(),
 });
 

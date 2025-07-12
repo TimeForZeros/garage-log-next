@@ -10,7 +10,7 @@ export const createVehicle = async (formData: VehicleSchema) => {
     make: formData.make || null,
     model: formData.model || null,
     year: !!formData.year ? Number(formData.year) : null,
-    odometerMiles: !!formData.odometerMiles ? Number(formData.odometerMiles) : null,
+    odometer: !!formData.odometer ? Number(formData.odometer) : null,
   };
   // await prisma.vehicle.create({ data: vehicleData });
 };
