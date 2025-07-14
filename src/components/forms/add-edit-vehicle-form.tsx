@@ -16,16 +16,16 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 
-export const AddVehicleForm = () => {
-  const addVehicleForm = useForm<VehicleSchema>({
+const AddEditVehicleForm = ({ vehicle }: { vehicle: VehicleSchema | null }) => {
+  const editVehicleForm = useForm<VehicleSchema>({
     resolver: zodResolver(vehicleSchema),
     defaultValues: {
-      name: '',
-      make: '',
-      model: '',
-      year: '',
-      odometer: '',
-      useKm: false,
+      name: vehicle?.name ?? '',
+      make: vehicle?.make ?? '',
+      model: vehicle?.model ?? '',
+      year: (vehicle?.year ?? '').toString(),
+      odometer: (vehicle?.odometer ?? '').toString(),
+      useKm: !!vehicle?.useKm,
     },
   });
 
@@ -35,10 +35,10 @@ export const AddVehicleForm = () => {
   };
 
   return (
-    <Form {...addVehicleForm}>
-      <form onSubmit={addVehicleForm.handleSubmit(onSubmit)} className='space-y-2'>
+    <Form {...editVehicleForm}>
+      <form onSubmit={editVehicleForm.handleSubmit(onSubmit)} className='space-y-2'>
         <FormField
-          control={addVehicleForm.control}
+          control={editVehicleForm.control}
           name='name'
           render={({ field }) => (
             <FormItem>
@@ -54,7 +54,7 @@ export const AddVehicleForm = () => {
         />
 
         <FormField
-          control={addVehicleForm.control}
+          control={editVehicleForm.control}
           name='make'
           render={({ field }) => (
             <FormItem>
@@ -67,7 +67,7 @@ export const AddVehicleForm = () => {
         />
 
         <FormField
-          control={addVehicleForm.control}
+          control={editVehicleForm.control}
           name='model'
           render={({ field }) => (
             <FormItem>
@@ -80,7 +80,7 @@ export const AddVehicleForm = () => {
         />
 
         <FormField
-          control={addVehicleForm.control}
+          control={editVehicleForm.control}
           name='year'
           render={({ field }) => (
             <FormItem>
@@ -93,7 +93,7 @@ export const AddVehicleForm = () => {
         />
 
         <FormField
-          control={addVehicleForm.control}
+          control={editVehicleForm.control}
           name='odometer'
           render={({ field }) => (
             <FormItem>
@@ -106,7 +106,7 @@ export const AddVehicleForm = () => {
         />
 
         <FormField
-          control={addVehicleForm.control}
+          control={editVehicleForm.control}
           name='useKm'
           render={({ field }) => (
             <FormItem>
@@ -127,3 +127,5 @@ export const AddVehicleForm = () => {
     </Form>
   );
 };
+
+export default AddEditVehicleForm;
