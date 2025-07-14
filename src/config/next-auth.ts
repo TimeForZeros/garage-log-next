@@ -50,7 +50,7 @@ export const nextAuthOptions: NextAuthOptions = {
       return baseUrl;
     },
     async session({ session, token, user }) {
-      return session;
+      return { ...session, user: { ...session.user, id: token.sub } };
     },
     async jwt({ token, user, account, profile, isNewUser }) {
       return token;

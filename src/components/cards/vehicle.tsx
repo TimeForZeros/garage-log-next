@@ -7,12 +7,10 @@ import {
   CardFooter,
   CardAction,
 } from '@/components/ui/card';
-import { Button } from '../ui/button';
 import EditVehicleModal from '../modals/edit-vehicle';
 
 // todo define tihs one
 const VehicleCard = (vehicle: any) => {
-  const openEditVehicleModal = () => <EditVehicleModal vehicle={vehicle} />;
   return (
     <Card key={vehicle.id}>
       <CardHeader>
@@ -30,7 +28,7 @@ const VehicleCard = (vehicle: any) => {
       </CardContent>
       <CardFooter>
         <CardAction>
-            <EditVehicleModal vehicle={vehicle} />
+          <EditVehicleModal vehicle={vehicle} />
         </CardAction>
       </CardFooter>
     </Card>

@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form';
 import { Button } from '@/components/ui/button';
 import { vehicleSchema, VehicleSchema } from '@/lib/definitions';
 import { Switch } from '../ui/switch';
+import { addVehicle } from '@/app/actions/vehicles';
 
 import {
   Form,
@@ -16,29 +17,40 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 
-const AddEditVehicleForm = ({ vehicle }: { vehicle: VehicleSchema | null }) => {
-  const editVehicleForm = useForm<VehicleSchema>({
+const AddEditVehicleForm = ({ vehicle, handleSubmit }: { vehicle: VehicleSchema | null, handleSubmit: () => {} }) => {
+  const defaultValues = {
+    name: vehicle?.name ?? '',
+    make: vehicle?.make ?? '',
+    model: vehicle?.model ?? '',
+    year: (vehicle?.year ?? '').toString(),
+    odometer: (vehicle?.odometer ?? '').toString(),
+    useKm: !!vehicle?.useKm,
+  };
+  const vehicleForm = useForm<VehicleSchema>({
     resolver: zodResolver(vehicleSchema),
-    defaultValues: {
-      name: vehicle?.name ?? '',
-      make: vehicle?.make ?? '',
-      model: vehicle?.model ?? '',
-      year: (vehicle?.year ?? '').toString(),
-      odometer: (vehicle?.odometer ?? '').toString(),
-      useKm: !!vehicle?.useKm,
-    },
+    defaultValues,
   });
 
   const onSubmit = async (formData: VehicleSchema) => {
-    const res = await fetch('/api/vehicle', { method: 'POST', body: JSON.stringify(formData) });
-    console.log('response', await res.json());
+    if (vehicle) {
+      const keys: (keyof typeof defaultValues)[] = Object.keys(
+        defaultValues,
+      ) as (keyof typeof defaultValues)[];
+      if (keys.every((key) => defaultValues[key] === formData[key])) {
+        // no need to update
+      } else {
+        // all good to update;
+      }
+    } else {
+      const addedVehicle = await addVehicle(formData);
+    }
   };
 
   return (
-    <Form {...editVehicleForm}>
-      <form onSubmit={editVehicleForm.handleSubmit(onSubmit)} className='space-y-2'>
+    <Form {...vehicleForm}>
+      <form onSubmit={vehicleForm.handleSubmit(onSubmit)} className='space-y-2'>
         <FormField
-          control={editVehicleForm.control}
+          control={vehicleForm.control}
           name='name'
           render={({ field }) => (
             <FormItem>
@@ -54,7 +66,7 @@ const AddEditVehicleForm = ({ vehicle }: { vehicle: VehicleSchema | null }) => {
         />
 
         <FormField
-          control={editVehicleForm.control}
+          control={vehicleForm.control}
           name='make'
           render={({ field }) => (
             <FormItem>
@@ -67,7 +79,7 @@ const AddEditVehicleForm = ({ vehicle }: { vehicle: VehicleSchema | null }) => {
         />
 
         <FormField
-          control={editVehicleForm.control}
+          control={vehicleForm.control}
           name='model'
           render={({ field }) => (
             <FormItem>
@@ -80,7 +92,7 @@ const AddEditVehicleForm = ({ vehicle }: { vehicle: VehicleSchema | null }) => {
         />
 
         <FormField
-          control={editVehicleForm.control}
+          control={vehicleForm.control}
           name='year'
           render={({ field }) => (
             <FormItem>
@@ -93,7 +105,7 @@ const AddEditVehicleForm = ({ vehicle }: { vehicle: VehicleSchema | null }) => {
         />
 
         <FormField
-          control={editVehicleForm.control}
+          control={vehicleForm.control}
           name='odometer'
           render={({ field }) => (
             <FormItem>
@@ -106,7 +118,7 @@ const AddEditVehicleForm = ({ vehicle }: { vehicle: VehicleSchema | null }) => {
         />
 
         <FormField
-          control={editVehicleForm.control}
+          control={vehicleForm.control}
           name='useKm'
           render={({ field }) => (
             <FormItem>
@@ -121,8 +133,10 @@ const AddEditVehicleForm = ({ vehicle }: { vehicle: VehicleSchema | null }) => {
             </FormItem>
           )}
         />
-
-        <Button type='submit'>Submit</Button>
+        <div className='flex space-x-1'>
+          <Button type='submit'>Submit</Button>
+          {vehicle && <Button variant='destructive'>Delete</Button>}
+        </div>
       </form>
     </Form>
   );
