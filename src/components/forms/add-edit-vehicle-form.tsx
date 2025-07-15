@@ -17,7 +17,7 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 
-const AddEditVehicleForm = ({ vehicle, handleSubmit }: { vehicle: VehicleSchema | null, handleSubmit: () => {} }) => {
+const AddEditVehicleForm = ({ vehicle }: { vehicle: VehicleSchema | null }) => {
   const defaultValues = {
     name: vehicle?.name ?? '',
     make: vehicle?.make ?? '',
