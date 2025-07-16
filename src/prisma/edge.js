@@ -35,12 +35,12 @@ exports.Prisma = Prisma
 exports.$Enums = {}
 
 /**
- * Prisma Client JS version: 6.11.1
- * Query Engine version: f40f79ec31188888a2e33acda0ecc8fd10a853a9
+ * Prisma Client JS version: 6.12.0
+ * Query Engine version: 8047c96bbd92db98a2abc7c9323ce77c02c89dbc
  */
 Prisma.prismaVersion = {
-  client: "6.11.1",
-  engine: "f40f79ec31188888a2e33acda0ecc8fd10a853a9"
+  client: "6.12.0",
+  engine: "8047c96bbd92db98a2abc7c9323ce77c02c89dbc"
 }
 
 Prisma.PrismaClientKnownRequestError = PrismaClientKnownRequestError;
@@ -184,12 +184,13 @@ const config = {
     "schemaEnvPath": "../../.env"
   },
   "relativePath": "../../prisma",
-  "clientVersion": "6.11.1",
-  "engineVersion": "f40f79ec31188888a2e33acda0ecc8fd10a853a9",
+  "clientVersion": "6.12.0",
+  "engineVersion": "8047c96bbd92db98a2abc7c9323ce77c02c89dbc",
   "datasourceNames": [
     "db"
   ],
   "activeProvider": "postgresql",
+  "postinstall": true,
   "inlineDatasources": {
     "db": {
       "url": {
@@ -200,7 +201,7 @@ const config = {
   },
   "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"../src/prisma\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel User {\n  id       String    @id @default(cuid(2))\n  name     String?\n  email    String    @unique\n  password String\n  Vehicle  Vehicle[]\n}\n\nmodel Vehicle {\n  id               String             @id @default(cuid(2))\n  name             String\n  model            String?\n  make             String?\n  year             Int?\n  odometer         Int?\n  useKm            Boolean\n  owner            User               @relation(fields: [userId], references: [id])\n  userId           String\n  MaintenanceItem  MaintenanceItem[]\n  MaintenanceEntry MaintenanceEntry[]\n}\n\nmodel MaintenanceItem {\n  id                 Int                @id @default(autoincrement())\n  name               String\n  comments           String?\n  vehicle            Vehicle            @relation(fields: [vehicleId], references: [id])\n  timeIntervalDays   Int?\n  usageIntervalMiles Float? // float so if there's probably a conversion from Km\n  recurring          Boolean\n  vehicleId          String\n  MaintenanceEntry   MaintenanceEntry[]\n}\n\nmodel MaintenanceEntry {\n  id                Int              @id @default(autoincrement())\n  title             String\n  details           String\n  vehicle           Vehicle          @relation(fields: [vehicleId], references: [id])\n  date              DateTime\n  vehicleId         String\n  maintenanceItemId Int?\n  MaintenanceItem   MaintenanceItem? @relation(fields: [maintenanceItemId], references: [id])\n}\n",
   "inlineSchemaHash": "faf0e8fa284ee106941123967b19932e5035a1ada6ab95ea270381a66aec3089",
-  "copyEngine": false
+  "copyEngine": true
 }
 config.dirname = '/'
 
