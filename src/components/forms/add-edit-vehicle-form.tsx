@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import { Button } from '@/components/ui/button';
 import { vehicleSchema, VehicleSchema } from '@/lib/definitions';
 import { Switch } from '../ui/switch';
-import { addVehicle } from '@/app/actions/vehicles';
+import { addOrUpdateVehicle } from '@/app/actions/vehicles';
 
 import {
   Form,
@@ -19,6 +19,7 @@ import { Input } from '@/components/ui/input';
 
 const AddEditVehicleForm = ({ vehicle }: { vehicle: VehicleSchema | null }) => {
   const defaultValues = {
+    id: vehicle?.id,
     name: vehicle?.name ?? '',
     make: vehicle?.make ?? '',
     model: vehicle?.model ?? '',
@@ -36,14 +37,9 @@ const AddEditVehicleForm = ({ vehicle }: { vehicle: VehicleSchema | null }) => {
       const keys: (keyof typeof defaultValues)[] = Object.keys(
         defaultValues,
       ) as (keyof typeof defaultValues)[];
-      if (keys.every((key) => defaultValues[key] === formData[key])) {
-        // no need to update
-      } else {
-        // all good to update;
-      }
-    } else {
-      const addedVehicle = await addVehicle(formData);
+      if (keys.every((key) => defaultValues[key] === formData[key])) return; // no need to update
     }
+    const addedVehicle = await addOrUpdateVehicle(formData);
   };
 
   return (

@@ -10,6 +10,7 @@ const parseIntFromInput = (text: string) => {
 };
 
 export const vehicleSchema = z.object({
+  id: z.string().optional(),
   name: z
     .string()
     .trim()
