@@ -8,7 +8,7 @@ import { zxcvbn, zxcvbnOptions } from '@zxcvbn-ts/core';
 import * as zxcvbnCommonPackage from '@zxcvbn-ts/language-common';
 import * as zxcvbnEnPackage from '@zxcvbn-ts/language-en';
 import { signupSchema, SignupSchema } from '@/lib/definitions';
-import { redirect } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import FormErrorMessage from '../ui/form-error-message';
 import { useState } from 'react';
 import {
@@ -34,6 +34,7 @@ const options = {
 zxcvbnOptions.setOptions(options);
 
 export const SignupForm = () => {
+  const router = useRouter();
   const [errorMessage, setErrorMessage] = useState('');
   const form = useForm<SignupSchema>({
     resolver: zodResolver(signupSchema),
@@ -47,8 +48,7 @@ export const SignupForm = () => {
 
   const onSubmit = async (values: SignupSchema) => {
     const res = await signup(values);
-    if (!res) redirect('/login');
-    console.log('here');
+    if (!res) router.push('/login');
     console.log(res.error);
     setErrorMessage(res.error);
   };
