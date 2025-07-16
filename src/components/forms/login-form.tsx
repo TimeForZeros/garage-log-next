@@ -1,12 +1,12 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardContent } from '../ui/card';
 import { loginSchema, LoginSchema } from '@/lib/definitions';
-import { redirect } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { signIn } from 'next-auth/react';
 
 import {
@@ -20,6 +20,7 @@ import {
 import { Input } from '@/components/ui/input';
 
 export const LoginForm = () => {
+  const router = useRouter();
   const [errorMessage, setErrorMessage] = useState('');
   const ErrorMessage = () => (
     <span className='text-destructive text-sm flex justify-around'>{errorMessage}</span>
@@ -34,9 +35,7 @@ export const LoginForm = () => {
 
   const onSubmit = async (values: LoginSchema) => {
     const res = await signIn('credentials', { ...values, redirect: false });
-    if (res?.ok) {
-      redirect('/dashboard');
-    }
+    if (res?.ok) return router.push('/dashboard');
     setErrorMessage('Account not found or password incorrect');
   };
 
