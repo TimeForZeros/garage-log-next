@@ -16,8 +16,10 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
+import { useQueryClient } from '@tanstack/react-query';
 
 const VehicleForm = ({ vehicle }: { vehicle: VehicleSchema | null }) => {
+  const queryClient = useQueryClient();
   const defaultValues = {
     id: vehicle?.id,
     name: vehicle?.name ?? '',
@@ -39,16 +41,18 @@ const VehicleForm = ({ vehicle }: { vehicle: VehicleSchema | null }) => {
       ) as (keyof typeof defaultValues)[];
       if (keys.every((key) => defaultValues[key] === formData[key])) return; // no need to update
     }
-    const addedVehicle = await addOrUpdateVehicle(formData);
+    await addOrUpdateVehicle(formData);
+    queryClient.invalidateQueries({ queryKey: ['vehicles'] });
   };
   const onDelete = async () => {
     if (!vehicle?.id) return;
     const error = await deleteVehicle(vehicle.id);
     if (error) {
       //do something
-    } 
+    }
+    queryClient.invalidateQueries({ queryKey: ['vehicles'] });
     console.log('delete successful');
-  }
+  };
 
   return (
     <Form {...vehicleForm}>
@@ -139,7 +143,11 @@ const VehicleForm = ({ vehicle }: { vehicle: VehicleSchema | null }) => {
         />
         <div className='flex space-x-1'>
           <Button type='submit'>Submit</Button>
-          {vehicle && <Button variant='destructive' onClick={onDelete}>Delete</Button>}
+          {vehicle && (
+            <Button variant='destructive' onClick={onDelete}>
+              Delete
+            </Button>
+          )}
         </div>
       </form>
     </Form>

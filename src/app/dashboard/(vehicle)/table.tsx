@@ -13,34 +13,39 @@ import {
 import VehicleCard from './card';
 import { useMemo } from 'react';
 import { getAllVehicles } from '@/app/actions/vehicles';
-import { useQuery } from '@tanstack/react-query';
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { VehicleSchema } from '@/lib/definitions';
+import VehicleModal from './modal';
+import { deleteVehicle } from '@/app/actions/vehicles';
+
 import {
   useReactTable,
   createColumnHelper,
   getCoreRowModel,
   flexRender,
 } from '@tanstack/react-table';
-import useStore from '@/stores';
-
+import { Button } from '@/components/ui/button';
 type StoreType = {
   updateVehicleList: (vehicles: any[]) => void;
   vehicleList: any[];
   vehiclesList?: any[]; // Remove or adjust if not needed
 };
 
-const useVehicles = () => {
-  const getVehicles = async () => {
-    const vehicles = await getAllVehicles();
-    return vehicles ?? [];
-  };
-  return useQuery({ queryKey: ['vehicles'], queryFn: getVehicles });
+const getVehicles = async () => {
+  const vehicles = await getAllVehicles();
+  return vehicles ?? [];
 };
 
 const VehicleTable = () => {
-  const { isPending, data } = useVehicles();
+  const queryClient = useQueryClient();
+  const { isPending, data } = useQuery({ queryKey: ['vehicles'], queryFn: getVehicles });
+  const vehicleMutation = useMutation({
+    mutationFn: (id: string) => deleteVehicle(id),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['vehicles'] });
+    },
+  });
   const columnHelper = createColumnHelper<VehicleSchema>();
-  const store = useStore() as StoreType;
   const columns = useMemo(
     () => [
       columnHelper.accessor('name', {
@@ -66,12 +71,25 @@ const VehicleTable = () => {
       columnHelper.accessor('odometer', {
         header: 'Odometer',
         cell: (info) => info.getValue(),
-        // footer: (info) => info.column.id,
+        footer: (info) => info.column.id,
       }),
       columnHelper.accessor('useKm', {
         header: 'Units',
         cell: (info) => (info.getValue() ? 'km' : 'mi'),
         footer: (info) => info.column.id,
+      }),
+      columnHelper.display({
+        id: 'actions', // Unique ID for the column
+        header: 'Actions',
+        cell: (props) => {
+          return (
+            <div style={{ display: 'flex', gap: '1rem' }}>
+              <Button>Details</Button>
+              <Button onClick={() => vehicleMutation.mutate(props.row.original.id)}>Delete</Button>
+              <VehicleModal vehicle={props.row.original} />
+            </div>
+          );
+        },
       }),
     ],
     [columnHelper],
@@ -85,7 +103,6 @@ const VehicleTable = () => {
   if (isPending || !data) {
     return <span>Loading...</span>;
   }
-  console.log(data);
 
   return (
     <Table>
@@ -128,7 +145,6 @@ const VehicleTable = () => {
         </TableFooter> */}
     </Table>
   );
-  return <div className='max-w-[30em]'>{store.vehicleList.map(VehicleCard)}</div>;
 };
 
 export default VehicleTable;
