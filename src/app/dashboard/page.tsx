@@ -4,10 +4,9 @@ import VehicleTable from '@/app/dashboard/(vehicle)/table';
 
 export default async function Dashboard() {
   return (
-    <>
-      <div>Hello World</div>
+    <div className='w-[50vw] mx-auto'>
       <VehicleModal vehicle={null} />
       <VehicleTable />
-    </>
+    </div>
   );
 }

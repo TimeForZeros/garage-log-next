@@ -3,7 +3,6 @@
 import { vehicleSchema, VehicleSchema } from '@/lib/definitions';
 import { nextAuthOptions } from '@/config';
 import prisma from '@/lib/prisma';
-import { PrismaClientKnownRequestError } from '@/prisma/runtime/library';
 import { getServerSession } from 'next-auth';
 
 export const addOrUpdateVehicle = async (formData: VehicleSchema) => {
@@ -18,24 +17,20 @@ export const addOrUpdateVehicle = async (formData: VehicleSchema) => {
     odometer: !!formData.odometer ? Number(formData.odometer) : null,
     useKm: formData.useKm,
   };
+
   try {
-    const vehicle = await prisma.vehicle.upsert({
-      where: {
-        id: vehicleData.id,
-      },
-      create: {
-        ...vehicleData,
-      },
-      update: {
-        ...vehicleData,
-      },
-    });
+    let vehicle = null;
+    if (vehicleData.id) {
+      vehicle = await prisma.vehicle.update({
+        where: { id: vehicleData.id },
+        data: { ...vehicleData },
+      });
+    } else {
+      vehicle = await prisma.vehicle.create({ data: { ...vehicleData } });
+    }
     return { success: true, vehicle };
   } catch (err) {
-    // if (err instanceof PrismaClientKnownRequestError) {
-    console.log(err);
-    // }
-    return { success: false, error: err };
+    return { success: false };
   }
 };
 
@@ -55,7 +50,6 @@ export const deleteVehicle = async (vehicleid: string) => {
         id: vehicleid,
       },
     });
-    console.log(deleteSuccess);
   } catch (err) {
     return err;
   }

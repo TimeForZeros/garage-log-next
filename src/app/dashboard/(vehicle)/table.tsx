@@ -39,7 +39,6 @@ const useVehicles = () => {
 
 const VehicleTable = () => {
   const { isPending, data } = useVehicles();
-  console.log(isPending, data);
   const columnHelper = createColumnHelper<VehicleSchema>();
   const store = useStore() as StoreType;
   const columns = useMemo(
