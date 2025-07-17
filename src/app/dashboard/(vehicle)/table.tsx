@@ -9,8 +9,8 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import VehicleCard from '../cards/vehicle';
-
+import VehicleCard from './card';
+import { getAllVehicles } from '@/app/actions/vehicles';
 import { useQuery } from '@tanstack/react-query';
 import useStore from '@/stores';
 
@@ -23,12 +23,17 @@ type StoreType = {
 const VehicleTable = () => {
   const store = useStore() as StoreType;
   const getVehicles = async () => {
-    const res = await fetch('/api/vehicle');
-    const vehicles = await res.json();
+    console.log('hitsa');
+    // await new Promise((resolve) => setTimeout(() => resolve(), 10000));
+    console.log('hits');
+    const vehicles = await getAllVehicles();
     store.updateVehicleList(vehicles ?? []);
     return vehicles ?? [];
   };
-  useQuery({ queryKey: ['vehicles'], queryFn: getVehicles });
+  const {isLoading} = useQuery({ queryKey: ['vehicles'], queryFn: getVehicles });
+  if (isLoading) {
+    return <span>Loading...</span>
+  }
   return <div className='max-w-[30em]'>{store.vehicleList.map(VehicleCard)}</div>;
 };
 

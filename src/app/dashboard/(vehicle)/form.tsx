@@ -4,7 +4,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { Button } from '@/components/ui/button';
 import { vehicleSchema, VehicleSchema } from '@/lib/definitions';
-import { Switch } from '../ui/switch';
+import { Switch } from '@/components/ui/switch';
 import { addOrUpdateVehicle } from '@/app/actions/vehicles';
 
 import {
@@ -17,7 +17,7 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 
-const AddEditVehicleForm = ({ vehicle }: { vehicle: VehicleSchema | null }) => {
+const VehicleForm = ({ vehicle }: { vehicle: VehicleSchema | null }) => {
   const defaultValues = {
     id: vehicle?.id,
     name: vehicle?.name ?? '',
@@ -138,4 +138,4 @@ const AddEditVehicleForm = ({ vehicle }: { vehicle: VehicleSchema | null }) => {
   );
 };
 
-export default AddEditVehicleForm;
+export default VehicleForm;

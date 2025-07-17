@@ -5,7 +5,6 @@ import { nextAuthOptions } from '@/config';
 import prisma from '@/lib/prisma';
 import { PrismaClientKnownRequestError } from '@/prisma/runtime/library';
 import { getServerSession } from 'next-auth';
-import { NextRequest, NextResponse } from 'next/server';
 
 export const addOrUpdateVehicle = async (formData: VehicleSchema) => {
   const session: { user: { id: string } } | null = await getServerSession(nextAuthOptions);
@@ -38,4 +37,11 @@ export const addOrUpdateVehicle = async (formData: VehicleSchema) => {
     // }
     return { success: false, error: err };
   }
+};
+
+export const getAllVehicles = async () => {
+  const session: { user: { id: string } } | null = await getServerSession(nextAuthOptions);
+  if (!session) return;
+  const query = await prisma.vehicle.findMany({ where: { userId: session.user.id } });
+  return query;
 };

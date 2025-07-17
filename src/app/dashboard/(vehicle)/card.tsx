@@ -7,7 +7,7 @@ import {
   CardFooter,
   CardAction,
 } from '@/components/ui/card';
-import EditVehicleModal from '../modals/edit-vehicle';
+import VehicleModal from './modal';
 
 // todo define this one
 const VehicleCard = (vehicle: any) => (
@@ -27,7 +27,7 @@ const VehicleCard = (vehicle: any) => (
     </CardContent>
     <CardFooter>
       <CardAction>
-        <EditVehicleModal vehicle={vehicle} />
+        <VehicleModal vehicle={vehicle} />
       </CardAction>
     </CardFooter>
   </Card>

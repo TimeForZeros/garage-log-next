@@ -7,26 +7,27 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog';
-import { Button } from '../ui/button';
+import { Button } from '../../../components/ui/button';
 import { vehicleSchema, VehicleSchema } from '@/lib/definitions';
-import AddEditVehicleForm from '../forms/add-edit-vehicle-form';
+import AddEditVehicleForm from './form';
 
-const AddVehicleModal = () => {
+const VehicleModal = ({ vehicle }: { vehicle: VehicleSchema | null }) => {
+  const actionType = vehicle ? 'Edit' : 'Add';
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button>Add</Button>
+        <Button>{actionType}</Button>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Create Vehicle</DialogTitle>
+          <DialogTitle>{actionType} Vehicle</DialogTitle>
           {/* <DialogDescription> */}
           {/* </DialogDescription> */}
-          <AddEditVehicleForm vehicle={null} />
+          <AddEditVehicleForm vehicle={vehicle} />
         </DialogHeader>
       </DialogContent>
     </Dialog>
   );
 };
 
-export default AddVehicleModal;
+export default VehicleModal;
