@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import { Button } from '@/components/ui/button';
 import { vehicleSchema, VehicleSchema } from '@/lib/definitions';
 import { Switch } from '@/components/ui/switch';
-import { addOrUpdateVehicle } from '@/app/actions/vehicles';
+import { addOrUpdateVehicle, deleteVehicle } from '@/app/actions/vehicles';
 
 import {
   Form,
@@ -41,6 +41,14 @@ const VehicleForm = ({ vehicle }: { vehicle: VehicleSchema | null }) => {
     }
     const addedVehicle = await addOrUpdateVehicle(formData);
   };
+  const onDelete = async () => {
+    if (!vehicle?.id) return;
+    const error = await deleteVehicle(vehicle.id);
+    if (error) {
+      //do something
+    } 
+    console.log('delete successful');
+  }
 
   return (
     <Form {...vehicleForm}>
@@ -131,7 +139,7 @@ const VehicleForm = ({ vehicle }: { vehicle: VehicleSchema | null }) => {
         />
         <div className='flex space-x-1'>
           <Button type='submit'>Submit</Button>
-          {vehicle && <Button variant='destructive'>Delete</Button>}
+          {vehicle && <Button variant='destructive' onClick={onDelete}>Delete</Button>}
         </div>
       </form>
     </Form>

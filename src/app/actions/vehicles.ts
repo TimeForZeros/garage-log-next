@@ -45,3 +45,19 @@ export const getAllVehicles = async () => {
   const query = await prisma.vehicle.findMany({ where: { userId: session.user.id } });
   return query;
 };
+
+export const deleteVehicle = async (vehicleid: string) => {
+  const session: { user: { id: string } } | null = await getServerSession(nextAuthOptions);
+  if (!session) return;
+  try {
+    const deleteSuccess = await prisma.vehicle.delete({
+      where: {
+        id: vehicleid,
+      },
+    });
+    console.log(deleteSuccess);
+  } catch (err) {
+    return err;
+  }
+  return null;
+};
