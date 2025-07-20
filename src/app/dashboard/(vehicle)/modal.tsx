@@ -1,4 +1,6 @@
-import React from 'react';
+"use client"
+
+import React, { useState } from 'react';
 import {
   Dialog,
   DialogContent,
@@ -13,8 +15,9 @@ import AddEditVehicleForm from './form';
 
 const VehicleModal = ({ vehicle }: { vehicle: VehicleSchema | null }) => {
   const actionType = vehicle ? 'Edit' : 'Add';
+  const [open, setOpen] = useState(false)
   return (
-    <Dialog>
+    <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         <Button>{actionType}</Button>
       </DialogTrigger>
@@ -23,7 +26,7 @@ const VehicleModal = ({ vehicle }: { vehicle: VehicleSchema | null }) => {
           <DialogTitle>{actionType} Vehicle</DialogTitle>
           {/* <DialogDescription> */}
           {/* </DialogDescription> */}
-          <AddEditVehicleForm vehicle={vehicle} />
+          <AddEditVehicleForm vehicle={vehicle} closeModal={() =>setOpen(false)} />
         </DialogHeader>
       </DialogContent>
     </Dialog>

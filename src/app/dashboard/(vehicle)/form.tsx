@@ -1,5 +1,3 @@
-'use client';
-
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { Button } from '@/components/ui/button';
@@ -18,7 +16,13 @@ import {
 import { Input } from '@/components/ui/input';
 import { useQueryClient } from '@tanstack/react-query';
 
-const VehicleForm = ({ vehicle }: { vehicle: VehicleSchema | null }) => {
+const VehicleForm = ({
+  vehicle,
+  closeModal,
+}: {
+  vehicle: VehicleSchema | null;
+  closeModal: () => void;
+}) => {
   const queryClient = useQueryClient();
   const defaultValues = {
     id: vehicle?.id,
@@ -43,6 +47,7 @@ const VehicleForm = ({ vehicle }: { vehicle: VehicleSchema | null }) => {
     }
     await addOrUpdateVehicle(formData);
     queryClient.invalidateQueries({ queryKey: ['vehicles'] });
+    closeModal();
   };
   const onDelete = async () => {
     if (!vehicle?.id) return;
