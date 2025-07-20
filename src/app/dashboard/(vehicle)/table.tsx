@@ -13,7 +13,7 @@ import {
 import VehicleCard from './card';
 import { useMemo } from 'react';
 import { getAllVehicles } from '@/app/actions/vehicles';
-import { hydrate, useSuspenseQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+import { useSuspenseQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { VehicleSchema } from '@/lib/definitions';
 import VehicleModal from './modal';
 import { deleteVehicle } from '@/app/actions/vehicles';
@@ -32,7 +32,6 @@ type StoreType = {
 };
 
 const getVehicles = async () => {
-  console.log('htis');
   const vehicles = await getAllVehicles();
   return vehicles ?? [];
 };
@@ -42,7 +41,6 @@ const VehicleTable = () => {
   const { data } = useSuspenseQuery({
     queryKey: ['vehicles'],
     queryFn: getVehicles,
-    staleTime: 5 * 60 * 1000,
   });
   const vehicleMutation = useMutation({
     mutationFn: (id: string) => deleteVehicle(id),
@@ -104,10 +102,6 @@ const VehicleTable = () => {
     data: data || [],
     getCoreRowModel: getCoreRowModel(),
   });
-
-  if (!data) {
-    return <span>Loading...</span>;
-  }
 
   return (
     <Table>

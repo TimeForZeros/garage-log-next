@@ -9,11 +9,13 @@ export default async function Dashboard() {
   const queryClient = new QueryClient();
   queryClient.prefetchQuery({ queryKey: ['vehicles'], queryFn: getAllVehicles });
   return (
-    <div className='w-[50vw] mx-auto'>
-      <VehicleModal vehicle={null} />
-      <HydrationBoundary state={dehydrate(queryClient, { shouldDehydrateQuery: () => true })}>
-        <VehicleTable />
-      </HydrationBoundary>
-    </div>
+    <HydrationBoundary state={dehydrate(queryClient, { shouldDehydrateQuery: () => true })}>
+      <div className='w-[50vw] mx-auto'>
+        <VehicleModal vehicle={null} />
+        <Suspense fallback={<Loading />}>
+          <VehicleTable />
+        </Suspense>
+      </div>
+    </HydrationBoundary>
   );
 }
